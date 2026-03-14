@@ -39,19 +39,20 @@ class CarApp:
         """, unsafe_allow_html=True)
 
         if self.df is not None:
-            # 1. ENCABEZADO: Título a la derecha y métricas rápidas
+            # ENCABEZADO: Título a la derecha y métricas rápidas
             st.markdown('<div style="text-align: right;"><p style="font-size: 24px; font-weight: bold; margin: 0;">🚗 Análisis del precio de carros</p></div>', unsafe_allow_html=True)
             st.markdown("<hr style='margin: 10px 0px 20px 0px; opacity: 0.2;'>", unsafe_allow_html=True)
 
-            # 2. MÉTRICAS CLAVE (Fila superior para dar contexto rápido)
+            # MÉTRICAS CLAVE (Fila superior para dar contexto rápido)
             precio_promedio, kilometraje_medio, total_de_carros, marca_lider = st.columns(4)
             precio_promedio.metric("Precio Promedio", f"${self.df['Precio'].mean():,.0f}")
             kilometraje_medio.metric("Kilometraje Medio", f"{self.df['Kilometraje'].mean():,.0f} km")
-        
+            total_de_carros.metric("Total de Carros", len(self.df))
+            marca_lider.metric("Marca Líder", self.df['Marca'].mode()[0])
 
             st.write("##") # Espaciador
 
-            # 3. CUADRÍCULA DE GRÁFICOS (Grid Layout)
+           #CUADRÍCULA DE GRÁFICOS (Grid Layout)
             # Fila 1: Precio Anual (60%) y Combustible (40%)
             columna_evolucion_de_precios_por_año, columna_tipo_de_combustible = st.columns([60, 40])
             
@@ -67,7 +68,22 @@ class CarApp:
                 fig_pie.update_layout(margin=dict(t=0, b=0, l=0, r=0))
                 st.plotly_chart(fig_pie, use_container_width=True)
 
-        
+            # Fila 2: Marcas (40%) y Dispersión (60%)
+            columna_marcas, columna_distribucion_de_precios_por_condicion = st.columns([40, 60])
+
+            with columna_marcas:
+                st.subheader("Marcas más Costosas (Promedio)")
+                df_marcas = self.df.groupby("Marca")["Precio"].mean().sort_values(ascending=True).reset_index()
+                # Gráfico de barras horizontal para mejor lectura de nombres
+                fig_marcas = px.bar(df_marcas, x="Precio", y="Marca", orientation='h', color="Precio")
+                st.plotly_chart(fig_marcas, use_container_width=True)
+
+            with columna_distribucion_de_precios_por_condicion:
+                st.subheader("Distribución de Precios por Condición")
+                fig_box = px.box(self.df, x="Condición", y="Precio", color="Condición",
+                                title="")
+                st.plotly_chart(fig_box, use_container_width=True)
+                
         else:
             st.warning("No hay datos cargados para mostrar.")
 class Main:
@@ -75,17 +91,17 @@ class Main:
     def run():
         st.set_page_config(page_title="Car App", layout="wide")
         
-        # 1. Instanciar la lógica de la app
+       
         app = CarApp('./db/data.csv')
         
-        # 2. Ejecutar procesos iniciales
+     
         app.cargar_y_limpiar()
         
-        # 3. Lanzar la interfaz
+       
         app.render_ui()
         
         
-# Punto de entrada estándar de Python
+
 if __name__ == "__main__":
     Main.run()        
         
