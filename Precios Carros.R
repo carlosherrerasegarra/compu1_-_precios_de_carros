@@ -285,6 +285,84 @@ df_precioscarros2 <- df_precioscarros2 %>%
   mutate (Fuel.Type = if_else (Model == "Q7" & Year >= 2016 & Engine.Size == 2.0, sample(opciones_combustible_Hibrido,  n(), replace = TRUE), Fuel.Type )) %>%
   mutate (Fuel.Type = if_else (Model == "Q7" & Year >= 2016 & Engine.Size == 3.0, sample(opciones_combustible_PHD, n(), replace = TRUE), Fuel.Type ))
 
+# Audi Q7 - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Q7" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 10000, max = 18000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Q7" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 15000, max = 30000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Q7" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 24000, max = 55000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Q7" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 50000, max = 80000),2), Price))
+
+# Audi Q7 - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Q7" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 75000, max = 150000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Q7" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 50000, max = 110000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Q7" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 20000, max = 70000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Q7" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 30000),0), Mileage))
+
+# Audi Q5 - Eliminar registros previos a 2008
+df_precioscarros2 <- df_precioscarros2 %>%
+  filter(!(Model == "Q5" & Year < 2008))
+
+# Audi Q5 - Motores
+motores_q5_08_16 <- c(2.0, 3.0, 3.2)
+motores_q5_17_23 <- c(2.0, 3.0)
+
+# Audi Q5 - 2008 - 2016
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Q5" & Year < 2017, sample(motores_q5_08_16, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Q5" & Year < 2017 & Engine.Size == 3.2, "Petrol", Fuel.Type)) %>%
+  mutate (Fuel.Type = if_else (Model == "Q5" & Year < 2017 & Engine.Size == 3.0, "Diesel", Fuel.Type )) %>%
+  mutate (Fuel.Type = if_else (Model == "Q5" & Year < 2017 & Engine.Size == 2.0, sample(opciones_combustible, n(), replace = TRUE), Fuel.Type ))
+
+# Audi Q5 - 2017 - 2023
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Q5" & Year >= 2017, sample(motores_q5_17_23, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Q5" & Year >= 2017 & Engine.Size == 3.0, sample(opciones_combustible, n(), replace = TRUE), Fuel.Type ))  %>%
+  mutate (Fuel.Type = if_else (Model == "Q5" & Year >= 2017 & Engine.Size == 2.0, sample(opciones_combustible_PHD, n(), replace = TRUE), Fuel.Type ))
+
+# Audi Q5 - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Q5" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 9000, max = 15000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Q5" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 13000, max = 25000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Q5" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 20000, max = 38000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Q5" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 33000, max = 60000),2), Price))
+
+# Audi Q5 - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Q5" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 70000, max = 140000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Q5" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 45000, max = 110000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Q5" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 15000, max = 70000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Q5" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 30000),0), Mileage))
 
 
 # Analisis de datos - Conteo Univariado
