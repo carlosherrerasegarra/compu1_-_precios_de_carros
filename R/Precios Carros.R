@@ -364,6 +364,822 @@ set.seed(125)
 df_precioscarros2 <- df_precioscarros2 %>%
   mutate (Mileage = if_else(Model == "Q5" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 30000),0), Mileage))
 
+# Toyota RAV4 - Motores
+motores_r4_00_05 <- c(1.8, 2.0, 2.4)
+motores_r4_00_05_Petrol <- c(1.8, 2.4)
+motores_r4_06_12 <- c(2.0, 2.4, 2.5, 3.5, 2.2)
+motores_r4_06_12_Petrol <- c(2.0, 2.4, 2.5, 3.5)
+motores_r4_13_18 <- c(2.0, 2.5, 2.2)
+motores_r4_19_23 <- c(2.0, 2.5)
+
+# Toyota RAV4 - 2000 - 2005
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "RAV4" & Year < 2006, sample(motores_r4_00_05, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "RAV4" & Year < 2006 & Engine.Size %in% motores_r4_00_05_Petrol, "Petrol", Fuel.Type)) %>%
+  mutate (Fuel.Type = if_else (Model == "RAV4" & Year < 2006 & Engine.Size == 2.0, sample(opciones_combustible, n(), replace = TRUE), Fuel.Type ))
+
+# Toyota RAV4 - 2006 - 2012
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "RAV4" & Year >= 2006 & Year <= 2012, sample(motores_r4_06_12, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "RAV4" & Year >= 2006 & Year <= 2012 & Engine.Size %in% motores_r4_06_12_Petrol, "Petrol", Fuel.Type)) %>%
+  mutate (Fuel.Type = if_else (Model == "RAV4" & Year >= 2006 & Year <= 2012 & Engine.Size == 2.2, "Diesel", Fuel.Type ))
+  
+# Toyota RAV4 2013 - 2018
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "RAV4" & Year >= 2013 & Year <= 2018, sample(motores_r4_13_18, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "RAV4" & Year >= 2013 & Year <= 2018 & Engine.Size == 2.0, sample(opciones_combustible, n(), replace = TRUE), Fuel.Type)) %>%
+  mutate (Fuel.Type = if_else (Model == "RAV4" & Year >= 2013 & Year <= 2018 & Engine.Size == 2.5, sample(opciones_combustible_Hibrido, n(), replace = TRUE), Fuel.Type)) %>%
+  mutate (Fuel.Type = if_else (Model == "RAV4" & Year >= 2013 & Year <= 2018 & Engine.Size == 2.2, "Diesel", Fuel.Type ))
+
+# Toyota RAV4 - 2019 - 2023
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "RAV4" & Year >= 2019 & Year <= 2023, sample(motores_r4_13_18, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "RAV4" & Year >= 2019 & Year <= 2023 & Engine.Size == 2.0, sample(opciones_combustible, n(), replace = TRUE), Fuel.Type)) %>%
+  mutate (Fuel.Type = if_else (Model == "RAV4" & Year >= 2019 & Year <= 2023 & Engine.Size == 2.5, sample(opciones_combustible_Hibrido, n(), replace = TRUE), Fuel.Type)) %>%
+  mutate (Fuel.Type = if_else (Model == "RAV4" & Year >= 2019 & Year <= 2023 & Engine.Size == 2.2, "Diesel", Fuel.Type ))  
+
+#Toyota RAV4 - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "RAV4" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 3000, max = 10000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "RAV4" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 5500, max = 12000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "RAV4" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 9000, max = 17000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "RAV4" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 15000, max = 27000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "RAV4" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 24000, max = 36000),2), Price))
+
+# Toyota - RAV4 - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "RAV4" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 100000, max = 180000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "RAV4" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 80000, max = 150000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "RAV4" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 50000, max = 110000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "RAV4" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 20000, max = 70000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "RAV4" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 30000),0), Mileage))
+
+# Toyota Prius - 2000 - 2009
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Prius" & Year < 2010, 1.5, Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Prius" , "Hybrid", Fuel.Type)) %>%
+  mutate (Transmission = if_else (Model == "Prius" , "Automatic", Transmission))
+
+# Toyota Prius - 2010 - 2022
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Prius" & Year >= 2010 & Year <= 2022 , 1.8, Engine.Size))
+
+# Toyota Prius - 2023
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Prius" & Year == 2023 , 2.0, Engine.Size))
+
+#Toyota Prius - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Prius" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 5000, max = 9000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Prius" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 6500, max = 12000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Prius" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 9000, max = 16000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Prius" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 13000, max = 24000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Prius" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 22000, max = 30000),2), Price))
+
+# Toyota - Prius - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Prius" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 100000, max = 180000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Prius" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 80000, max = 150000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Prius" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 50000, max = 110000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Prius" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 20000, max = 70000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Prius" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 30000),0), Mileage))
+
+#Toyota Corolla - Motores
+motores_corolla_09_13 <- c(2.4, 1.8)
+motores_corolla_18_23 <- c(1.8, 2.0)
+opciones_combustible_PH <- c("Hybrid", "Petrol")
+
+#Toyota Corolla - 2000
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Corolla" & Year == 2000, 1.6, Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Corolla" & Year >= 2000 & Year <=2018, "Petrol", Fuel.Type))
+  
+#Toyota Corolla - 2001 - 2008
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Corolla" & Year >= 2001 & Year <=2008, 1.8, Engine.Size))
+
+#Toyota Corolla - 2009 - 2013
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Corolla" & Year >= 2009 & Year <=2013, sample(motores_corolla_09_13, n(), replace = TRUE), Engine.Size))
+
+#Toyota Corolla - 2014 - 2018
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Corolla" & Year >= 2014 & Year <=2018, 1.8, Engine.Size))
+
+#Toyota Corolla - 2019 - 2023
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Corolla" & Year >= 2019 & Year <=2023, sample(motores_corolla_18_23, n(), replace = TRUE), Engine.Size))%>%
+  mutate (Fuel.Type = if_else (Model == "Corolla" & Year >= 2019 & Year <=2023 & Engine.Size == 2.0, "Petrol", Fuel.Type))%>%
+  mutate (Fuel.Type = if_else (Model == "Corolla" & Year >= 2019 & Year <=2023 & Engine.Size == 1.8, sample(opciones_combustible_PH, n(), replace = TRUE), Fuel.Type ))
+
+#Toyota Corolla - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Corolla" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 2500, max = 8000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Corolla" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 3500, max = 10000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Corolla" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 6000, max = 15000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Corolla" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 13000, max = 24000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Corolla" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 22000, max = 30000),2), Price))
+
+# Toyota - Corolla - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Corolla" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 100000, max = 180000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Corolla" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 80000, max = 150000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Corolla" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 50000, max = 110000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Corolla" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 20000, max = 70000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Corolla" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 30000),0), Mileage))
+
+# Toyota Camry - Motores
+motores_camry_00_01 <- c(2.2, 3.0)
+motores_camry_02_06 <- c(2.4, 3.0, 3.3)
+motores_camry_07_11 <- c(2.0, 2.4, 2.5, 3.5)
+motores_camry_12_23 <- c(2.0, 2.5, 3.5)
+
+df_precioscarros2 <- df_precioscarros2 %>%
+mutate (Fuel.Type = if_else (Model == "Camry", "Petrol", Fuel.Type))
+
+# Toyota Camry - 2000- 2001
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Camry" & Year < 2002, sample(motores_camry_00_01, n(), replace = TRUE), Engine.Size))
+
+# Toyota Camry - 2002- 2006
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Camry" & Year >= 2002 & Year <= 2006, sample(motores_camry_02_06, n(), replace = TRUE), Engine.Size))
+
+# Toyota Camry - 2007- 2011
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Camry" & Year >= 2007 & Year <= 2011, sample(motores_camry_07_11, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Camry" & Year >= 2007 & Year <=2011 & Engine.Size == 2.4, sample(opciones_combustible_PH, n(), replace = TRUE), Fuel.Type ))
+
+# Toyota Camry - 2012- 2023
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Camry" & Year >= 2012 & Year <= 2023, sample(motores_camry_12_23, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Camry" & Year >= 2012 & Year <=2023 & Engine.Size == 2.5, sample(opciones_combustible_PH, n(), replace = TRUE), Fuel.Type ))
+
+# Toyota Camry - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Camry" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 3500, max = 8000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Camry" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 5000, max = 11500),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Camry" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 7000, max = 16000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Camry" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 12000, max = 24000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Camry" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 20000, max = 30000),2), Price))
+
+# Toyota - Camry - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Camry" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 100000, max = 180000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Camry" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 80000, max = 150000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Camry" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 50000, max = 110000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Camry" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 20000, max = 70000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Camry" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 30000),0), Mileage))
+
+
+# Ford Explorer - Motores
+motores_explorer_00_01 <- c(4.0, 5.0)
+motores_explorer_02_10 <- c(4.0, 4.6)
+motores_explorer_11_19 <- c(2.0, 2.3, 3.5)
+motores_explorer_20_23 <- c(2.3, 3.0, 3.3)
+
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Fuel.Type = if_else (Model == "Explorer", "Petrol", Fuel.Type)) %>%
+  mutate (Transmission = if_else(Model == "Explorer" & Year > 2001, "Automatic", Transmission))
+
+# Ford Explorer - 2000- 2001
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Explorer" & Year < 2002, sample(motores_explorer_00_01, n(), replace = TRUE), Engine.Size))
+
+# Ford Explorer - 2002- 2010
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Explorer" & Year >= 2002 & Year <= 2010, sample(motores_explorer_02_10, n(), replace = TRUE), Engine.Size))
+
+# Ford Explorer - 2011- 2019
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Explorer" & Year >= 2011 & Year <= 2019, sample(motores_explorer_11_19, n(), replace = TRUE), Engine.Size))
+
+# Ford Explorer - 2020- 2023
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Explorer" & Year >= 2020 & Year <= 2023, sample(motores_explorer_20_23, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Explorer" & Year >= 2020 & Year <=2023 & Engine.Size == 3.0, sample(opciones_combustible_PH, n(), replace = TRUE), Fuel.Type )) %>%
+  mutate (Fuel.Type = if_else (Model == "Explorer" & Year >= 2020 & Year <=2023 & Engine.Size == 3.3, "Hybrid", Fuel.Type ))
+
+# Ford Explorer - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Explorer" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 3500, max = 8000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Explorer" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 5000, max = 11500),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Explorer" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 7000, max = 19000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Explorer" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 12000, max = 30000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Explorer" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 23000, max = 45000),2), Price))
+
+# Ford Explorer - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Explorer" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 110000, max = 200000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Explorer" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 90000, max = 160000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Explorer" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 60000, max = 120000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Explorer" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 20000, max = 75000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Explorer" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 40000),0), Mileage))
+
+# Ford Focus - Motores
+motores_focus_00_07 <- c(2.0, 2.3)
+motores_focus_12_17 <- c(1.0, 2.0, 2.3)
+motores_focus_18_23 <- c(1.0, 1.5, 2.0, 2.3)
+
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Fuel.Type = if_else (Model == "Focus", "Petrol", Fuel.Type))
+
+# Ford Focus 2000 - 2007
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Focus" & Year < 2008, sample(motores_focus_00_07, n(), replace = TRUE), Engine.Size))
+
+# Ford Focus 2008 - 2011
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Focus" & Year >= 2008 & Year <= 2011, 2.0, Engine.Size))
+
+# Ford Focus 2012 - 2017
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Focus" & Year >= 2012 & Year <= 2017, sample(motores_focus_12_17, n(), replace = TRUE), Engine.Size))
+
+# Ford Focus 2017 - 2023
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Focus" & Year >= 2018 & Year <= 2023, sample(motores_focus_18_23, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Focus" & Year >= 2018 & Year <=2023 & Engine.Size == 1.0, sample(opciones_combustible_PH, n(), replace = TRUE), Fuel.Type )) %>%
+  mutate (Fuel.Type = if_else (Model == "Focus" & Year >= 2018 & Year <=2023 & Engine.Size == 2.0, "Diesel", Fuel.Type )) %>%
+  mutate (Fuel.Type = if_else (Model == "Focus" & Year >= 2018 & Year <=2023 & Engine.Size == 1.5, sample(opciones_combustible, n(), replace = TRUE), Fuel.Type ))
+
+# Ford Focus - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Focus" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 2500, max = 8000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Focus" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 4000, max = 8500),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Focus" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 6000, max = 14000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Focus" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 8000, max = 16000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Focus" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 14000, max = 23000),2), Price))
+
+# Ford Focus - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Focus" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 110000, max = 200000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Focus" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 90000, max = 160000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Focus" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 60000, max = 120000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Focus" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 20000, max = 75000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Focus" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 40000),0), Mileage))
+
+# Ford Mustang - Motores
+motores_mustang_00_04 <- c(3.8, 3.9, 4.6, 5.4)
+motores_mustang_05_09 <- c(4.0, 4.6, 5.4)
+motores_mustang_10_14 <- c(3.7, 4.0, 4.6, 5.0, 5.4, 5.8)
+motores_mustang_15_23 <- c(2.3, 3.7, 5.0, 5.2)
+
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Fuel.Type = if_else (Model == "Mustang", "Petrol", Fuel.Type))
+
+# Ford Mustang 2000 - 2004
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Mustang" & Year < 2005, sample(motores_mustang_00_04, n(), replace = TRUE), Engine.Size))
+
+# Ford Mustang 2005 - 2009
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Mustang" & Year >= 2005 & Year <= 2009, sample(motores_mustang_05_09, n(), replace = TRUE), Engine.Size))
+
+# Ford Mustang 2010 - 2014
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Mustang" & Year >= 2010 & Year <= 2014, sample(motores_mustang_10_14, n(), replace = TRUE), Engine.Size))
+
+# Ford Mustang 2015 - 2023
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Mustang" & Year >= 2015 & Year <= 2023, sample(motores_mustang_15_23, n(), replace = TRUE), Engine.Size))
+
+# Ford Mustang - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Mustang" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 4500, max = 11000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Mustang" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 6000, max = 15000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Mustang" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 10000, max = 24000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Mustang" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 17000, max = 35000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Mustang" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 27000, max = 50000),2), Price))
+
+# Ford Mustang - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Mustang" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 110000, max = 180000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Mustang" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 80000, max = 160000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Mustang" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 50000, max = 120000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Mustang" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 15000, max = 80000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Mustang" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 30000),0), Mileage))
+
+# Ford Fiesta
+motores_fiesta_00_02 <- c(1.0, 1.2, 1.4, 1.5, 1.6)
+motores_fiesta_03_08 <- c(1.3, 1.4, 1.6, 2.0)
+motores_fiesta_09_17 <- c(1.0, 1.25, 1.4, 1.5, 1.6)
+motores_fiesta_09_17_mixtos <- c(1.4, 1.5, 1.6)
+motores_fiesta_18_23 <- c(1.0, 1.1, 1.5)
+
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Fuel.Type = if_else (Model == "Fiesta", "Petrol", Fuel.Type))
+
+# Ford Fiesta 2000 - 2002
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Fiesta" & Year < 2003, sample(motores_fiesta_00_02, n(), replace = TRUE), Engine.Size))
+
+# Ford Fiesta 2003 - 2008
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Fiesta" & Year >= 2003 & Year <= 2008, sample(motores_fiesta_03_08, n(), replace = TRUE), Engine.Size))
+
+# Ford Fiesta 2009 - 2017
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Fiesta" & Year >= 2009 & Year <= 2017, sample(motores_fiesta_09_17, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Fiesta" & Year >= 2009 & Year <= 2017 & Engine.Size %in% motores_fiesta_09_17_mixtos, sample(opciones_combustible, n(), replace = TRUE), Fuel.Type))
+
+# Ford Fiesta 2018 - 2023
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Fiesta" & Year >= 2018 & Year <= 2023, sample(motores_fiesta_18_23, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Fiesta" & Year >= 2018 & Year <= 2023 & Engine.Size == 1.5, sample(opciones_combustible, n(), replace = TRUE), Fuel.Type)) %>%
+  mutate (Fuel.Type = if_else (Model == "Fiesta" & Year >= 2018 & Year <= 2023 & Engine.Size == 1.0, sample(opciones_combustible_PH, n(), replace = TRUE), Fuel.Type))
+
+# Ford Fiesta - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Fiesta" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 1500, max = 3500),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Fiesta" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 3000, max = 7000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Fiesta" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 5000, max = 10000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Fiesta" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 7000, max = 13000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Fiesta" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 10000, max = 20000),2), Price))
+
+# Ford Fiesta - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Fiesta" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 110000, max = 180000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Fiesta" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 80000, max = 160000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Fiesta" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 50000, max = 110000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Fiesta" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 20000, max = 70000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Fiesta" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 30000),0), Mileage))
+
+# Honda Accord - Motores
+motores_accord_00_02 <- c(2.0, 2.3, 3.0)
+motores_accord_03_07 <- c(2.0, 2.4, 3.0)
+motores_accord_08_12 <- c(2.0, 2.2, 2.4, 3.5)
+motores_accord_13_17 <- c(2.0, 2.4, 3.5)
+motores_accord_18_23 <- c(1.5, 2.0)
+
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Fuel.Type = if_else (Model == "Accord", "Petrol", Fuel.Type))
+
+# Honda Accord 2000 - 2002
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Accord" & Year < 2003, sample(motores_accord_00_02, n(), replace = TRUE), Engine.Size))
+
+# Honda Accord 2003 - 2007
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Accord" & Year >= 2003 & Year <= 2007, sample(motores_accord_03_07, n(), replace = TRUE), Engine.Size))
+
+# Honda Accord 2008 - 2012
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Accord" & Year >= 2008 & Year <= 2012, sample(motores_accord_08_12, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Accord" & Year >= 2018 & Year <= 2023 & Engine.Size == 2.2, "Diesel", Fuel.Type))
+
+# Honda Accord 2013 - 2017
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Accord" & Year >= 2013 & Year <= 2017, sample(motores_accord_13_17, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Accord" & Year >= 2013 & Year <= 2017 & Engine.Size == 2.0, sample(opciones_combustible_PH, n(), replace = TRUE), Fuel.Type))
+
+# Honda Accord 2018 - 2022
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Accord" & Year >= 2018 & Year <= 2022, sample(motores_accord_18_23, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Accord" & Year >= 2018 & Year <= 2022 & Engine.Size == 2.0, sample(opciones_combustible_PH, n(), replace = TRUE), Fuel.Type))
+
+# Honda Accord 2023
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Accord" & Year == 2023, sample(motores_accord_18_23, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Accord" & Year == 2023 & Engine.Size == 2.0, sample(opciones_combustible_PH, n(), replace = TRUE), Fuel.Type))
+
+# Honda Accord - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Accord" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 3500, max = 8000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Accord" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 5000, max = 10000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Accord" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 7500, max = 14000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Accord" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 12000, max = 22000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Accord" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 20000, max = 30000),2), Price))
+
+# Honda Accord - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Accord" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 110000, max = 190000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Accord" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 80000, max = 150000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Accord" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 50000, max = 110000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Accord" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 20000, max = 70000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Accord" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 30000),0), Mileage))
+
+# Honda Fit - Motores
+motores_fit_00_08 <- c(1.2, 1.3, 1.5)
+motores_fit_09_13 <- c(1.3, 1.5)
+motores_fit_14_20 <- c(1.2, 1.3, 1.5)
+motores_fit_21_23 <- c(1.3, 1.5)
+
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Fuel.Type = if_else (Model == "Fit", "Petrol", Fuel.Type))
+
+# Honda Fit 2000 - 2008
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Fit" & Year < 2009, sample(motores_fit_00_08, n(), replace = TRUE), Engine.Size))
+ 
+
+# Honda Fit 2009 - 2013
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Fit" & Year >= 2009 & Year <= 2013, sample(motores_fit_09_13, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Fit" & Year >= 2009 & Year <= 2013, sample(opciones_combustible_PH, n(), replace = TRUE), Fuel.Type))
+
+# Honda Fit 2014 - 2020
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Fit" & Year >= 2014 & Year <= 2020, sample(motores_fit_14_20, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Fit" & Year >= 2014 & Year <= 2020 & Engine.Size == 1.5, "Hybrid", Fuel.Type))
+
+# Honda Fit 2021 - 2023
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Fit" & Year >= 2021 & Year <= 2023, sample(motores_fit_14_20, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Fit" & Year >= 2021 & Year <= 2023 & Engine.Size == 1.3, "Hybrid", Fuel.Type)) %>%
+  mutate (Fuel.Type = if_else (Model == "Fit" & Year >= 2021 & Year <= 2023 & Engine.Size == 1.5, sample(opciones_combustible_PH, n(), replace = TRUE), Fuel.Type))
+
+# Honda Fit - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Fit" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 3500, max = 6000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Fit" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 4500, max = 10000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Fit" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 7000, max = 14000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Fit" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 10000, max = 21000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Fit" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 18000, max = 27000),2), Price))
+
+# Honda Fit - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Fit" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 100000, max = 150000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Fit" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 80000, max = 150000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Fit" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 50000, max = 110000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Fit" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 20000, max = 70000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Fit" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 30000),0), Mileage))
+
+# Honda Civic - Motores
+motores_civic_00 <- c(1.3, 1.4, 1.5, 1.6, 1.8, 2.0)
+motores_civic_01_05 <- c(1.4, 1.5, 1.6, 1.7, 1.3)
+motores_civic_06_11 <- c(1.6, 1.8, 2.0, 1.3)
+motores_civic_12_16 <- c(1.6, 1.8, 2.0, 2.4, 1.5)
+motores_civic_17_21 <- c(1.0, 1.5, 1.6, 1.8, 2.6)
+motores_civic_22_23 <- c(1.5, 2.0)
+
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Fuel.Type = if_else (Model == "Civic", "Petrol", Fuel.Type))
+
+# Honda Civic 2000
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Civic" & Year == 2000, sample(motores_civic_00, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Civic" & Year == 2000 & Engine.Size == 2.0, "Diesel", Fuel.Type))    
+
+# Honda Civic 2001 - 2005
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Civic" & Year >= 2001 & Year <= 2005, sample(motores_civic_01_05, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Civic" & Year >= 2001 & Year <= 2005 & Engine.Size == 1.7, sample(opciones_combustible, n(), replace = TRUE), Fuel.Type))  %>%
+  mutate (Fuel.Type = if_else (Model == "Civic" & Year >= 2001 & Year <= 2005 & Engine.Size == 1.3, "Hybrid", Fuel.Type))
+
+# Honda Civic 2006 - 2011
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Civic" & Year >= 2006 & Year <= 2011, sample(motores_civic_06_11, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Civic" & Year >= 2006 & Year <= 2011 & Engine.Size == 1.3, "Hybrid", Fuel.Type))
+
+# Honda Civic 2012 - 2016
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Civic" & Year >= 2012 & Year <= 2016, sample(motores_civic_12_16, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Civic" & Year >= 2012 & Year <= 2016 & Engine.Size == 1.5, "Hybrid", Fuel.Type))
+
+# Honda Civic 2017 - 2021
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Civic" & Year >= 2017 & Year <= 2021, sample(motores_civic_17_21, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Civic" & Year >= 2017 & Year <= 2021 & Engine.Size == 1.6, sample(opciones_combustible, n(), replace = TRUE), Fuel.Type))
+
+
+# Honda Civic 2022 - 2023
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "Civic" & Year >= 2022 & Year <= 2023, sample(motores_civic_22_23, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "Civic" & Year >= 2022 & Year <= 2023 & Engine.Size == 2.0, sample(opciones_combustible_PH, n(), replace = TRUE), Fuel.Type))
+
+# Honda Civic - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Civic" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 3500, max = 7500),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Civic" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 4500, max = 10000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Civic" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 7000, max = 14000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Civic" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 10000, max = 21000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "Civic" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 18000, max = 27000),2), Price))
+
+# Honda Civic - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Civic" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 110000, max = 190000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Civic" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 80000, max = 150000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Civic" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 50000, max = 110000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Civic" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 20000, max = 70000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "Civic" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 30000),0), Mileage))
+
+# Honda CR-V - Motores
+motores_crv_02_16 <- c(2.0, 2.4, 2.2)
+motores_crv_17_22 <- c(1.5, 2.0, 2.4, 1.6)
+motores_crv_23 <- c(1.5, 2.0)
+
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Fuel.Type = if_else (Model == "CR-V", "Petrol", Fuel.Type))
+
+# Honda CR-V 2000 - 2001
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "CR-V" & Year <= 2001, 2.0, Engine.Size))
+
+# Honda CR-V 2002 - 2016
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "CR-V" & Year >= 2002 & Year <= 2016, sample(motores_crv_02_16, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "CR-V" & Year >= 2002 & Year <= 2016 & Engine.Size == 2.2, "Diesel", Fuel.Type))
+
+# Honda CR-V 2017 - 2022
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "CR-V" & Year >= 2017 & Year <= 2022, sample(motores_crv_17_22, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "CR-V" & Year >= 2017 & Year <= 2022 & Engine.Size == 1.6, "Diesel", Fuel.Type)) %>%
+  mutate (Fuel.Type = if_else (Model == "CR-V" & Year >= 2017 & Year <= 2022 & Engine.Size == 2.0, "Hybrid", Fuel.Type))
+
+# Honda CR-V 2023
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Engine.Size = if_else (Model == "CR-V" & Year == 2023, sample(motores_crv_23, n(), replace = TRUE), Engine.Size)) %>%
+  mutate (Fuel.Type = if_else (Model == "CR-V" & Year == 2023 & Engine.Size == 2.0, "Hybrid", Fuel.Type))
+
+# Honda CR-V - Precios Nuevos
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "CR-V" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 3500, max = 8000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "CR-V" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 5000, max = 12000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "CR-V" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 8000, max = 17000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "CR-V" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 12000, max = 25000),2), Price))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Price = if_else(Model == "CR-V" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 21000, max = 35000),2), Price))
+
+# Honda CR-V - Millaje Nuevo
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "CR-V" & Year >= 2000 & Year <= 2005, round(runif(n(), min = 110000, max = 190000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "CR-V" & Year >= 2006 & Year <= 2010, round(runif(n(), min = 80000, max = 150000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "CR-V" & Year >= 2011 & Year <= 2015, round(runif(n(), min = 50000, max = 110000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "CR-V" & Year >= 2016 & Year <= 2020, round(runif(n(), min = 20000, max = 70000),0), Mileage))
+set.seed(125)
+df_precioscarros2 <- df_precioscarros2 %>%
+  mutate (Mileage = if_else(Model == "CR-V" & Year >= 2021 & Year <= 2023, round(runif(n(), min = 5000, max = 30000),0), Mileage))
+
+
+
+
+write_csv(df_precioscarros2, "precios_carros.csv")
+
 
 # Analisis de datos - Conteo Univariado
 total_carros <- df_precioscarros2 %>% 
@@ -428,7 +1244,7 @@ ano_combustible <- df_precioscarros2 %>%
   count (Year, Fuel.Type) %>%
   pivot_wider(names_from = Fuel.Type, values_from = n, values_fill = 0)
 ano_transmision <- df_precioscarros2 %>%
-  count (Year, Transmission) %>%
+  count (Year, Transmission) %>%  
   pivot_wider(names_from = Transmission, values_from = n, values_fill = 0)
 ano_condicion <- df_precioscarros2 %>%
   count (Year, Condition) %>%
