@@ -1687,9 +1687,16 @@ df_precioscarros2 <- df_precioscarros2 %>%
   mutate (Condition = if_else( Year == 2023 & Mileage <6000, "New", Condition)) %>%
   mutate (Mileage = if_else (Condition == "New", 0, Mileage)) %>%
   mutate (Price = if_else(Transmission == "Automatic", Price * 1.05, Price)) %>%
-  mutate (Price = if_else (Condition == "New", Price * 1.15, Price))
-  
-  
+  mutate (Price = if_else (Condition == "New", Price * 1.15, Price)) %>%
+  mutate (Transmission = if_else (Transmission == "Automatic", "Automatico", Transmission)) %>%
+  mutate (Condition = if_else(Condition == "New", "Nuevo", Condition )) %>%
+  mutate (Condition = if_else(Condition == "Used", "Usado", Condition )) %>%
+  mutate (Condition = if_else(Condition == "Like New", "Como Nuevo", Condition )) %>%
+  mutate (Fuel.Type = if_else (Fuel.Type == "Electric", "Electrico", Fuel.Type)) %>%
+  mutate (Fuel.Type = if_else (Fuel.Type == "Petrol", "Gasolina", Fuel.Type)) %>%
+  mutate (Fuel.Type = if_else (Fuel.Type == "Hybrid", "Hibrido", Fuel.Type)) %>%
+  mutate (Price = round(Price, 2))
+
 write_csv(df_precioscarros2, "precios_carros.csv")
 
 
