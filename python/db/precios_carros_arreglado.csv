@@ -1,0 +1,1867 @@
+Car ID,Brand,Year,Engine Size,Fuel Type,Transmission,Mileage,Condition,Price,Model
+1,Tesla,2016,NA,Electrico,Automatico,61234,Usado,64827.24,Model X
+2,BMW,2018,2,Gasolina,Manual,25258,Usado,23271.83,5 Series
+3,Audi,2013,3,Gasolina,Manual,67987,Usado,13597.37,A4
+5,Ford,2009,5.4,Gasolina,Manual,108525,Usado,9209.05,Mustang
+6,Audi,2019,2,Hibrido,Automatico,68260,Usado,56617.09,Q7
+7,Audi,2020,2,Gasolina,Automatico,68216,Usado,39286.89,Q5
+9,Honda,2023,1.5,Gasolina,Manual,18327,Usado,22797.83,Civic
+10,Ford,2010,4,Gasolina,Automatico,113251,Usado,7516.96,Explorer
+12,Ford,2017,5,Gasolina,Automatico,57500,Usado,30207.65,Mustang
+13,Ford,2006,2,Gasolina,Automatico,129164,Usado,5731.11,Fiesta
+14,Audi,2023,4,Diesel,Automatico,0,Nuevo,60886.85,Q7
+15,BMW,2014,2,Diesel,Automatico,95803,Usado,23020.13,X3
+16,Ford,2010,4,Gasolina,Automatico,108744,Usado,9695.44,Mustang
+17,Mercedes,2017,1.5,Diesel,Automatico,19561,Usado,20496.27,GLA
+18,Audi,2022,1,Gasolina,Automatico,24488,Usado,31284.92,A3
+19,Honda,2011,1.8,Gasolina,Automatico,75453,Usado,10468.01,Civic
+20,BMW,2005,3,Diesel,Automatico,139350,Usado,9381.73,X5
+21,Mercedes,2019,3,Gasolina,Automatico,66338,Usado,44521.95,C-Class
+22,Mercedes,2022,2,Hibrido,Automatico,21802,Usado,66698.42,E-Class
+23,Honda,2012,2.2,Diesel,Manual,95522,Usado,14828.23,CR-V
+24,BMW,2019,4.4,Gasolina,Automatico,36825,Usado,35406.93,X5
+25,Audi,2015,3.2,Gasolina,Automatico,92343,Usado,22827.21,Q5
+26,Toyota,2017,2,Gasolina,Automatico,54192,Usado,21216.46,Camry
+27,BMW,2009,2.5,Gasolina,Manual,97149,Usado,9067.25,X3
+28,Honda,2022,1.5,Gasolina,Manual,19444,Usado,25777.62,Accord
+30,Audi,2017,1.6,Diesel,Automatico,86945,Usado,24309.3,A3
+31,BMW,2020,3,Diesel,Automatico,54319,Usado,46020.14,X5
+32,Toyota,2000,1.6,Gasolina,Automatico,113479,Usado,3598.05,Corolla
+33,Toyota,2022,2,Gasolina,Automatico,5160,Como Nuevo,23153.8,Corolla
+34,Ford,2007,1.4,Gasolina,Manual,139904,Usado,5995.2,Fiesta
+35,Ford,2005,4,Gasolina,Automatico,113873,Usado,5102.57,Mustang
+37,Honda,2014,1.5,Hibrido,Automatico,107065,Usado,14340.43,Fit
+38,BMW,2021,2,Diesel,Automatico,28777,Usado,71958.98,5 Series
+39,BMW,2014,2,Diesel,Manual,77838,Usado,18031.61,X3
+41,Mercedes,2000,2.9,Diesel,Manual,148147,Usado,9814.73,E-Class
+42,Mercedes,2022,1.3,Hibrido,Automatico,20046,Usado,42874.81,GLA
+43,Tesla,2022,NA,Electrico,Automatico,7359,Usado,42917.24,Model Y
+46,BMW,2017,1.6,Gasolina,Automatico,23931,Usado,23568.27,5 Series
+47,Tesla,2017,NA,Electrico,Automatico,43420,Usado,44094.9,Model S
+48,BMW,2016,4.4,Gasolina,Automatico,39278,Usado,36895.27,X5
+49,Toyota,2007,1.5,Hibrido,Automatico,100080,Usado,8481.56,Prius
+50,Ford,2014,2,Gasolina,Automatico,112379,Usado,18349.55,Explorer
+52,Ford,2016,3.7,Gasolina,Automatico,32711,Usado,22999.84,Mustang
+54,Audi,2007,1.9,Diesel,Automatico,114634,Usado,11370.75,A4
+55,Toyota,2013,2,Gasolina,Manual,84634,Usado,12195.15,Camry
+58,BMW,2000,4.4,Gasolina,Manual,146179,Usado,9040.67,5 Series
+59,Toyota,2018,1.8,Hibrido,Automatico,47844,Usado,20081.87,Prius
+60,BMW,2015,3,Diesel,Manual,83412,Usado,18353.08,3 Series
+62,Honda,2020,1.5,Gasolina,Automatico,52074,Usado,19335.59,Accord
+63,Honda,2015,2.2,Diesel,Automatico,91216,Usado,14891.53,CR-V
+64,Toyota,2004,3,Gasolina,Automatico,102631,Usado,3830.41,Camry
+65,Honda,2008,1.2,Gasolina,Automatico,113380,Usado,7478.86,Fit
+66,Audi,2001,1.6,Gasolina,Manual,128682,Usado,6471.88,A4
+67,Honda,2017,1.5,Gasolina,Automatico,37926,Usado,17493.84,CR-V
+68,BMW,2005,3,Diesel,Manual,139898,Usado,8851.31,X3
+69,BMW,2008,2,Gasolina,Manual,101889,Usado,10943.75,5 Series
+71,BMW,2008,2.2,Gasolina,Manual,136016,Usado,15948.98,5 Series
+72,Tesla,2015,NA,Electrico,Automatico,48526,Usado,47097.39,Model S
+73,BMW,2012,4.8,Gasolina,Manual,89229,Usado,25768.64,X5
+74,Audi,2008,2.5,Gasolina,Automatico,139590,Usado,11506.97,A3
+75,Tesla,2020,NA,Electrico,Automatico,52408,Usado,49379.73,Model S
+76,Ford,2012,1.4,Diesel,Manual,86489,Usado,8040.77,Fiesta
+78,Toyota,2010,2,Gasolina,Automatico,87293,Usado,6486.02,RAV4
+79,BMW,2003,4.6,Gasolina,Automatico,152571,Usado,10769.93,X5
+80,Honda,2001,1.5,Gasolina,Manual,145324,Usado,5766.19,Fit
+81,BMW,2005,2.5,Diesel,Automatico,108334,Usado,6015.71,5 Series
+82,Honda,2013,2.2,Diesel,Manual,71846,Usado,11276.87,CR-V
+84,Mercedes,2005,5,Gasolina,Manual,173773,Usado,12377.31,E-Class
+85,Mercedes,2018,4,Gasolina,Automatico,66729,Usado,45813.72,GLC
+86,Honda,2005,1.5,Gasolina,Automatico,146287,Usado,6105.05,Fit
+88,Mercedes,2017,3,Gasolina,Manual,55054,Usado,37478.09,C-Class
+89,Audi,2012,1.2,Gasolina,Manual,88076,Usado,10615.26,A3
+91,Honda,2022,1.5,Gasolina,Automatico,10048,Usado,25018.04,CR-V
+92,Honda,2018,2.4,Gasolina,Automatico,22101,Usado,13173.61,CR-V
+93,BMW,2012,4.4,Gasolina,Manual,93695,Usado,20923.81,3 Series
+95,Honda,2000,1.2,Gasolina,Manual,128154,Usado,4907.68,Fit
+96,Mercedes,2023,2,Hibrido,Automatico,29038,Usado,61989.73,C-Class
+98,Mercedes,2006,3.2,Gasolina,Manual,93877,Usado,11020.31,E-Class
+99,Tesla,2020,NA,Electrico,Automatico,52049,Usado,35543.61,Model 3
+103,BMW,2006,4.4,Gasolina,Automatico,113712,Usado,14361.6,X5
+104,Toyota,2014,2.5,Hibrido,Automatico,54576,Usado,8070.73,Camry
+105,Mercedes,2020,3,Diesel,Manual,28843,Usado,27788.93,GLC
+106,Audi,2018,2.9,Gasolina,Manual,62870,Usado,31718.36,A4
+108,Honda,2016,3.5,Gasolina,Manual,62870,Usado,20573.98,Accord
+111,Honda,2011,2,Gasolina,Automatico,70875,Usado,10249.52,Accord
+113,BMW,2010,4.8,Gasolina,Automatico,137885,Usado,18084.36,X5
+114,BMW,2002,3.2,Gasolina,Manual,175516,Usado,9663.72,3 Series
+115,BMW,2007,2.5,Diesel,Manual,132556,Usado,15441.51,5 Series
+116,Audi,2013,2,Diesel,Automatico,116014,Usado,17012.96,A3
+117,Toyota,2013,2.5,Hibrido,Automatico,67082,Usado,10040.46,Camry
+118,Audi,2009,3.2,Gasolina,Automatico,135533,Usado,15347.99,Q5
+120,Audi,2013,2,Diesel,Automatico,103523,Usado,24994.44,Q5
+121,Toyota,2008,2,Gasolina,Automatico,97757,Usado,6981.33,Camry
+122,Toyota,2002,1.5,Hibrido,Automatico,116925,Usado,6138.56,Prius
+123,Tesla,2020,NA,Electrico,Automatico,40560,Usado,42413.41,Model S
+124,Toyota,2007,1.8,Gasolina,Manual,129537,Usado,8099.86,Corolla
+125,Toyota,2015,1.8,Gasolina,Manual,99630,Usado,13444.5,Corolla
+128,Ford,2020,5,Gasolina,Automatico,56671,Usado,29966.73,Mustang
+129,Ford,2011,2.3,Gasolina,Automatico,70849,Usado,9628.29,Explorer
+130,Toyota,2004,1.8,Gasolina,Automatico,168435,Usado,7565.13,Corolla
+131,Ford,2001,5,Gasolina,Manual,132656,Usado,4632.8,Explorer
+132,Ford,2015,2,Gasolina,Automatico,106218,Usado,12770.54,Focus
+133,Toyota,2004,2.4,Gasolina,Automatico,128491,Usado,5767.57,RAV4
+134,Ford,2014,2.3,Gasolina,Manual,60009,Usado,6001.25,Focus
+136,Honda,2003,2,Gasolina,Automatico,148230,Usado,5932.96,Accord
+138,Honda,2010,2.4,Gasolina,Automatico,136531,Usado,9489.86,Accord
+139,Toyota,2015,1.8,Gasolina,Manual,74370,Usado,9655.45,Corolla
+140,BMW,2022,3,Diesel,Manual,13903,Usado,38903.3,3 Series
+142,Toyota,2013,1.8,Hibrido,Automatico,101707,Usado,15784.06,Prius
+143,BMW,2017,2.5,Gasolina,Automatico,41504,Usado,35049.55,5 Series
+144,Honda,2011,1.3,Gasolina,Manual,52203,Usado,7257.02,Fit
+145,Toyota,2010,2,Gasolina,Manual,96104,Usado,6495.35,Camry
+147,Tesla,2020,NA,Electrico,Automatico,26383,Usado,25811.95,Model 3
+148,Mercedes,2022,4,Gasolina,Manual,19288,Usado,60003,E-Class
+149,Audi,2010,6,Diesel,Automatico,144117,Usado,18241.15,Q7
+150,Ford,2022,2.3,Gasolina,Automatico,9261,Usado,15850.58,Focus
+151,BMW,2015,1.5,Gasolina,Manual,63803,Usado,13450.8,3 Series
+152,Mercedes,2014,2,Gasolina,Automatico,67702,Usado,22134.74,GLA
+153,Ford,2020,5.2,Gasolina,Automatico,73533,Usado,34869.52,Mustang
+154,Ford,2014,4.6,Gasolina,Manual,66226,Usado,13245.23,Mustang
+155,Toyota,2003,2.4,Gasolina,Automatico,124689,Usado,5133.22,Camry
+156,Ford,2010,5.8,Gasolina,Manual,131299,Usado,11771.18,Mustang
+157,Audi,2018,1.2,Gasolina,Automatico,67399,Usado,19831.38,A3
+159,Mercedes,2003,2.6,Gasolina,Automatico,111296,Usado,6287.78,C-Class
+160,Ford,2020,1,Gasolina,Automatico,34499,Usado,9176.86,Fiesta
+161,Toyota,2012,2.5,Hibrido,Automatico,74435,Usado,11198.53,Camry
+162,Audi,2021,1.4,Gasolina,Automatico,11668,Usado,36261.14,A4
+163,Honda,2018,1.8,Gasolina,Automatico,66157,Usado,21162.18,Civic
+166,Mercedes,2003,2.1,Diesel,Manual,162479,Usado,11247.88,E-Class
+168,Ford,2020,3.3,Hibrido,Automatico,34670,Usado,17641.21,Explorer
+172,Honda,2002,2.2,Diesel,Manual,142523,Usado,5329.4,CR-V
+173,Honda,2007,2.2,Diesel,Manual,126848,Usado,9684.8,CR-V
+175,Audi,2009,1.4,Gasolina,Manual,115636,Usado,8563.57,A3
+176,Ford,2003,2,Gasolina,Automatico,159842,Usado,3070.27,Fiesta
+180,BMW,2012,4.4,Gasolina,Automatico,105388,Usado,32147.21,X5
+182,BMW,2010,3,Diesel,Manual,105490,Usado,11471.87,5 Series
+184,Audi,2011,3.6,Gasolina,Automatico,66437,Usado,20064.78,Q7
+187,Audi,2012,4.2,Gasolina,Manual,62414,Usado,12482.81,A4
+190,Audi,2016,2,Diesel,Automatico,30067,Usado,26177.74,Q5
+191,BMW,2009,3,Diesel,Manual,81120,Usado,7571.21,X3
+192,Audi,2009,2,Diesel,Manual,77925,Usado,9679.32,Q5
+193,Tesla,2023,NA,Electrico,Automatico,11258,Usado,69570.8,Model X
+194,Ford,2003,1.4,Gasolina,Automatico,141865,Usado,2530.96,Fiesta
+198,Honda,2006,3,Gasolina,Automatico,146317,Usado,10223.81,Accord
+199,Honda,2021,2.4,Gasolina,Manual,10215,Usado,23920.35,CR-V
+202,Toyota,2023,2,Hibrido,Automatico,17748,Usado,27383.42,Prius
+203,Audi,2012,1.9,Diesel,Manual,80667,Usado,9133.36,A3
+205,BMW,2014,3,Gasolina,Automatico,62414,Usado,13758.69,3 Series
+206,BMW,2012,3,Gasolina,Automatico,56793,Usado,14145.44,X3
+207,BMW,2022,3,Gasolina,Automatico,10173,Usado,36931.14,X3
+208,BMW,2021,3,Gasolina,Manual,28685,Usado,53684.81,3 Series
+209,BMW,2021,3,Gasolina,Manual,17729,Usado,57821.21,X5
+210,Mercedes,2020,3,Gasolina,Automatico,31789,Usado,28692.64,C-Class
+215,BMW,2009,2.2,Gasolina,Manual,113245,Usado,12609.25,5 Series
+216,Toyota,2023,1.8,Hibrido,Automatico,12105,Usado,25487.14,Corolla
+218,Mercedes,2007,2.6,Gasolina,Automatico,130148,Usado,14298.69,C-Class
+220,Toyota,2015,1.8,Hibrido,Automatico,66338,Usado,11451.45,Prius
+221,Toyota,2016,2.5,Diesel,Manual,52905,Usado,22897.29,RAV4
+222,Ford,2004,1.3,Gasolina,Automatico,131765,Usado,2227.95,Fiesta
+224,Toyota,2017,2,Diesel,Automatico,48502,Usado,22932.55,RAV4
+225,BMW,2023,3,Gasolina,Automatico,17553,Usado,44680.86,X3
+226,Audi,2018,2,Diesel,Automatico,46146,Usado,27685,A4
+227,Toyota,2003,1.8,Gasolina,Manual,145268,Usado,5612.2,Corolla
+228,Ford,2006,1.6,Gasolina,Manual,117313,Usado,4865.65,Fiesta
+230,Mercedes,2017,2,Diesel,Automatico,55442,Usado,40857.76,GLC
+231,Ford,2018,3.5,Gasolina,Automatico,42325,Usado,20271.74,Explorer
+232,Toyota,2003,1.8,Gasolina,Automatico,141833,Usado,5644.84,Corolla
+233,Mercedes,2009,6.2,Gasolina,Manual,138534,Usado,14624.03,C-Class
+235,Toyota,2022,2.5,Gasolina,Manual,17380,Usado,24952.05,Camry
+236,Ford,2017,1,Gasolina,Manual,55711,Usado,13194.29,Focus
+237,Honda,2004,1.5,Gasolina,Automatico,103144,Usado,3840.08,Fit
+239,Tesla,2016,NA,Electrico,Automatico,55765,Usado,61381.67,Model X
+242,Toyota,2001,1.8,Gasolina,Automatico,149195,Usado,6176.3,Corolla
+243,BMW,2000,3.2,Gasolina,Automatico,137313,Usado,7138.4,3 Series
+244,Toyota,2022,1.8,Hibrido,Automatico,8905,Usado,24412.2,Prius
+245,Mercedes,2020,1.6,Gasolina,Automatico,54341,Usado,39025.33,C-Class
+246,Toyota,2016,2,Diesel,Manual,34708,Usado,18529.82,RAV4
+248,BMW,2015,1.5,Gasolina,Automatico,100827,Usado,23842.06,3 Series
+249,BMW,2004,2.5,Gasolina,Manual,126604,Usado,8091.67,X3
+250,Mercedes,2014,2.1,Diesel,Automatico,62986,Usado,20154,GLA
+254,Toyota,2009,2,Gasolina,Manual,87571,Usado,5703.01,Camry
+256,Toyota,2013,3.5,Gasolina,Automatico,60998,Usado,9082.21,Camry
+257,Toyota,2012,2.5,Hibrido,Automatico,107651,Usado,16430.11,Camry
+258,Ford,2001,2,Gasolina,Automatico,110273,Usado,2642.5,Focus
+259,Toyota,2002,2.4,Gasolina,Manual,104599,Usado,3758.72,Camry
+261,Honda,2020,1.2,Gasolina,Manual,47297,Usado,16005.37,Fit
+262,BMW,2017,2,Gasolina,Manual,49356,Usado,33046.89,X3
+263,Mercedes,2002,6.3,Gasolina,Automatico,138573,Usado,9300.13,E-Class
+265,Audi,2021,NA,Electrico,Automatico,19615,Usado,29238.1,A3
+266,Toyota,2006,3.3,Gasolina,Manual,145065,Usado,11041.71,Camry
+267,Toyota,2008,1.5,Hibrido,Automatico,80988,Usado,6906.54,Prius
+268,Ford,2016,1,Gasolina,Manual,47339,Usado,11976.58,Focus
+270,Honda,2006,2.4,Gasolina,Automatico,109229,Usado,7442.18,Accord
+271,Audi,2023,3,Diesel,Manual,26728,Usado,44775.14,A4
+272,BMW,2013,2.5,Gasolina,Manual,50182,Usado,15045.46,5 Series
+273,Honda,2018,2,Hibrido,Automatico,30841,Usado,15559.61,CR-V
+274,Mercedes,2003,5.5,Gasolina,Automatico,102505,Usado,5512.98,E-Class
+276,BMW,2009,2.5,Diesel,Automatico,146782,Usado,18404.47,5 Series
+278,Ford,2012,1.6,Diesel,Manual,102148,Usado,9345.63,Fiesta
+279,Ford,2013,3.5,Gasolina,Automatico,115974,Usado,19104.56,Explorer
+280,Toyota,2003,1.8,Gasolina,Manual,123803,Usado,4136.44,Corolla
+282,Mercedes,2004,5.4,Gasolina,Automatico,150538,Usado,10556.47,E-Class
+284,BMW,2003,4.9,Gasolina,Manual,139766,Usado,8479.51,5 Series
+285,Honda,2002,2,Gasolina,Manual,168597,Usado,6796.1,CR-V
+288,Ford,2000,1.5,Gasolina,Automatico,121810,Usado,1929.31,Fiesta
+290,Toyota,2008,2.5,Gasolina,Automatico,92478,Usado,6466.64,Camry
+291,Toyota,2006,2.4,Gasolina,Manual,126418,Usado,9310.2,Camry
+292,BMW,2003,2,Diesel,Automatico,117346,Usado,5565.98,3 Series
+293,Ford,2012,3.5,Gasolina,Automatico,97629,Usado,15252.15,Explorer
+294,Mercedes,2016,2,Gasolina,Automatico,48341,Usado,41749.22,E-Class
+295,Audi,2001,2.4,Gasolina,Automatico,109467,Usado,5408.38,A4
+296,Ford,2004,2,Gasolina,Manual,171588,Usado,6263.7,Focus
+298,BMW,2020,2,Diesel,Automatico,59111,Usado,48927.13,X5
+300,BMW,2005,3,Gasolina,Manual,150538,Usado,9422.06,5 Series
+301,Ford,2007,5.4,Gasolina,Automatico,137982,Usado,13149.11,Mustang
+302,Honda,2017,2.4,Gasolina,Manual,25917,Usado,13183.34,Accord
+303,Ford,2002,4,Gasolina,Automatico,151560,Usado,5856.89,Explorer
+304,Tesla,2021,NA,Electrico,Automatico,17138,Usado,38108.26,Model 3
+305,Ford,2011,2,Gasolina,Automatico,70310,Usado,9515.13,Explorer
+307,Tesla,2021,NA,Electrico,Automatico,6586,Usado,42616.65,Model Y
+308,BMW,2005,4.8,Gasolina,Automatico,121810,Usado,7540.1,X5
+309,Toyota,2001,1.5,Hibrido,Automatico,135963,Usado,7138.07,Prius
+310,Toyota,2022,1.8,Hibrido,Automatico,14303,Usado,26225.94,Prius
+312,Honda,2001,1.3,Hibrido,Automatico,153413,Usado,5954.17,Civic
+313,Toyota,2005,2,Diesel,Automatico,104698,Usado,3581.67,RAV4
+314,Ford,2016,2,Gasolina,Automatico,35717,Usado,10800.43,Focus
+315,BMW,2002,2.2,Gasolina,Manual,135335,Usado,8091.78,5 Series
+316,Toyota,2001,1.8,Gasolina,Manual,102900,Usado,2699.34,Corolla
+317,Toyota,2022,1.8,Hibrido,Automatico,26381,Usado,30283.93,Corolla
+318,Honda,2019,1.2,Gasolina,Automatico,67599,Usado,21495.33,Fit
+320,Tesla,2021,NA,Electrico,Automatico,19779,Usado,78517.83,Model X
+321,Mercedes,2011,3,Diesel,Automatico,64392,Usado,16377.88,C-Class
+322,Honda,2003,1.5,Gasolina,Automatico,141783,Usado,5868.6,Fit
+323,Ford,2004,1.6,Gasolina,Manual,142789,Usado,2436.84,Fiesta
+325,BMW,2014,3,Diesel,Automatico,60310,Usado,14945.55,X3
+326,Honda,2022,1.5,Gasolina,Automatico,17316,Usado,26172.62,Accord
+327,Toyota,2015,2.5,Diesel,Automatico,100507,Usado,16520.98,RAV4
+328,BMW,2009,4.8,Gasolina,Manual,115699,Usado,12969.26,5 Series
+329,BMW,2022,1.6,Gasolina,Automatico,6468,Usado,43849.97,5 Series
+330,Toyota,2015,2.5,Hibrido,Automatico,82872,Usado,14052.08,RAV4
+331,Honda,2011,1.3,Hibrido,Automatico,87778,Usado,11977.8,Civic
+332,Toyota,2016,1.8,Gasolina,Manual,48783,Usado,19332.25,Corolla
+334,BMW,2011,1.6,Gasolina,Manual,101314,Usado,27828.45,5 Series
+335,Audi,2007,3,Gasolina,Manual,139678,Usado,16899.02,Q7
+336,Audi,2019,3,Diesel,Manual,40914,Usado,24692.34,A4
+337,Ford,2002,3.8,Gasolina,Manual,179026,Usado,10909.56,Mustang
+339,Toyota,2012,1.8,Hibrido,Automatico,101743,Usado,15788.47,Prius
+340,Toyota,2022,2.2,Diesel,Automatico,10632,Usado,28038.58,RAV4
+341,Ford,2018,1,Gasolina,Automatico,33821,Usado,9091.43,Fiesta
+342,Ford,2007,2,Gasolina,Automatico,113462,Usado,4906.74,Fiesta
+343,Ford,2021,3.7,Gasolina,Automatico,22241,Usado,45005.27,Mustang
+344,BMW,2004,4.4,Gasolina,Manual,137168,Usado,8716.81,X5
+345,Mercedes,2019,2,Hibrido,Automatico,62284,Usado,48670.2,E-Class
+346,Toyota,2007,2,Gasolina,Manual,140661,Usado,10632.83,Camry
+347,BMW,2023,2,Diesel,Manual,7231,Usado,43122.86,X5
+348,Ford,2011,2,Gasolina,Manual,87843,Usado,9712.35,Focus
+349,Toyota,2000,1.6,Gasolina,Automatico,123679,Usado,4334.36,Corolla
+350,BMW,2020,NA,Electrico,Automatico,34264,Usado,26222,3 Series
+351,Mercedes,2019,4,Gasolina,Automatico,61949,Usado,43714.93,GLC
+352,BMW,2005,4.4,Gasolina,Automatico,175957,Usado,13225.47,X5
+353,Mercedes,2021,3,Gasolina,Automatico,8194,Usado,40103.44,C-Class
+354,Ford,2017,2,Gasolina,Automatico,51479,Usado,13207.62,Focus
+356,Toyota,2006,2.4,Gasolina,Manual,136097,Usado,10208.97,Camry
+357,Ford,2000,3.8,Gasolina,Manual,168879,Usado,9967.34,Mustang
+358,Toyota,2020,2.5,Hibrido,Automatico,49047,Usado,23069.8,RAV4
+359,Audi,2015,2.7,Diesel,Manual,64802,Usado,12960.42,A4
+360,Honda,2011,3.5,Gasolina,Automatico,50248,Usado,7903.22,Accord
+361,Mercedes,2005,2.6,Gasolina,Manual,174394,Usado,11509.51,C-Class
+362,Honda,2019,2.6,Gasolina,Manual,34420,Usado,13172.37,Civic
+363,Honda,2001,3,Gasolina,Manual,143365,Usado,5376.78,Accord
+364,Mercedes,2013,2.1,Hibrido,Automatico,64802,Usado,19362.65,E-Class
+365,Ford,2003,1.3,Gasolina,Manual,133298,Usado,2165.67,Fiesta
+367,Toyota,2022,1.8,Hibrido,Automatico,9355,Usado,24563.32,Prius
+368,BMW,2017,2,Gasolina,Manual,33320,Usado,25919.84,X3
+369,Toyota,2012,2.4,Gasolina,Manual,59717,Usado,10295.63,RAV4
+370,BMW,2001,4.6,Gasolina,Manual,176034,Usado,12603.4,X5
+371,Toyota,2008,1.5,Hibrido,Automatico,99263,Usado,8414.19,Prius
+372,Mercedes,2020,2,Gasolina,Manual,51062,Usado,30020.69,GLA
+374,BMW,2008,3,Gasolina,Automatico,138085,Usado,14248.67,3 Series
+376,Ford,2010,4,Gasolina,Automatico,112737,Usado,7466.82,Explorer
+377,Toyota,2002,1.8,Gasolina,Manual,161152,Usado,8350.78,RAV4
+378,Toyota,2019,2,Gasolina,Manual,34589,Usado,16209.5,Corolla
+379,BMW,2022,NA,Electrico,Automatico,28248,Usado,55910.65,3 Series
+380,Ford,2003,1.4,Gasolina,Manual,172961,Usado,3298.88,Fiesta
+381,Ford,2017,1.4,Gasolina,Automatico,23586,Usado,7801.85,Fiesta
+382,Mercedes,2022,2,Hibrido,Automatico,24698,Usado,57433.12,C-Class
+384,Mercedes,2002,5,Gasolina,Manual,157490,Usado,10748.98,E-Class
+385,Mercedes,2021,1.3,Gasolina,Manual,9355,Usado,33135.69,GLA
+387,Mercedes,2014,3,Diesel,Automatico,94084,Usado,24172.02,C-Class
+388,Mercedes,2021,2,Gasolina,Manual,9049,Usado,32915.16,GLA
+389,Audi,2004,1.9,Diesel,Manual,154918,Usado,7402.66,A3
+390,Ford,2019,2,Gasolina,Automatico,67040,Usado,28764.55,Explorer
+391,Mercedes,2009,2.1,Diesel,Automatico,128647,Usado,14109.56,C-Class
+392,Ford,2011,5,Gasolina,Manual,116571,Usado,23314.19,Mustang
+393,Ford,2014,1.5,Diesel,Manual,109797,Usado,9983.11,Fiesta
+394,Honda,2016,2.2,Diesel,Manual,59552,Usado,22283.4,CR-V
+395,Audi,2009,3.2,Gasolina,Manual,103315,Usado,11855.57,Q5
+397,Toyota,2017,2.5,Diesel,Manual,65867,Usado,26008.19,RAV4
+398,BMW,2012,2,Diesel,Manual,103966,Usado,28491.59,5 Series
+400,Toyota,2023,1.8,Gasolina,Manual,27177,Usado,29096.77,Corolla
+401,Audi,2009,3,Diesel,Manual,130011,Usado,12751.32,A4
+402,BMW,2013,3,Diesel,Automatico,93117,Usado,21818.31,3 Series
+404,Ford,2002,4.6,Gasolina,Automatico,145906,Usado,5560.05,Explorer
+405,BMW,2015,2.5,Gasolina,Automatico,55983,Usado,17320.51,5 Series
+406,Ford,2006,4.6,Gasolina,Automatico,155935,Usado,11678.62,Explorer
+407,Toyota,2019,2,Gasolina,Manual,39003,Usado,17180.59,Corolla
+409,BMW,2008,4.4,Gasolina,Manual,86729,Usado,7407.49,3 Series
+410,BMW,2014,4.4,Gasolina,Manual,94084,Usado,27225.17,X5
+411,Mercedes,2020,2,Gasolina,Manual,47188,Usado,28729.47,GLA
+416,Ford,2017,1.4,Diesel,Manual,61093,Usado,11931.17,Fiesta
+417,BMW,2013,2,Hibrido,Automatico,109797,Usado,26196.79,3 Series
+418,Toyota,2019,1.8,Hibrido,Automatico,67534,Usado,24630.28,Prius
+419,Audi,2017,1.4,Gasolina,Automatico,33858,Usado,23556.42,A4
+420,Audi,2009,3,Gasolina,Automatico,75674,Usado,10575.48,Q7
+422,Mercedes,2021,2,Gasolina,Automatico,27934,Usado,48837.89,GLA
+425,Ford,2013,1.4,Diesel,Automatico,103652,Usado,9944.52,Fiesta
+427,Toyota,2013,1.8,Hibrido,Automatico,50539,Usado,9516.06,Prius
+428,BMW,2015,2.5,Gasolina,Automatico,68994,Usado,20736.02,5 Series
+429,Tesla,2021,NA,Electrico,Automatico,17218,Usado,38151.84,Model 3
+430,Audi,2013,3.2,Gasolina,Automatico,89811,Usado,22336.51,Q5
+431,Audi,2019,1.5,Gasolina,Manual,92242,Usado,24307.27,A3
+433,Toyota,2002,1.5,Hibrido,Automatico,132522,Usado,6957.39,Prius
+435,Honda,2005,3,Gasolina,Automatico,149784,Usado,6024.76,Accord
+436,Toyota,2012,2,Gasolina,Automatico,102418,Usado,15605.79,Camry
+437,Honda,2020,1.5,Hibrido,Automatico,69156,Usado,21855.04,Fit
+439,Mercedes,2007,1.8,Gasolina,Automatico,96470,Usado,10055.18,C-Class
+440,Honda,2020,2.6,Gasolina,Automatico,51089,Usado,17681.49,Civic
+441,Ford,2001,5.4,Gasolina,Manual,141675,Usado,7441.29,Mustang
+443,Honda,2014,1.8,Gasolina,Automatico,101536,Usado,13663.2,Civic
+445,Mercedes,2012,1.6,Gasolina,Automatico,109305,Usado,28167.57,C-Class
+447,Honda,2012,2.2,Gasolina,Manual,68246,Usado,9476.62,Accord
+449,Ford,2019,5.2,Gasolina,Automatico,66301,Usado,32766.7,Mustang
+450,Honda,2017,2.4,Gasolina,Manual,44850,Usado,18460.91,CR-V
+452,Honda,2010,2,Gasolina,Automatico,123881,Usado,8345.19,Civic
+453,Toyota,2001,2.2,Gasolina,Automatico,138211,Usado,5931.86,Camry
+454,Toyota,2022,2,Gasolina,Manual,21769,Usado,27365.95,Corolla
+455,Toyota,2018,2,Diesel,Manual,36659,Usado,18998.2,RAV4
+456,Ford,2018,2.3,Gasolina,Automatico,57735,Usado,25567.07,Explorer
+457,Mercedes,2004,1.8,Gasolina,Automatico,105152,Usado,5723.36,C-Class
+460,Honda,2009,2,Gasolina,Automatico,90135,Usado,6010.13,Accord
+462,Honda,2010,2.2,Diesel,Manual,122151,Usado,9215.08,CR-V
+463,Ford,2017,3.5,Gasolina,Automatico,35854,Usado,18047.98,Explorer
+466,Audi,2008,3,Gasolina,Manual,96388,Usado,12281.35,Q7
+467,BMW,2022,2,Diesel,Manual,11929,Usado,36929.21,X3
+468,Honda,2018,1.5,Gasolina,Manual,63127,Usado,20625.49,Accord
+470,Toyota,2002,1.8,Gasolina,Manual,128155,Usado,4435.63,Corolla
+471,BMW,2020,NA,Electrico,Automatico,40363,Usado,29352.9,3 Series
+473,BMW,2013,4.8,Gasolina,Automatico,108987,Usado,33280.96,X5
+474,Toyota,2018,1.8,Gasolina,Automatico,29852,Usado,15925.82,Corolla
+475,Mercedes,2006,5.4,Gasolina,Automatico,119659,Usado,15902.78,E-Class
+476,Mercedes,2015,2,Gasolina,Automatico,56082,Usado,17254.41,GLA
+477,BMW,2015,3,Gasolina,Manual,64247,Usado,15086.93,X3
+478,Ford,2000,1.2,Gasolina,Automatico,122166,Usado,1939.98,Fiesta
+482,Honda,2007,1.3,Gasolina,Automatico,142165,Usado,9853.64,Fit
+486,Mercedes,2019,1.5,Diesel,Manual,36494,Usado,25164.62,GLA
+488,Toyota,2003,1.5,Hibrido,Automatico,141589,Usado,7433.4,Prius
+489,Honda,2005,1.7,Diesel,Automatico,172759,Usado,6969.83,Civic
+491,Mercedes,2017,2.1,Diesel,Automatico,45874,Usado,29705.9,GLA
+493,Mercedes,2019,1.6,Gasolina,Automatico,17898,Usado,19914.34,GLA
+494,Honda,2002,1.5,Gasolina,Manual,146647,Usado,5832.33,Fit
+495,Honda,2006,1.8,Gasolina,Manual,95814,Usado,5742.51,Civic
+496,Mercedes,2021,3,Gasolina,Manual,26631,Usado,56631.09,C-Class
+497,Toyota,2013,2.4,Gasolina,Manual,59006,Usado,7350.84,Corolla
+499,Honda,2004,2.4,Gasolina,Automatico,150980,Usado,6095.37,CR-V
+500,Mercedes,2021,1.3,Gasolina,Automatico,26564,Usado,47802.17,GLA
+502,Mercedes,2022,1.3,Hibrido,Automatico,13798,Usado,38151.53,GLA
+503,Ford,2001,5.4,Gasolina,Manual,117053,Usado,5154.91,Mustang
+504,BMW,2020,1.6,Gasolina,Manual,32833,Usado,27984.74,5 Series
+505,Audi,2021,3,Gasolina,Manual,28989,Usado,78786.84,Q7
+506,Toyota,2005,1.8,Gasolina,Automatico,111996,Usado,3491,Corolla
+507,Audi,2014,2.5,Gasolina,Automatico,92197,Usado,12011.42,A3
+511,Audi,2023,4,Gasolina,Manual,21737,Usado,70083.88,Q7
+513,BMW,2004,3.2,Gasolina,Automatico,113904,Usado,5294.93,3 Series
+514,Mercedes,2000,5,Gasolina,Manual,151787,Usado,10178.67,E-Class
+515,Audi,2012,1.8,Gasolina,Manual,81926,Usado,16385.21,A4
+516,BMW,2020,4.4,Gasolina,Automatico,44555,Usado,40096.84,X5
+517,Mercedes,2017,2.1,Diesel,Automatico,50302,Usado,31255.6,GLA
+520,Tesla,2020,NA,Electrico,Automatico,16717,Usado,41326.28,Model Y
+521,BMW,2017,2,Diesel,Manual,34830,Usado,29227.3,5 Series
+524,BMW,2003,1.6,Gasolina,Manual,174634,Usado,9597.58,3 Series
+525,Honda,2016,2,Gasolina,Manual,30523,Usado,14104.66,Accord
+526,Mercedes,2002,3.2,Gasolina,Automatico,124394,Usado,7811.42,E-Class
+527,Ford,2016,2,Gasolina,Automatico,27157,Usado,9493.13,Focus
+528,Toyota,2010,2,Gasolina,Automatico,134297,Usado,11068.97,RAV4
+529,Tesla,2020,NA,Electrico,Automatico,30985,Usado,48817.04,Model Y
+530,Ford,2019,2,Gasolina,Automatico,49266,Usado,22656.71,Explorer
+531,BMW,2022,2,Diesel,Automatico,8752,Usado,35439.96,X3
+532,Honda,2020,2.6,Gasolina,Automatico,69173,Usado,21858.85,Civic
+534,Honda,2001,2,Gasolina,Manual,124513,Usado,4316.35,Accord
+535,Audi,2019,1.4,Gasolina,Automatico,20287,Usado,18996.44,A4
+536,Honda,2015,1.5,Hibrido,Automatico,100423,Usado,13526.85,Fit
+537,Audi,2017,2,Gasolina,Automatico,64362,Usado,19135.64,A3
+538,Mercedes,2007,3,Diesel,Manual,107989,Usado,13278.22,E-Class
+541,Toyota,2019,2.2,Diesel,Manual,40085,Usado,19820.43,RAV4
+542,BMW,2005,5,Gasolina,Automatico,176765,Usado,12302.78,5 Series
+543,Audi,2009,2.5,Gasolina,Manual,125961,Usado,9596.07,A3
+544,Toyota,2020,1.8,Hibrido,Automatico,55633,Usado,21881.13,Prius
+546,Honda,2012,3.5,Gasolina,Manual,72426,Usado,9929.49,Accord
+547,Toyota,2016,1.8,Hibrido,Automatico,69425,Usado,25067.08,Prius
+549,Honda,2016,2.4,Gasolina,Automatico,24611,Usado,13568.27,Accord
+550,Mercedes,2023,1.5,Hibrido,Automatico,0,Nuevo,42435.8,C-Class
+552,Toyota,2008,2,Gasolina,Manual,104642,Usado,7788.23,RAV4
+553,Audi,2000,1.9,Diesel,Automatico,108563,Usado,5343.14,A4
+554,Audi,2001,2,Gasolina,Automatico,131263,Usado,6981.8,A4
+558,Tesla,2017,NA,Electrico,Automatico,40061,Usado,51488.67,Model X
+559,Audi,2007,2.5,Diesel,Automatico,91905,Usado,8387.57,A4
+560,Mercedes,2020,2,Diesel,Manual,21384,Usado,20127.99,GLA
+561,Audi,2010,4.2,Gasolina,Automatico,104309,Usado,13782.6,Q7
+562,Tesla,2022,NA,Electrico,Automatico,26122,Usado,85178.4,Model X
+563,Ford,2001,4,Gasolina,Manual,112893,Usado,3644.66,Explorer
+564,BMW,2007,4.4,Gasolina,Automatico,85640,Usado,10038.56,X5
+566,Ford,2007,4,Gasolina,Automatico,100968,Usado,8776.82,Mustang
+567,Audi,2016,3,Diesel,Manual,30980,Usado,21513.53,A4
+569,Toyota,2016,1.8,Gasolina,Automatico,39539,Usado,18163.58,Corolla
+570,Audi,2022,3,Diesel,Manual,5362,Como Nuevo,33390.99,Q5
+571,Mercedes,2023,2,Diesel,Automatico,23255,Usado,45300.52,GLA
+572,BMW,2012,4.4,Gasolina,Automatico,92759,Usado,21724.27,3 Series
+575,Toyota,2011,2.5,Gasolina,Manual,58450,Usado,8267.56,Camry
+577,Mercedes,2022,1.5,Gasolina,Automatico,22602,Usado,67874.8,E-Class
+578,Mercedes,2004,1.8,Gasolina,Manual,141711,Usado,8649.68,C-Class
+579,BMW,2007,2.5,Diesel,Automatico,75431,Usado,7416.31,5 Series
+580,Audi,2012,2,Gasolina,Automatico,53700,Usado,15336.5,Q5
+581,BMW,2007,1.6,Gasolina,Automatico,101403,Usado,9626.74,3 Series
+586,BMW,2018,3,Gasolina,Manual,24150,Usado,26397.62,X5
+587,Toyota,2023,2.5,Diesel,Manual,28084,Usado,35080.17,RAV4
+588,Mercedes,2002,5,Gasolina,Manual,151122,Usado,10112.25,E-Class
+589,Mercedes,2023,2,Hibrido,Automatico,22980,Usado,52737.95,GLC
+590,Audi,2016,2.9,Gasolina,Manual,35645,Usado,23006.46,A4
+592,Honda,2019,1.5,Gasolina,Manual,36719,Usado,15343.87,Accord
+593,Honda,2020,1.5,Gasolina,Automatico,55679,Usado,20092.51,Accord
+594,Mercedes,2007,1.8,Gasolina,Manual,140826,Usado,14899.14,C-Class
+595,Audi,2013,1.8,Gasolina,Automatico,101902,Usado,14049.39,A3
+597,Honda,2010,2,Gasolina,Automatico,118173,Usado,7874.23,Civic
+598,BMW,2019,3,Diesel,Manual,24533,Usado,26618.81,X5
+600,Honda,2018,1.8,Gasolina,Manual,58770,Usado,18529.43,Civic
+601,Honda,2006,2,Gasolina,Automatico,116252,Usado,9056.46,CR-V
+602,Ford,2018,1,Gasolina,Manual,37906,Usado,10604.5,Focus
+604,Toyota,2010,1.8,Hibrido,Automatico,128626,Usado,10836.61,Prius
+605,Audi,2004,2,Gasolina,Manual,116986,Usado,5667.75,A4
+606,Audi,2004,1.9,Diesel,Manual,120028,Usado,5876.91,A4
+607,BMW,2021,1.6,Gasolina,Manual,22602,Usado,47601.9,3 Series
+609,Honda,2009,1.6,Gasolina,Automatico,113903,Usado,7521.97,Civic
+610,Toyota,2005,1.5,Hibrido,Automatico,134181,Usado,7044.5,Prius
+611,BMW,2014,4.4,Gasolina,Automatico,58031,Usado,17858.13,5 Series
+613,BMW,2016,4.4,Gasolina,Automatico,25162,Usado,28331.39,X5
+615,Honda,2007,1.5,Gasolina,Automatico,139246,Usado,9612.81,Fit
+616,Ford,2008,2,Gasolina,Manual,100935,Usado,4702.98,Focus
+619,Toyota,2017,2,Gasolina,Manual,49330,Usado,19039.21,Camry
+624,BMW,2013,1.5,Gasolina,Automatico,63180,Usado,13959.79,3 Series
+625,Ford,2008,1.6,Gasolina,Manual,114544,Usado,4727.2,Fiesta
+626,Toyota,2008,1.5,Hibrido,Automatico,94862,Usado,8051.14,Prius
+627,Toyota,2022,2.5,Hibrido,Automatico,11259,Usado,23628.65,Camry
+628,Honda,2017,1.5,Hibrido,Automatico,27905,Usado,12326.06,Fit
+629,Ford,2009,4,Gasolina,Automatico,142716,Usado,10389.86,Explorer
+630,BMW,2020,3,Gasolina,Automatico,29885,Usado,31196.98,X5
+631,Audi,2003,1.8,Gasolina,Manual,160548,Usado,8662.69,A4
+632,Audi,2011,3,Diesel,Manual,102771,Usado,28192.8,Q7
+635,Mercedes,2021,1.3,Hibrido,Automatico,17947,Usado,41288.03,GLA
+636,Honda,2012,2.4,Gasolina,Manual,66216,Usado,8891.85,Civic
+637,Audi,2020,2,Diesel,Manual,39663,Usado,36190.78,Q7
+638,Ford,2015,2,Gasolina,Manual,74523,Usado,7936.41,Focus
+639,Honda,2001,1.6,Gasolina,Manual,168527,Usado,6426.33,Civic
+640,Ford,2010,2,Gasolina,Manual,117310,Usado,5755.67,Focus
+642,Toyota,2014,1.8,Gasolina,Manual,102771,Usado,13915.68,Corolla
+643,Honda,2016,2.4,Gasolina,Manual,46883,Usado,18989.47,CR-V
+645,Honda,2017,2.4,Gasolina,Manual,54242,Usado,18848.37,Accord
+646,Honda,2022,1.5,Gasolina,Manual,14831,Usado,21539.26,Civic
+647,Honda,2008,2.2,Gasolina,Manual,82664,Usado,5190.27,Accord
+649,Honda,2013,2.4,Gasolina,Automatico,50487,Usado,7409.64,Civic
+650,Ford,2017,1.4,Gasolina,Manual,57843,Usado,11541.11,Fiesta
+651,Toyota,2021,2,Gasolina,Automatico,8410,Usado,22432.26,Camry
+652,Tesla,2019,NA,Electrico,Automatico,70760,Usado,60170.83,Model S
+653,BMW,2019,2,Hibrido,Automatico,59528,Usado,39446.22,X3
+654,Honda,2020,1.6,Diesel,Manual,25651,Usado,13469.34,CR-V
+655,Audi,2011,2,Gasolina,Manual,87200,Usado,20790.72,Q5
+656,Honda,2018,1.5,Gasolina,Manual,43583,Usado,16716.61,Accord
+657,Audi,2013,3.2,Gasolina,Automatico,119487,Usado,17742.32,A3
+658,Ford,2016,2,Gasolina,Automatico,25930,Usado,14637.72,Explorer
+659,Audi,2023,4,Gasolina,Automatico,16965,Usado,67576.47,Q7
+660,BMW,2020,1.6,Gasolina,Automatico,62527,Usado,40730.44,3 Series
+661,Toyota,2002,1.8,Gasolina,Manual,105598,Usado,2884.85,Corolla
+662,Audi,2022,2,Gasolina,Manual,29723,Usado,46811.47,A4
+663,Audi,2006,2,Gasolina,Manual,96346,Usado,8543.25,A4
+664,Toyota,2016,1.8,Gasolina,Automatico,36610,Usado,17486.8,Corolla
+665,BMW,2011,3,Gasolina,Automatico,104953,Usado,32010.28,X5
+666,Honda,2008,2,Gasolina,Manual,113503,Usado,7132.4,Civic
+667,Audi,2014,1.6,Diesel,Manual,80018,Usado,9003.54,A3
+668,Toyota,2017,3.5,Gasolina,Automatico,41239,Usado,17952.28,Camry
+670,Toyota,2012,2.5,Hibrido,Automatico,64589,Usado,9647.76,Camry
+672,BMW,2007,4.4,Gasolina,Automatico,93154,Usado,11195.7,X5
+673,Honda,2013,1.5,Gasolina,Automatico,70251,Usado,9830.71,Fit
+674,Toyota,2007,3.5,Gasolina,Manual,149103,Usado,11916.68,RAV4
+677,Mercedes,2022,2,Diesel,Manual,5203,Como Nuevo,38137.95,GLC
+678,Audi,2011,2,Diesel,Automatico,109271,Usado,15596.94,A3
+679,BMW,2010,4.4,Gasolina,Manual,126363,Usado,15533.21,X5
+680,Toyota,2021,1.8,Hibrido,Automatico,20749,Usado,28391.66,Prius
+681,Tesla,2021,NA,Electrico,Automatico,29181,Usado,88390.37,Model X
+682,Audi,2010,3,Diesel,Manual,89070,Usado,10634.6,Q5
+683,Tesla,2021,NA,Electrico,Automatico,19823,Usado,47764.4,Model Y
+684,Toyota,2012,2.4,Gasolina,Automatico,63957,Usado,11403.92,RAV4
+685,Ford,2017,2.3,Gasolina,Automatico,25112,Usado,14356.72,Explorer
+686,Toyota,2001,1.5,Hibrido,Automatico,100035,Usado,5251.86,Prius
+687,Mercedes,2020,1.6,Diesel,Automatico,20054,Usado,23315.54,C-Class
+688,Toyota,2014,1.8,Gasolina,Automatico,98421,Usado,13926.36,Corolla
+689,Toyota,2019,2.5,Diesel,Automatico,40565,Usado,20932.35,RAV4
+690,Mercedes,2017,1.5,Gasolina,Manual,64588,Usado,41638.55,C-Class
+691,BMW,2014,1.6,Gasolina,Manual,101699,Usado,27924.67,5 Series
+692,Toyota,2018,2.5,Diesel,Manual,33065,Usado,18135.53,RAV4
+693,Mercedes,2022,2,Diesel,Manual,20152,Usado,48303.56,GLC
+694,Audi,2023,3,Gasolina,Automatico,17244,Usado,48535.07,Q5
+695,Ford,2011,2,Gasolina,Automatico,103224,Usado,16426.97,Explorer
+696,Ford,2012,2.3,Gasolina,Manual,108363,Usado,12448.35,Focus
+697,Toyota,2021,2.5,Hibrido,Automatico,12342,Usado,28900.39,RAV4
+698,BMW,2010,3,Gasolina,Manual,99914,Usado,11654.1,X5
+699,BMW,2004,2,Gasolina,Automatico,132426,Usado,8845.59,X3
+701,Toyota,2023,2,Gasolina,Automatico,15073,Usado,26484.5,Corolla
+702,Ford,2002,1.6,Gasolina,Automatico,130364,Usado,2185.93,Fiesta
+703,BMW,2021,2,Gasolina,Automatico,15620,Usado,42650.58,X3
+704,Toyota,2018,1.8,Hibrido,Automatico,42767,Usado,18909.19,Prius
+705,Tesla,2022,NA,Electrico,Automatico,9051,Usado,33705.58,Model 3
+706,BMW,2006,3,Diesel,Manual,149168,Usado,14900.19,3 Series
+707,Mercedes,2011,1.6,Gasolina,Automatico,61185,Usado,15536.04,C-Class
+709,BMW,2004,4.4,Gasolina,Manual,146394,Usado,9639.44,X5
+710,Ford,2014,2,Gasolina,Manual,94675,Usado,10623.39,Focus
+711,Honda,2007,2,Gasolina,Manual,117239,Usado,8723.92,CR-V
+713,Audi,2015,2,Diesel,Manual,71389,Usado,14277.82,A4
+714,Audi,2007,2.5,Gasolina,Automatico,111196,Usado,8525.63,A3
+715,Ford,2000,4.6,Gasolina,Automatico,121670,Usado,5862.87,Mustang
+716,BMW,2011,1.6,Gasolina,Manual,74678,Usado,16169.47,3 Series
+717,Toyota,2004,1.5,Hibrido,Automatico,175894,Usado,9234.45,Prius
+719,Ford,2000,2,Gasolina,Automatico,197012,Usado,8208.26,Focus
+721,BMW,2007,1.6,Gasolina,Automatico,129883,Usado,13215.31,3 Series
+722,Audi,2002,1.8,Gasolina,Automatico,146600,Usado,7390.71,A3
+724,Toyota,2001,1.8,Gasolina,Manual,158546,Usado,6525.07,Corolla
+726,Audi,2009,3,Diesel,Automatico,80503,Usado,10395.25,Q5
+727,Audi,2020,1,Gasolina,Automatico,77711,Usado,22193.73,A3
+728,Honda,2013,2.4,Gasolina,Manual,107602,Usado,13740.17,Accord
+729,Honda,2006,1.3,Hibrido,Automatico,128125,Usado,8695.28,Civic
+732,Tesla,2015,NA,Electrico,Automatico,32505,Usado,46728.4,Model X
+733,Honda,2012,1.3,Gasolina,Automatico,71389,Usado,9970.16,Fit
+734,Audi,2008,3,Diesel,Manual,86170,Usado,7271.27,A4
+735,Ford,2019,1,Hibrido,Automatico,36929,Usado,9483.04,Fiesta
+737,Audi,2021,NA,Electrico,Automatico,22982,Usado,30652.47,A3
+738,Ford,2009,4,Gasolina,Automatico,109088,Usado,7111.04,Explorer
+739,Ford,2021,1,Hibrido,Automatico,6955,Usado,15227.81,Focus
+740,Honda,2011,2.2,Diesel,Manual,79780,Usado,12467.02,CR-V
+742,BMW,2013,2,Gasolina,Automatico,84675,Usado,19602.3,3 Series
+744,Honda,2001,1.3,Gasolina,Automatico,129125,Usado,5204.07,Fit
+745,Honda,2020,1,Gasolina,Manual,33599,Usado,12991.83,Civic
+746,BMW,2019,4.4,Gasolina,Manual,49375,Usado,40972.43,X5
+747,Toyota,2010,1.8,Hibrido,Automatico,121632,Usado,10259.63,Prius
+748,Audi,2015,3,Diesel,Automatico,69614,Usado,18421.24,Q5
+749,Mercedes,2018,3,Gasolina,Automatico,55448,Usado,39532.47,C-Class
+750,Tesla,2022,NA,Electrico,Automatico,23833,Usado,41753.78,Model 3
+751,Mercedes,2005,3.5,Gasolina,Manual,120009,Usado,6750.76,C-Class
+752,Audi,2023,2,Diesel,Automatico,23514,Usado,75827.61,Q7
+753,Honda,2018,1.5,Hibrido,Automatico,25142,Usado,11687.75,Fit
+754,Toyota,2004,1.5,Hibrido,Automatico,106121,Usado,5571.35,Prius
+755,Honda,2003,2,Gasolina,Manual,151102,Usado,5811.98,Accord
+756,Ford,2014,1.6,Diesel,Automatico,65312,Usado,6589.84,Fiesta
+758,Honda,2019,1.5,Gasolina,Manual,64836,Usado,20967.29,Accord
+759,Audi,2009,1.9,Diesel,Manual,98237,Usado,6823.67,A3
+760,Audi,2023,3,Diesel,Manual,0,Nuevo,35193.17,A4
+761,Audi,2021,1.4,Hibrido,Automatico,12581,Usado,26283.95,A3
+762,Mercedes,2002,6,Gasolina,Automatico,172951,Usado,12909.87,E-Class
+763,Ford,2004,3.8,Gasolina,Automatico,159924,Usado,9592.61,Mustang
+764,Audi,2005,1.8,Gasolina,Manual,159428,Usado,7599.97,A3
+766,Mercedes,2021,4,Gasolina,Manual,13307,Usado,43648.77,GLC
+767,BMW,2007,2,Diesel,Automatico,126562,Usado,12403.08,X3
+768,Toyota,2006,2.4,Gasolina,Manual,128827,Usado,9533.98,Camry
+769,Tesla,2020,NA,Electrico,Automatico,22468,Usado,44345.6,Model Y
+771,Toyota,2005,2,Diesel,Automatico,161643,Usado,8813.42,RAV4
+772,Audi,2013,3.2,Gasolina,Manual,52516,Usado,14387.5,Q5
+774,BMW,2012,1.6,Gasolina,Manual,66319,Usado,14079.77,3 Series
+775,Mercedes,2019,2,Hibrido,Automatico,28641,Usado,29089.6,GLC
+776,BMW,2016,1.6,Gasolina,Manual,46763,Usado,36652.75,5 Series
+777,Tesla,2022,NA,Electrico,Automatico,9800,Usado,34113.11,Model 3
+778,Ford,2006,4.6,Gasolina,Manual,93179,Usado,7482.61,Mustang
+779,Audi,2003,1.6,Gasolina,Manual,116344,Usado,5715.04,A3
+780,BMW,2013,3,Gasolina,Manual,65006,Usado,13751.62,3 Series
+782,Tesla,2023,NA,Electrico,Automatico,16877,Usado,75470.65,Model X
+783,Ford,2004,2.3,Gasolina,Automatico,176856,Usado,6914.95,Focus
+784,Honda,2015,2.2,Diesel,Manual,50375,Usado,8056.28,CR-V
+785,Honda,2022,1.5,Gasolina,Automatico,18373,Usado,29913.43,CR-V
+786,Ford,2019,1,Gasolina,Automatico,20083,Usado,7360.39,Fiesta
+788,Mercedes,2023,1.6,Gasolina,Manual,15065,Usado,54091.28,E-Class
+789,Ford,2023,5,Gasolina,Automatico,20574,Usado,43394.61,Mustang
+790,Audi,2001,1.6,Gasolina,Manual,119583,Usado,5856.74,A3
+792,Honda,2018,1.2,Gasolina,Automatico,27508,Usado,12234.45,Fit
+793,BMW,2018,2,Gasolina,Automatico,61035,Usado,47809.53,5 Series
+794,Mercedes,2016,1.8,Gasolina,Manual,49528,Usado,40322.42,E-Class
+795,Honda,2013,1.5,Gasolina,Automatico,60666,Usado,8656.56,Fit
+796,BMW,2018,2,Gasolina,Manual,60353,Usado,37934.58,X3
+797,BMW,2021,2,Diesel,Manual,18355,Usado,43354.72,X3
+798,Audi,2023,2,Diesel,Manual,9243,Usado,32884.92,A4
+800,Toyota,2011,2.5,Gasolina,Manual,101466,Usado,14719.85,Camry
+804,Audi,2018,2,Hibrido,Automatico,32239,Usado,33167.68,Q7
+805,BMW,2015,2,Diesel,Manual,56938,Usado,16734.38,5 Series
+807,Toyota,2003,1.8,Gasolina,Automatico,101767,Usado,2752.58,Corolla
+809,BMW,2016,3,Hibrido,Automatico,41409,Usado,29890.18,3 Series
+810,Toyota,2022,1.8,Hibrido,Automatico,25938,Usado,30135.28,Prius
+811,Toyota,2000,1.5,Hibrido,Automatico,149921,Usado,7870.84,Prius
+812,Toyota,2017,1.8,Gasolina,Automatico,32239,Usado,16477.24,Corolla
+813,Mercedes,2019,2.1,Diesel,Automatico,16596,Usado,19458.44,GLA
+814,Audi,2016,2,Hibrido,Automatico,40005,Usado,38223.5,Q7
+815,Mercedes,2014,1.8,Gasolina,Automatico,74765,Usado,19100.78,C-Class
+816,Honda,2010,2.2,Diesel,Manual,122071,Usado,9207.1,CR-V
+817,BMW,2021,4.4,Gasolina,Manual,23571,Usado,62285.45,5 Series
+818,Audi,2012,6,Diesel,Automatico,64000,Usado,19425.06,Q7
+823,Mercedes,2019,1.6,Gasolina,Automatico,39072,Usado,27325.1,GLA
+824,Audi,2015,4.2,Diesel,Manual,56400,Usado,16600.02,Q7
+825,Ford,2014,2,Gasolina,Automatico,84006,Usado,12391.35,Explorer
+826,BMW,2014,2.5,Gasolina,Manual,87378,Usado,24344.48,5 Series
+827,Audi,2005,1.9,Diesel,Manual,114126,Usado,5618.03,A3
+828,BMW,2014,2,Diesel,Manual,59010,Usado,17252.54,5 Series
+829,Ford,2013,3.5,Gasolina,Automatico,74000,Usado,10290.05,Explorer
+830,Ford,2010,4.6,Gasolina,Automatico,128648,Usado,9018.22,Explorer
+831,BMW,2006,2,Gasolina,Manual,75124,Usado,7011.55,X3
+832,Toyota,2008,1.8,Gasolina,Manual,87467,Usado,4193.34,Corolla
+833,Honda,2015,1.6,Gasolina,Manual,52050,Usado,7239.19,Civic
+835,Toyota,2019,1.8,Gasolina,Automatico,35067,Usado,17130.53,Corolla
+836,Toyota,2009,2,Gasolina,Manual,141326,Usado,11194.6,RAV4
+837,Mercedes,2017,2,Hibrido,Automatico,23685,Usado,29511.03,E-Class
+841,Audi,2016,2,Gasolina,Automatico,34314,Usado,23709.58,A4
+843,Mercedes,2012,1.6,Gasolina,Manual,87508,Usado,21377.02,C-Class
+844,Ford,2005,1.3,Gasolina,Automatico,158830,Usado,3039.9,Fiesta
+846,Toyota,2012,2.5,Hibrido,Automatico,92996,Usado,14121.81,Camry
+847,Ford,2018,2.3,Gasolina,Automatico,74627,Usado,16743,Focus
+848,BMW,2020,4.4,Gasolina,Automatico,58599,Usado,48616.89,X5
+849,Honda,2018,2.6,Gasolina,Manual,26433,Usado,11415.19,Civic
+851,BMW,2002,2,Gasolina,Automatico,171769,Usado,9851.82,3 Series
+852,BMW,2013,1.6,Gasolina,Automatico,75713,Usado,17249.77,3 Series
+853,Audi,2018,2,Diesel,Manual,34314,Usado,32874.82,Q7
+854,Honda,2004,1.5,Gasolina,Manual,114303,Usado,3715.14,Civic
+855,BMW,2004,2,Diesel,Automatico,173476,Usado,12000.62,5 Series
+856,BMW,2019,2,Diesel,Automatico,48080,Usado,42235.49,X5
+857,Honda,2016,2,Gasolina,Manual,58244,Usado,19648.72,Accord
+859,BMW,2009,4.4,Gasolina,Manual,132445,Usado,12893.45,3 Series
+860,Honda,2004,2.4,Gasolina,Manual,122636,Usado,4210.76,Accord
+861,BMW,2003,1.6,Gasolina,Automatico,168956,Usado,9630.25,3 Series
+862,BMW,2005,3,Diesel,Manual,100156,Usado,4011.68,3 Series
+863,Audi,2003,4.2,Gasolina,Automatico,137418,Usado,7426.15,A4
+864,Toyota,2006,2,Gasolina,Automatico,96265,Usado,7360.85,RAV4
+865,BMW,2006,4,Gasolina,Manual,116409,Usado,10969.08,3 Series
+866,Ford,2017,2,Gasolina,Automatico,48635,Usado,22439.93,Explorer
+869,Toyota,2023,2.2,Diesel,Automatico,29850,Usado,37724.17,RAV4
+870,Toyota,2003,2,Gasolina,Automatico,103369,Usado,3459.54,RAV4
+871,Toyota,2005,1.5,Hibrido,Automatico,150619,Usado,7907.52,Prius
+872,Audi,2008,6,Diesel,Manual,114555,Usado,14219.23,Q7
+873,BMW,2021,3,Diesel,Automatico,10833,Usado,37625.1,X3
+875,BMW,2011,3,Diesel,Automatico,83127,Usado,20136.44,X3
+876,Audi,2019,2,Diesel,Manual,58346,Usado,30270.8,A4
+877,Audi,2023,1.4,Hibrido,Automatico,32393,Usado,34605.24,A3
+878,Mercedes,2003,5.4,Gasolina,Automatico,163022,Usado,11040.15,C-Class
+879,Ford,2020,3,Gasolina,Automatico,46958,Usado,21863.7,Explorer
+880,Audi,2023,1.5,Hibrido,Automatico,35772,Usado,36024.12,A3
+882,Honda,2009,2.2,Diesel,Manual,81883,Usado,5188.26,CR-V
+883,Ford,2021,5.2,Gasolina,Manual,5514,Como Nuevo,27472.87,Mustang
+886,Toyota,2022,1.8,Hibrido,Automatico,16693,Usado,27028.94,Prius
+888,Honda,2023,1.5,Gasolina,Manual,17963,Usado,28259.41,CR-V
+890,Honda,2015,2.4,Gasolina,Automatico,76529,Usado,10892.72,Accord
+891,Ford,2015,1.6,Gasolina,Manual,74324,Usado,7026.97,Fiesta
+893,Audi,2009,4.2,Gasolina,Automatico,140939,Usado,17885.22,Q7
+895,Toyota,2005,1.5,Hibrido,Automatico,149969,Usado,7873.36,Prius
+896,Mercedes,2011,2,Gasolina,Manual,67859,Usado,19357.66,E-Class
+897,Toyota,2008,3.5,Gasolina,Manual,80564,Usado,5052.37,Camry
+898,Honda,2012,1.6,Gasolina,Manual,61950,Usado,8394.12,Civic
+900,Toyota,2023,2,Gasolina,Automatico,24173,Usado,29542.17,Corolla
+901,Ford,2010,5.4,Gasolina,Automatico,142614,Usado,13696.22,Mustang
+902,Audi,2019,1.8,Gasolina,Automatico,98655,Usado,26991.89,A3
+903,Honda,2017,1.5,Hibrido,Automatico,23040,Usado,11202.19,Fit
+905,Toyota,2020,2,Gasolina,Manual,63960,Usado,22550.31,Camry
+907,Ford,2017,2,Gasolina,Automatico,47935,Usado,22199.59,Explorer
+909,Toyota,2006,2.4,Gasolina,Automatico,130848,Usado,10207.65,Camry
+911,Toyota,2014,2,Gasolina,Manual,72560,Usado,10384.04,Camry
+912,Honda,2017,1,Gasolina,Automatico,68602,Usado,21727,Civic
+913,Toyota,2023,1.8,Hibrido,Automatico,9211,Usado,24515.05,Corolla
+914,Ford,2010,2,Gasolina,Automatico,143013,Usado,7778.39,Focus
+915,Tesla,2019,NA,Electrico,Automatico,21475,Usado,39779.11,Model X
+918,Tesla,2015,NA,Electrico,Automatico,60580,Usado,54185.31,Model S
+919,Mercedes,2006,3.2,Gasolina,Automatico,141235,Usado,15695.57,C-Class
+920,BMW,2020,3,Diesel,Manual,55450,Usado,35331.06,3 Series
+921,Toyota,2009,2.4,Gasolina,Manual,107703,Usado,6072.47,Corolla
+922,Audi,2011,3,Diesel,Manual,101426,Usado,23417.05,Q5
+923,Tesla,2023,NA,Electrico,Automatico,29092,Usado,88296.81,Model X
+926,Ford,2020,3,Gasolina,Automatico,29799,Usado,15967.3,Explorer
+927,Audi,2017,2.5,Gasolina,Automatico,60731,Usado,18303.73,A3
+929,Audi,2002,1.9,Diesel,Manual,120926,Usado,5938.64,A4
+930,Audi,2022,NA,Electrico,Automatico,12439,Usado,26224.39,A3
+932,Honda,2023,2,Hibrido,Automatico,27046,Usado,35013.31,CR-V
+934,Ford,2018,1.5,Diesel,Manual,40397,Usado,9447.58,Fiesta
+935,Toyota,2018,2.5,Diesel,Automatico,61715,Usado,26262.22,RAV4
+936,Audi,2020,2,Diesel,Manual,64555,Usado,36218.03,Q5
+937,Mercedes,2011,3.5,Gasolina,Manual,90609,Usado,22152.17,C-Class
+938,Toyota,2008,2.5,Gasolina,Automatico,118558,Usado,9534.43,RAV4
+940,Toyota,2017,1.8,Hibrido,Automatico,21019,Usado,13885.31,Prius
+942,Audi,2003,1.6,Gasolina,Automatico,163584,Usado,9314.99,A4
+943,Audi,2009,4.2,Gasolina,Manual,94618,Usado,12092.56,Q7
+944,BMW,2006,2.5,Diesel,Automatico,133700,Usado,16389.83,5 Series
+945,Mercedes,2021,3,Gasolina,Manual,7798,Usado,37798.3,C-Class
+946,Toyota,2022,2,Diesel,Automatico,7428,Usado,26423.51,RAV4
+947,Toyota,2000,2.2,Gasolina,Automatico,148851,Usado,6560.25,Camry
+948,Honda,2016,1.8,Gasolina,Automatico,60154,Usado,19775.5,Civic
+949,BMW,2023,2,Hibrido,Automatico,9979,Usado,36727.95,X3
+952,Honda,2008,1.8,Gasolina,Manual,95601,Usado,5725.77,Civic
+953,Honda,2006,2.2,Diesel,Automatico,100021,Usado,7352.17,CR-V
+954,Honda,2021,1.2,Gasolina,Automatico,11539,Usado,21371.84,Fit
+955,Mercedes,2016,3.5,Hibrido,Automatico,26690,Usado,31002.45,E-Class
+956,Mercedes,2016,4,Gasolina,Manual,56653,Usado,39418.62,GLC
+957,Ford,2001,2.3,Gasolina,Manual,130893,Usado,3776.78,Focus
+958,Ford,2005,4.6,Gasolina,Automatico,131625,Usado,4810.33,Explorer
+959,Honda,2013,2.4,Gasolina,Automatico,66938,Usado,11067.79,CR-V
+960,BMW,2005,5,Gasolina,Manual,136726,Usado,8213.51,5 Series
+961,Toyota,2001,1.8,Gasolina,Manual,157236,Usado,8008.14,RAV4
+963,BMW,2009,3,Gasolina,Automatico,140107,Usado,17376.41,5 Series
+964,Audi,2020,2,Diesel,Manual,25939,Usado,23579.9,Q5
+966,Mercedes,2001,2.5,Gasolina,Manual,116361,Usado,6431.55,C-Class
+967,Ford,2021,2,Diesel,Automatico,6283,Usado,15046.37,Focus
+968,Toyota,2015,2.5,Gasolina,Automatico,87161,Usado,13202.85,Camry
+969,Toyota,2001,2.4,Gasolina,Automatico,159608,Usado,8626.47,RAV4
+974,Audi,2018,2,Diesel,Automatico,22735,Usado,23657.93,Q5
+975,Audi,2006,1.8,Gasolina,Automatico,128380,Usado,13174.84,A4
+976,Mercedes,2021,1.3,Gasolina,Automatico,15198,Usado,39209.88,GLA
+977,Honda,2011,1.5,Hibrido,Automatico,54892,Usado,7949.24,Fit
+978,Ford,2023,1,Hibrido,Automatico,27433,Usado,20756.81,Focus
+979,Ford,2014,2.3,Gasolina,Manual,103785,Usado,11838,Focus
+981,Mercedes,2005,3.2,Gasolina,Automatico,176765,Usado,12302.8,C-Class
+982,BMW,2009,2.5,Gasolina,Manual,137352,Usado,12819.5,X3
+983,Honda,2002,1.2,Gasolina,Automatico,139759,Usado,5762.36,Fit
+984,Mercedes,2018,1.5,Gasolina,Manual,43985,Usado,37701.86,E-Class
+985,Honda,2016,1.2,Gasolina,Automatico,36649,Usado,14345.89,Fit
+986,Honda,2006,1.5,Gasolina,Automatico,99200,Usado,6308.99,Fit
+987,Honda,2020,1.2,Gasolina,Manual,54214,Usado,17527,Fit
+988,Mercedes,2019,3,Gasolina,Manual,20887,Usado,22568.84,C-Class
+990,Ford,2013,3.5,Gasolina,Automatico,65808,Usado,8569.61,Explorer
+991,Ford,2019,1,Hibrido,Automatico,26437,Usado,8161.04,Fiesta
+992,Tesla,2021,NA,Electrico,Automatico,28902,Usado,88097.15,Model X
+993,Honda,2014,2.2,Diesel,Automatico,73151,Usado,12046.21,CR-V
+995,Toyota,2007,2.2,Diesel,Manual,108546,Usado,8150.7,RAV4
+996,Mercedes,2020,4,Gasolina,Automatico,52423,Usado,43775.31,E-Class
+997,Toyota,2014,1.8,Gasolina,Automatico,97726,Usado,13816.9,Corolla
+998,Tesla,2021,NA,Electrico,Automatico,24238,Usado,49481.62,Model Y
+1002,Honda,2007,3,Gasolina,Automatico,115859,Usado,7939.41,Accord
+1003,Ford,2016,1.25,Gasolina,Automatico,64892,Usado,13006.42,Fiesta
+1004,Toyota,2001,2,Diesel,Manual,153061,Usado,7642.81,RAV4
+1005,Audi,2023,2,Gasolina,Automatico,0,Nuevo,36770.57,A4
+1007,BMW,2007,3,Diesel,Manual,94618,Usado,10877.27,X5
+1008,Honda,2011,2.2,Diesel,Automatico,77434,Usado,12720.89,CR-V
+1009,Toyota,2000,1.5,Hibrido,Automatico,125530,Usado,6590.35,Prius
+1010,Honda,2009,2.2,Diesel,Automatico,120509,Usado,9503.39,CR-V
+1011,Toyota,2019,1.8,Hibrido,Automatico,36732,Usado,17515.07,Corolla
+1013,BMW,2005,3.2,Gasolina,Automatico,116361,Usado,5488.39,3 Series
+1014,Audi,2006,2,Diesel,Manual,132464,Usado,13058.03,A4
+1015,Honda,2019,1.2,Gasolina,Manual,28580,Usado,11887.57,Fit
+1016,Mercedes,2022,4,Gasolina,Automatico,23627,Usado,53200,GLC
+1017,Audi,2017,1.5,Gasolina,Automatico,65997,Usado,19510.28,A3
+1021,Ford,2018,2,Gasolina,Automatico,35388,Usado,17887.73,Explorer
+1022,Ford,2010,1.6,Gasolina,Automatico,85501,Usado,3438.81,Fiesta
+1023,Ford,2023,1,Gasolina,Automatico,29277,Usado,20696.41,Fiesta
+1024,Ford,2011,1.5,Diesel,Manual,54886,Usado,5407.21,Fiesta
+1026,Toyota,2007,2.5,Gasolina,Automatico,129877,Usado,10638.05,RAV4
+1027,Tesla,2023,NA,Electrico,Automatico,28157,Usado,82065,Model S
+1030,Ford,2004,1.6,Gasolina,Manual,163374,Usado,3024.96,Fiesta
+1031,Mercedes,2020,2,Gasolina,Manual,58735,Usado,40289.2,GLC
+1032,BMW,2007,2,Gasolina,Manual,114525,Usado,12796.94,5 Series
+1033,BMW,2022,1.6,Gasolina,Automatico,13324,Usado,40240.64,3 Series
+1034,Toyota,2008,1.8,Gasolina,Manual,131699,Usado,8300.64,Corolla
+1036,Ford,2014,1.6,Diesel,Automatico,94859,Usado,9175.16,Fiesta
+1038,Audi,2013,3,Gasolina,Automatico,71613,Usado,15038.68,A4
+1039,Honda,2007,2.4,Gasolina,Manual,106609,Usado,6900.62,Accord
+1040,Audi,2017,1.4,Gasolina,Automatico,30431,Usado,22404.96,A4
+1041,Honda,2009,2,Gasolina,Manual,92685,Usado,5906.1,Accord
+1043,Ford,2005,4,Gasolina,Automatico,156004,Usado,6090.2,Explorer
+1044,Audi,2011,3,Diesel,Manual,60368,Usado,17591.9,Q7
+1046,Honda,2006,2.4,Gasolina,Automatico,140832,Usado,9812.38,Accord
+1047,BMW,2015,2,Gasolina,Automatico,56422,Usado,14061.03,X3
+1049,Audi,2012,2,Diesel,Automatico,72852,Usado,15298.96,A4
+1050,Mercedes,2002,2.8,Gasolina,Manual,178689,Usado,12868.92,E-Class
+1052,Mercedes,2010,2,Gasolina,Manual,76118,Usado,8178.85,E-Class
+1053,Toyota,2007,1.8,Gasolina,Manual,86523,Usado,4105.75,Corolla
+1054,Audi,2005,3.2,Gasolina,Manual,154325,Usado,7376.72,A3
+1055,Toyota,2000,1.5,Hibrido,Automatico,132487,Usado,6955.56,Prius
+1056,BMW,2000,4.4,Gasolina,Manual,165681,Usado,11568.07,X5
+1057,Honda,2022,2,Gasolina,Manual,24298,Usado,27719.05,Accord
+1058,Mercedes,2007,5.4,Gasolina,Automatico,104954,Usado,13432.2,E-Class
+1060,Toyota,2015,2.5,Gasolina,Manual,77953,Usado,11193,Camry
+1061,Mercedes,2010,3,Diesel,Manual,133813,Usado,14057.56,C-Class
+1064,Ford,2005,4,Gasolina,Automatico,151951,Usado,5877.45,Explorer
+1066,Honda,2021,2.4,Gasolina,Automatico,11764,Usado,26027.06,CR-V
+1067,Toyota,2018,1.8,Hibrido,Automatico,36278,Usado,17410.14,Prius
+1069,Toyota,2011,2,Gasolina,Automatico,71613,Usado,12475.79,RAV4
+1070,Mercedes,2010,2.1,Diesel,Automatico,83777,Usado,8455.87,C-Class
+1072,Mercedes,2022,4,Gasolina,Manual,24918,Usado,51544.49,GLC
+1073,Ford,2015,2,Gasolina,Automatico,79208,Usado,11383.69,Explorer
+1075,Audi,2012,3.6,Gasolina,Automatico,53971,Usado,16792.43,Q7
+1076,Toyota,2022,2.5,Hibrido,Automatico,17213,Usado,31355.27,RAV4
+1077,Honda,2020,1,Gasolina,Automatico,38057,Usado,14671.25,Civic
+1078,BMW,2020,2,Gasolina,Manual,47547,Usado,32243.13,X3
+1080,Toyota,2001,1.8,Gasolina,Automatico,179563,Usado,8368.48,Corolla
+1082,Audi,2005,2.7,Diesel,Manual,106156,Usado,4923.2,A4
+1083,BMW,2022,2,Gasolina,Automatico,20917,Usado,48213.33,3 Series
+1087,Mercedes,2003,5,Gasolina,Manual,114536,Usado,6453.61,E-Class
+1088,Mercedes,2019,2.1,Diesel,Automatico,20456,Usado,23499.97,C-Class
+1089,Honda,2001,1.3,Gasolina,Automatico,133953,Usado,5457.54,Fit
+1090,BMW,2004,3.2,Gasolina,Manual,159812,Usado,8485.9,3 Series
+1093,Honda,2019,1.5,Hibrido,Automatico,22887,Usado,11166.83,Fit
+1094,Audi,2005,1.2,Gasolina,Automatico,124005,Usado,6352.71,A3
+1095,Honda,2017,3.5,Gasolina,Automatico,64993,Usado,22048.47,Accord
+1097,Ford,2018,5,Gasolina,Manual,65902,Usado,31096.04,Mustang
+1098,Ford,2011,1.6,Diesel,Manual,87380,Usado,8114.96,Fiesta
+1100,Ford,2001,4.6,Gasolina,Manual,110498,Usado,4546.28,Mustang
+1105,Tesla,2020,NA,Electrico,Automatico,42334,Usado,43456.64,Model S
+1106,BMW,2023,2,Gasolina,Automatico,6246,Usado,43569.63,5 Series
+1108,Honda,2021,1.2,Gasolina,Automatico,10572,Usado,21006.37,Fit
+1109,Honda,2002,1.3,Gasolina,Manual,121037,Usado,4551.83,Fit
+1111,Ford,2015,2.3,Gasolina,Automatico,73606,Usado,15457.26,Mustang
+1112,Ford,2020,3.3,Hibrido,Automatico,55124,Usado,24669.8,Explorer
+1113,Tesla,2023,NA,Electrico,Automatico,13740,Usado,45398.98,Model Y
+1114,Toyota,2000,2.2,Gasolina,Manual,169132,Usado,7388.66,Camry
+1116,Audi,2002,1.6,Gasolina,Automatico,135781,Usado,6893.71,A3
+1117,BMW,2019,3,Diesel,Manual,37180,Usado,33925.98,X5
+1120,Toyota,2018,3.5,Gasolina,Manual,32096,Usado,14902.93,Camry
+1121,Toyota,2014,2.5,Gasolina,Manual,60900,Usado,8635.02,Camry
+1122,Tesla,2017,NA,Electrico,Automatico,57619,Usado,62550.05,Model X
+1123,Mercedes,2010,3.5,Hibrido,Automatico,98298,Usado,12314.01,E-Class
+1126,BMW,2021,3,Diesel,Automatico,15152,Usado,42159.72,X3
+1127,Toyota,2016,1.8,Hibrido,Automatico,22824,Usado,14302.26,Prius
+1128,Toyota,2004,1.5,Hibrido,Automatico,124005,Usado,6510.24,Prius
+1129,Audi,2011,1.4,Gasolina,Automatico,105738,Usado,14855.07,A3
+1130,BMW,2010,2.5,Gasolina,Manual,109942,Usado,10261.22,X3
+1131,Toyota,2014,2.5,Hibrido,Automatico,54168,Usado,10033.46,RAV4
+1133,Honda,2000,2,Gasolina,Automatico,122636,Usado,4421.33,Accord
+1134,Ford,2019,2,Diesel,Automatico,35844,Usado,10819.76,Focus
+1135,Toyota,2015,2,Diesel,Manual,81485,Usado,13198,RAV4
+1136,Audi,2001,1.8,Gasolina,Manual,134464,Usado,6869.42,A4
+1137,Honda,2001,2,Gasolina,Manual,159957,Usado,6310.06,Accord
+1139,BMW,2007,5,Gasolina,Automatico,103565,Usado,11749.05,5 Series
+1140,Tesla,2023,NA,Electrico,Automatico,27568,Usado,43786.82,Model 3
+1141,Mercedes,2014,1.8,Gasolina,Manual,99916,Usado,24478.94,C-Class
+1142,Honda,2006,3,Gasolina,Automatico,129370,Usado,8952.76,Accord
+1144,Toyota,2008,1.5,Hibrido,Automatico,84081,Usado,7161.66,Prius
+1145,BMW,2019,3,Diesel,Automatico,45388,Usado,40602.16,X5
+1146,Ford,2000,4.6,Gasolina,Manual,132660,Usado,6604.13,Mustang
+1147,Honda,2007,2.4,Gasolina,Manual,140572,Usado,9326.55,Accord
+1148,Toyota,2022,2,Gasolina,Automatico,16182,Usado,25696.3,Camry
+1149,Audi,2022,2.9,Gasolina,Automatico,12546,Usado,36888.1,A4
+1151,BMW,2003,3,Gasolina,Manual,116944,Usado,6694.44,X5
+1152,Honda,2014,2.4,Gasolina,Automatico,95143,Usado,15510.02,CR-V
+1153,Honda,2005,1.2,Gasolina,Automatico,126326,Usado,5057.1,Fit
+1154,Ford,2014,1.4,Diesel,Manual,67031,Usado,6419.27,Fiesta
+1155,Ford,2020,5,Gasolina,Manual,41904,Usado,24450.41,Mustang
+1157,Mercedes,2020,2,Hibrido,Automatico,50670,Usado,37343.4,C-Class
+1158,Audi,2020,2,Diesel,Manual,60754,Usado,49267.5,Q7
+1159,Toyota,2013,1.8,Hibrido,Automatico,83957,Usado,13609.68,Prius
+1160,Toyota,2019,3.5,Gasolina,Automatico,57134,Usado,21957.68,Camry
+1161,Audi,2013,6,Diesel,Automatico,59781,Usado,18317.47,Q7
+1163,Audi,2011,6,Diesel,Manual,70768,Usado,20191.95,Q7
+1164,Mercedes,2016,4,Gasolina,Manual,38694,Usado,30339.27,C-Class
+1165,Mercedes,2006,2.5,Gasolina,Automatico,108132,Usado,11524.59,C-Class
+1167,BMW,2002,1.6,Gasolina,Manual,169132,Usado,9184.88,3 Series
+1169,Ford,2014,2,Gasolina,Automatico,108905,Usado,17620.02,Explorer
+1170,Mercedes,2017,3,Diesel,Automatico,63856,Usado,44552.16,GLC
+1171,Mercedes,2018,2,Hibrido,Automatico,38216,Usado,31637.04,C-Class
+1172,Mercedes,2000,6,Gasolina,Automatico,113041,Usado,6619.32,E-Class
+1174,Tesla,2022,NA,Electrico,Automatico,10788,Usado,63826.92,Model S
+1175,Toyota,2001,3,Gasolina,Automatico,127690,Usado,5310.47,Camry
+1177,Ford,2013,1,Gasolina,Automatico,88511,Usado,10291.49,Focus
+1178,Ford,2005,4.6,Gasolina,Manual,131130,Usado,6462.05,Mustang
+1181,BMW,2020,3,Hibrido,Automatico,59973,Usado,49450.26,X5
+1183,Mercedes,2002,2.6,Gasolina,Manual,104422,Usado,5442.17,E-Class
+1184,Honda,2018,1.5,Hibrido,Automatico,58214,Usado,19327.43,Fit
+1185,BMW,2013,1.5,Gasolina,Automatico,54168,Usado,11594,3 Series
+1186,BMW,2019,4.4,Gasolina,Automatico,27108,Usado,25643.8,5 Series
+1187,Ford,2016,1,Gasolina,Manual,20703,Usado,8102.28,Focus
+1189,Tesla,2023,NA,Electrico,Automatico,26238,Usado,50259.18,Model Y
+1190,Mercedes,2013,2.2,Diesel,Manual,108724,Usado,26681.05,C-Class
+1192,Toyota,2022,2.2,Diesel,Manual,23371,Usado,32817.92,RAV4
+1193,Mercedes,2021,4,Gasolina,Manual,28156,Usado,72417.78,E-Class
+1195,Ford,2018,2.3,Gasolina,Automatico,68377,Usado,33370.26,Mustang
+1196,Mercedes,2013,1.8,Gasolina,Manual,87334,Usado,25200.2,E-Class
+1198,Honda,2002,2.2,Diesel,Manual,171401,Usado,6953.81,CR-V
+1200,Ford,2018,2.3,Gasolina,Manual,37178,Usado,23141.51,Mustang
+1201,Honda,2008,3.5,Gasolina,Automatico,111696,Usado,7627.22,Accord
+1202,Ford,2019,1.5,Diesel,Automatico,68350,Usado,13442.05,Fiesta
+1203,Audi,2012,1.4,Gasolina,Automatico,84649,Usado,10426.37,A3
+1204,BMW,2006,3,Gasolina,Automatico,134239,Usado,13155.42,X3
+1205,Audi,2013,2.5,Gasolina,Automatico,109438,Usado,15631.88,A3
+1206,Mercedes,2008,2.5,Gasolina,Manual,138065,Usado,14567.79,C-Class
+1207,Honda,2022,1.6,Diesel,Manual,9823,Usado,23700.85,CR-V
+1208,Mercedes,2018,3,Diesel,Automatico,56381,Usado,41270.04,GLC
+1209,BMW,2014,2,Diesel,Automatico,81591,Usado,24042.62,5 Series
+1210,Ford,2019,5,Gasolina,Automatico,34263,Usado,23451.16,Mustang
+1211,BMW,2013,3,Gasolina,Manual,76836,Usado,22050.81,X5
+1212,Toyota,2023,2.5,Diesel,Automatico,7553,Usado,26486.93,RAV4
+1213,BMW,2005,2,Gasolina,Manual,151477,Usado,7860.77,3 Series
+1214,Toyota,2020,2.5,Diesel,Manual,38225,Usado,19373.88,RAV4
+1215,BMW,2003,3.5,Gasolina,Automatico,159414,Usado,10708.65,5 Series
+1217,Toyota,2016,2.2,Diesel,Manual,68573,Usado,26657.45,RAV4
+1218,Honda,2008,2,Gasolina,Automatico,135061,Usado,11031.43,CR-V
+1219,Mercedes,2000,3.2,Gasolina,Manual,122553,Usado,6973.39,C-Class
+1220,Mercedes,2023,3,Hibrido,Automatico,15770,Usado,47589.83,GLC
+1221,Audi,2019,2.5,Gasolina,Manual,56105,Usado,16422.82,A3
+1223,Ford,2010,1.6,Diesel,Automatico,87245,Usado,3530.37,Fiesta
+1225,BMW,2002,3,Gasolina,Automatico,161987,Usado,11758.65,X5
+1226,Audi,2008,3.2,Gasolina,Manual,130365,Usado,14174.14,Q5
+1227,Ford,2013,2,Gasolina,Automatico,69756,Usado,9398.73,Explorer
+1228,Ford,2008,1.4,Gasolina,Automatico,91843,Usado,3771.77,Fiesta
+1229,Toyota,2003,1.5,Hibrido,Automatico,145397,Usado,7633.33,Prius
+1230,Mercedes,2003,2.5,Gasolina,Automatico,106771,Usado,5872.11,C-Class
+1231,Honda,2007,3,Gasolina,Manual,103337,Usado,6666.91,Accord
+1232,Honda,2001,2.3,Gasolina,Manual,119299,Usado,4023.06,Accord
+1233,Audi,2008,4.2,Gasolina,Automatico,101359,Usado,9628.37,A4
+1235,Honda,2021,1.5,Gasolina,Manual,23398,Usado,24623.44,Fit
+1236,BMW,2008,5,Gasolina,Manual,79145,Usado,7607.98,5 Series
+1237,Honda,2023,2,Gasolina,Manual,8377,Usado,19215.78,Civic
+1238,Audi,2022,3,Diesel,Manual,14808,Usado,43592.64,Q5
+1239,Honda,2015,2.4,Gasolina,Manual,95672,Usado,12447.83,Accord
+1240,BMW,2016,4.4,Gasolina,Manual,41383,Usado,36354.61,X5
+1241,Toyota,2015,2,Diesel,Manual,60024,Usado,10336.49,RAV4
+1243,Audi,2002,1.9,Diesel,Manual,161698,Usado,8741.71,A4
+1244,Toyota,2010,1.8,Hibrido,Automatico,90096,Usado,7657.9,Prius
+1245,Toyota,2013,2.5,Gasolina,Automatico,53821,Usado,7951.85,Camry
+1246,Toyota,2017,3.5,Gasolina,Automatico,44413,Usado,18752.03,Camry
+1247,Ford,2020,1.1,Gasolina,Automatico,69528,Usado,13590.47,Fiesta
+1248,Tesla,2020,NA,Electrico,Automatico,39203,Usado,30672.89,Model 3
+1250,Tesla,2015,NA,Electrico,Automatico,51059,Usado,58416.95,Model X
+1251,Ford,2019,5.2,Gasolina,Manual,28124,Usado,20634.24,Mustang
+1254,Toyota,2011,1.8,Hibrido,Automatico,88253,Usado,14135.96,Prius
+1255,Audi,2000,1.8,Gasolina,Manual,165841,Usado,7880.54,A3
+1256,Mercedes,2020,4,Gasolina,Manual,68185,Usado,44240.81,GLC
+1257,BMW,2008,3,Diesel,Manual,108145,Usado,12861.26,X5
+1258,BMW,2008,2,Diesel,Manual,117664,Usado,13257.35,5 Series
+1262,Ford,2001,1.2,Gasolina,Manual,143983,Usado,2470.94,Fiesta
+1263,Toyota,2023,3.5,Gasolina,Manual,17180,Usado,24871.82,Camry
+1264,Honda,2000,2,Gasolina,Manual,161494,Usado,6396.53,CR-V
+1266,Ford,2012,2,Gasolina,Automatico,81359,Usado,9290.26,Focus
+1268,Toyota,2014,1.8,Hibrido,Automatico,72431,Usado,12197.83,Prius
+1270,BMW,2011,2,Diesel,Automatico,91020,Usado,21932.07,X3
+1271,Audi,2021,3,Gasolina,Automatico,19930,Usado,42160.29,A4
+1272,Ford,2011,1.6,Diesel,Manual,67476,Usado,6456.31,Fiesta
+1273,Toyota,2013,1.8,Hibrido,Automatico,73650,Usado,12347.08,Prius
+1276,BMW,2008,2,Gasolina,Manual,89469,Usado,8350.43,X3
+1277,Mercedes,2018,1.6,Gasolina,Automatico,42854,Usado,33762.18,C-Class
+1278,Ford,2019,3.7,Gasolina,Manual,55828,Usado,28306.35,Mustang
+1279,Audi,2021,2,Gasolina,Manual,29515,Usado,46670.52,A4
+1280,Audi,2007,1.2,Gasolina,Automatico,106071,Usado,7987.42,A3
+1281,Audi,2020,3,Gasolina,Manual,41283,Usado,28601.62,Q5
+1283,Ford,2005,5.4,Gasolina,Manual,114906,Usado,4955.53,Mustang
+1285,Honda,2018,2,Hibrido,Automatico,51059,Usado,19122.32,Accord
+1287,BMW,2022,2,Hibrido,Automatico,16454,Usado,56431.98,5 Series
+1288,Toyota,2006,1.5,Hibrido,Automatico,137611,Usado,11577.89,Prius
+1291,Toyota,2011,1.8,Hibrido,Automatico,86689,Usado,13944.45,Prius
+1292,Honda,2012,2.2,Gasolina,Automatico,93752,Usado,12851.83,Accord
+1295,Ford,2011,2,Gasolina,Automatico,81038,Usado,11768.05,Explorer
+1296,Audi,2001,4.2,Gasolina,Automatico,110885,Usado,5510.77,A4
+1297,Mercedes,2023,1.3,Gasolina,Manual,13335,Usado,36000.87,GLA
+1298,Toyota,2001,1.5,Hibrido,Automatico,160313,Usado,8416.44,Prius
+1299,Tesla,2022,NA,Electrico,Automatico,26612,Usado,50404.54,Model Y
+1302,Toyota,2007,3.5,Gasolina,Manual,116664,Usado,8904.47,RAV4
+1303,Toyota,2022,1.8,Gasolina,Manual,9609,Usado,23474.94,Corolla
+1304,Toyota,2005,3.3,Gasolina,Manual,134793,Usado,5457.13,Camry
+1305,Toyota,2005,1.8,Gasolina,Manual,153612,Usado,6185.84,Corolla
+1306,Tesla,2021,NA,Electrico,Automatico,12457,Usado,35559.93,Model 3
+1307,Tesla,2017,NA,Electrico,Automatico,35554,Usado,39469.9,Model S
+1308,Honda,2016,2.4,Gasolina,Manual,58942,Usado,22124.93,CR-V
+1311,Ford,2007,2,Gasolina,Manual,122314,Usado,5115.7,Fiesta
+1313,Ford,2009,4,Gasolina,Automatico,155976,Usado,11682.63,Explorer
+1314,Mercedes,2000,6.3,Gasolina,Manual,118671,Usado,6867.07,E-Class
+1316,Ford,2016,2.3,Gasolina,Automatico,37678,Usado,11099.89,Focus
+1318,Ford,2007,1.3,Gasolina,Automatico,96573,Usado,4020.07,Fiesta
+1319,Honda,2013,2.4,Gasolina,Automatico,84333,Usado,11555.75,Civic
+1320,BMW,2002,4.4,Gasolina,Manual,121694,Usado,7169.43,X5
+1323,Audi,2019,1.2,Gasolina,Manual,86231,Usado,22995.93,A3
+1324,Toyota,2023,2,Gasolina,Manual,23459,Usado,27383.71,Camry
+1325,BMW,2016,2,Gasolina,Automatico,48690,Usado,33627.32,3 Series
+1328,Ford,2016,2.3,Gasolina,Manual,69963,Usado,32220.47,Mustang
+1329,BMW,2013,2,Gasolina,Automatico,109433,Usado,26121.02,X3
+1330,Audi,2016,4,Gasolina,Manual,33554,Usado,32403.64,Q7
+1332,Toyota,2010,2.5,Gasolina,Manual,144411,Usado,11481.03,RAV4
+1333,Toyota,2019,1.8,Hibrido,Automatico,66564,Usado,24406.29,Corolla
+1335,Audi,2006,1.9,Diesel,Manual,112540,Usado,10567.48,A4
+1336,Ford,2020,2.3,Gasolina,Automatico,38980,Usado,11298.75,Focus
+1338,Toyota,2016,2.5,Diesel,Automatico,48049,Usado,22818.44,RAV4
+1339,Mercedes,2009,2.1,Diesel,Manual,135919,Usado,17747.08,E-Class
+1340,BMW,2010,4.8,Gasolina,Automatico,103039,Usado,11668.01,5 Series
+1341,Mercedes,2021,1.5,Gasolina,Manual,11905,Usado,49666.5,E-Class
+1343,Honda,2008,1.8,Gasolina,Automatico,98976,Usado,6290.52,Civic
+1344,Audi,2023,NA,Electrico,Automatico,11232,Usado,25717.63,A3
+1345,Ford,2004,1.4,Gasolina,Automatico,133099,Usado,2267.97,Fiesta
+1346,Honda,2016,2.4,Gasolina,Manual,29126,Usado,14372.65,CR-V
+1347,Toyota,2008,2.5,Gasolina,Automatico,99831,Usado,7183.51,Camry
+1348,Mercedes,2016,6.2,Gasolina,Manual,53483,Usado,42192.06,E-Class
+1349,Mercedes,2023,2,Diesel,Manual,17661,Usado,39115.84,GLA
+1350,Audi,2020,3,Diesel,Manual,39775,Usado,36260.34,Q7
+1353,BMW,2022,3,Diesel,Automatico,22613,Usado,67890.86,X5
+1354,Audi,2008,3.6,Gasolina,Automatico,140526,Usado,17838.89,Q7
+1355,BMW,2006,3,Diesel,Automatico,104562,Usado,12952.55,X5
+1357,Audi,2010,4.2,Diesel,Manual,115675,Usado,14338.65,Q7
+1359,Audi,2018,2,Diesel,Manual,44060,Usado,38917.19,Q7
+1361,BMW,2012,1.6,Gasolina,Automatico,105503,Usado,25069.66,3 Series
+1362,BMW,2013,4.4,Gasolina,Manual,87688,Usado,25306.35,X5
+1363,Audi,2012,3.2,Gasolina,Automatico,95361,Usado,23412.25,Q5
+1364,Honda,2000,1.5,Gasolina,Manual,114360,Usado,4217.98,Fit
+1368,Ford,2011,4,Gasolina,Manual,77685,Usado,15536.93,Mustang
+1369,BMW,2007,4.8,Gasolina,Manual,80256,Usado,8770.9,X5
+1370,BMW,2007,4.8,Gasolina,Manual,121588,Usado,14832.9,X5
+1371,Honda,2020,1.5,Gasolina,Manual,20944,Usado,12188.71,Accord
+1372,Ford,2012,2.3,Gasolina,Automatico,92540,Usado,10855.58,Focus
+1373,Ford,2011,1.4,Gasolina,Automatico,78872,Usado,7776.3,Fiesta
+1374,Audi,2015,1.2,Gasolina,Automatico,101778,Usado,14023.41,A3
+1375,BMW,2000,3,Gasolina,Automatico,114749,Usado,6605.1,5 Series
+1376,Ford,2012,3.7,Gasolina,Manual,71156,Usado,14231.28,Mustang
+1378,Honda,2004,1.2,Gasolina,Manual,121592,Usado,4579.6,Fit
+1381,Tesla,2022,NA,Electrico,Automatico,5173,Como Nuevo,31594.34,Model 3
+1383,Honda,2014,2,Gasolina,Manual,94962,Usado,14744.33,CR-V
+1384,Mercedes,2022,1.3,Gasolina,Automatico,24471,Usado,46220.1,GLA
+1385,Ford,2016,2,Gasolina,Automatico,66388,Usado,15484.73,Focus
+1386,BMW,2014,3,Hibrido,Automatico,81735,Usado,18830.56,3 Series
+1387,Honda,2019,2,Hibrido,Automatico,59335,Usado,23338.52,CR-V
+1388,Audi,2017,2,Diesel,Manual,47683,Usado,30696.31,Q5
+1389,Mercedes,2017,2.1,Diesel,Manual,47426,Usado,34149.34,C-Class
+1390,Honda,2001,1.4,Gasolina,Automatico,162260,Usado,6418.64,Civic
+1391,Toyota,2003,1.5,Hibrido,Automatico,119793,Usado,6289.14,Prius
+1392,Toyota,2000,1.6,Gasolina,Automatico,141042,Usado,5587.7,Corolla
+1394,BMW,2017,3,Diesel,Automatico,43802,Usado,32107.41,X3
+1395,Ford,2004,2,Gasolina,Automatico,140029,Usado,4551.86,Focus
+1397,BMW,2014,3,Diesel,Automatico,64003,Usado,15785.69,X3
+1398,BMW,2007,3,Diesel,Automatico,148546,Usado,19726.14,X5
+1399,BMW,2019,1.6,Gasolina,Automatico,58051,Usado,45860.1,5 Series
+1400,Audi,2016,3,Gasolina,Manual,61909,Usado,49983.5,Q7
+1403,Honda,2018,1.6,Diesel,Manual,60421,Usado,18892.65,Civic
+1404,Toyota,2014,1.8,Gasolina,Automatico,70435,Usado,9518.51,Corolla
+1405,BMW,2008,3,Gasolina,Manual,144012,Usado,14281.42,3 Series
+1408,Toyota,2008,1.8,Gasolina,Automatico,118112,Usado,7390.9,Corolla
+1409,Mercedes,2009,2.2,Diesel,Manual,77982,Usado,7357.89,C-Class
+1410,Ford,2001,3.8,Gasolina,Automatico,174690,Usado,11032.27,Mustang
+1411,Audi,2018,4,Gasolina,Automatico,53209,Usado,46818.91,Q7
+1412,Mercedes,2010,4.7,Gasolina,Automatico,90161,Usado,10947.11,E-Class
+1413,Toyota,2012,2.4,Gasolina,Automatico,67082,Usado,8990.45,Corolla
+1414,Mercedes,2009,3,Diesel,Manual,137863,Usado,18058.13,E-Class
+1417,Toyota,2018,1.8,Gasolina,Manual,20321,Usado,13070.59,Corolla
+1418,Mercedes,2021,1.6,Diesel,Automatico,29237,Usado,62199.04,C-Class
+1419,Audi,2008,1.8,Gasolina,Automatico,98462,Usado,7188.51,A3
+1420,Audi,2006,4.2,Gasolina,Manual,97549,Usado,8693.62,A4
+1421,Honda,2002,2,Gasolina,Manual,185398,Usado,7741.13,Accord
+1422,Mercedes,2019,1.6,Diesel,Automatico,49378,Usado,36751.42,C-Class
+1423,BMW,2005,2.5,Gasolina,Manual,109333,Usado,7104.74,X3
+1424,Mercedes,2020,3,Diesel,Automatico,51530,Usado,43331.99,E-Class
+1426,Toyota,2005,3.3,Gasolina,Manual,137330,Usado,5599.84,Camry
+1427,Toyota,2002,1.8,Gasolina,Manual,135422,Usado,4935.24,Corolla
+1431,Ford,2016,2.3,Gasolina,Manual,23415,Usado,8496.74,Focus
+1433,Audi,2011,3,Diesel,Automatico,66752,Usado,14017.98,A4
+1435,Toyota,2010,1.8,Hibrido,Automatico,146749,Usado,12331.8,Prius
+1436,Audi,2000,1.6,Gasolina,Manual,106176,Usado,5270.22,A3
+1437,Toyota,2022,2.5,Diesel,Manual,29511,Usado,35765.31,RAV4
+1438,Honda,2012,2,Gasolina,Automatico,100915,Usado,13666.54,Accord
+1439,BMW,2014,3,Diesel,Automatico,105068,Usado,32046.44,X5
+1440,Toyota,2004,1.5,Hibrido,Automatico,168853,Usado,8864.77,Prius
+1441,Audi,2020,3,Gasolina,Automatico,38777,Usado,29170.53,Q5
+1442,Honda,2016,2.4,Gasolina,Manual,24461,Usado,13159.89,CR-V
+1443,Toyota,2022,2.5,Hibrido,Automatico,11436,Usado,23703.04,Camry
+1444,Ford,2023,2.3,Gasolina,Automatico,11916,Usado,28714.31,Explorer
+1446,BMW,2020,NA,Electrico,Automatico,41654,Usado,30015.71,3 Series
+1447,Toyota,2021,2,Gasolina,Automatico,26116,Usado,29868.76,Camry
+1449,Ford,2017,1,Gasolina,Automatico,35781,Usado,10810.22,Focus
+1453,Honda,2022,1.6,Diesel,Automatico,29365,Usado,36376.7,CR-V
+1454,Ford,2008,2,Gasolina,Manual,153095,Usado,8056.08,Focus
+1455,Honda,2020,2.4,Gasolina,Automatico,40324,Usado,18148.39,CR-V
+1457,Toyota,2011,2.4,Gasolina,Automatico,86723,Usado,12083.81,Corolla
+1458,Ford,2001,1.6,Gasolina,Manual,121847,Usado,1838.48,Fiesta
+1459,Ford,2002,3.8,Gasolina,Automatico,130474,Usado,6721.2,Mustang
+1461,Ford,2011,4.6,Gasolina,Automatico,51161,Usado,10743.82,Mustang
+1462,Ford,2014,1,Gasolina,Automatico,85094,Usado,9813.17,Focus
+1463,Mercedes,2008,5.5,Gasolina,Manual,75572,Usado,8091.46,E-Class
+1464,Toyota,2022,1.8,Hibrido,Automatico,11040,Usado,25129.42,Prius
+1467,Mercedes,2015,1.6,Gasolina,Automatico,58326,Usado,14785.56,C-Class
+1469,Toyota,2003,1.5,Hibrido,Automatico,179843,Usado,9441.78,Prius
+1470,Toyota,2000,2.2,Gasolina,Automatico,131165,Usado,5515.7,Camry
+1471,Audi,2023,2.9,Gasolina,Automatico,23009,Usado,44358.63,A4
+1474,Mercedes,2023,2,Hibrido,Automatico,11185,Usado,44316.37,GLC
+1475,Honda,2004,1.2,Gasolina,Manual,146613,Usado,5830.65,Fit
+1476,BMW,2006,4.8,Gasolina,Manual,82930,Usado,8163.02,5 Series
+1477,Honda,2003,1.4,Gasolina,Manual,175739,Usado,6786.94,Civic
+1478,Audi,2004,1.4,Gasolina,Manual,155695,Usado,7436.65,A3
+1479,Toyota,2023,2.5,Diesel,Manual,11482,Usado,27111.53,RAV4
+1481,Toyota,2000,1.5,Hibrido,Automatico,177160,Usado,9300.92,Prius
+1482,BMW,2014,4.4,Gasolina,Automatico,64845,Usado,19376.15,X5
+1483,Toyota,2019,1.8,Hibrido,Automatico,41181,Usado,18542.9,Corolla
+1484,Toyota,2018,1.8,Hibrido,Automatico,46131,Usado,19686.3,Prius
+1485,BMW,2009,3,Diesel,Automatico,100024,Usado,9802.36,X3
+1486,Mercedes,2017,1.5,Gasolina,Automatico,50729,Usado,42934.76,E-Class
+1487,Mercedes,2002,5.4,Gasolina,Manual,167341,Usado,10892.31,C-Class
+1488,BMW,2010,4.4,Gasolina,Manual,144311,Usado,14317.27,3 Series
+1490,Audi,2010,1.9,Diesel,Manual,99171,Usado,6917.11,A3
+1492,Tesla,2016,NA,Electrico,Automatico,28848,Usado,35526.56,Model S
+1493,Toyota,2005,1.5,Hibrido,Automatico,131638,Usado,6911,Prius
+1497,Ford,2015,2,Gasolina,Automatico,84262,Usado,9696.63,Focus
+1498,Ford,2019,1.5,Gasolina,Automatico,47653,Usado,10834.28,Fiesta
+1499,Ford,2023,1,Gasolina,Automatico,12778,Usado,13766.66,Fiesta
+1500,Mercedes,2011,3.5,Gasolina,Manual,50025,Usado,12006.35,C-Class
+1502,Audi,2000,1.8,Gasolina,Automatico,125355,Usado,6414.75,A3
+1504,Audi,2016,2,Gasolina,Automatico,51187,Usado,29378.86,A4
+1505,Audi,2012,2,Diesel,Manual,97606,Usado,12521.2,A3
+1506,Mercedes,2017,4,Gasolina,Automatico,40061,Usado,34104.14,GLC
+1507,Ford,2004,2.3,Gasolina,Automatico,170587,Usado,6512.65,Focus
+1508,Honda,2023,1.3,Hibrido,Automatico,23009,Usado,25707.51,Fit
+1509,Toyota,2023,2,Gasolina,Automatico,7334,Usado,23884.3,Corolla
+1510,Mercedes,2002,1.8,Gasolina,Manual,109827,Usado,5859.82,C-Class
+1511,Ford,2010,4,Gasolina,Automatico,124599,Usado,8623.4,Explorer
+1513,Honda,2003,1.4,Gasolina,Automatico,139143,Usado,5205.02,Civic
+1514,Honda,2013,2,Gasolina,Automatico,91771,Usado,12626.46,Accord
+1516,BMW,2010,3,Gasolina,Automatico,124813,Usado,12231.69,X3
+1517,Toyota,2009,1.5,Hibrido,Automatico,105496,Usado,8928.39,Prius
+1518,Honda,2018,1.5,Gasolina,Automatico,39330,Usado,14965.31,Civic
+1519,Mercedes,2017,2,Hibrido,Automatico,32952,Usado,30982.43,GLC
+1521,Ford,2014,5.4,Gasolina,Automatico,100196,Usado,21041.12,Mustang
+1522,Tesla,2020,NA,Electrico,Automatico,23793,Usado,32554.47,Model S
+1523,BMW,2009,3,Gasolina,Automatico,146517,Usado,14358.66,X3
+1524,Toyota,2004,1.8,Gasolina,Manual,134238,Usado,4853.86,Corolla
+1528,Ford,2002,4,Gasolina,Automatico,126508,Usado,4541.67,Explorer
+1529,Honda,2022,1.2,Gasolina,Manual,8424,Usado,19232.62,Fit
+1530,Honda,2005,1.5,Gasolina,Manual,140622,Usado,5531.08,Fit
+1531,Ford,2003,3.8,Gasolina,Manual,139941,Usado,7280.28,Mustang
+1532,Mercedes,2017,4,Gasolina,Manual,68603,Usado,44415.92,GLC
+1533,Honda,2008,1.5,Gasolina,Manual,140234,Usado,9232.65,Fit
+1534,BMW,2016,2,Gasolina,Automatico,38291,Usado,28289.58,3 Series
+1535,Toyota,2012,1.8,Gasolina,Manual,96241,Usado,12936.17,Corolla
+1537,Tesla,2019,NA,Electrico,Automatico,48276,Usado,46950.41,Model S
+1539,Honda,2012,2.4,Gasolina,Automatico,69016,Usado,11395.08,CR-V
+1541,Audi,2021,1.4,Hibrido,Automatico,18669,Usado,28841,A3
+1542,Toyota,2003,1.5,Hibrido,Automatico,135212,Usado,7098.63,Prius
+1543,Toyota,2004,1.5,Hibrido,Automatico,137305,Usado,7208.52,Prius
+1545,Ford,2008,4,Gasolina,Automatico,151524,Usado,11248.58,Explorer
+1547,Ford,2012,1,Gasolina,Manual,102191,Usado,9349.22,Fiesta
+1549,Audi,2012,4.2,Gasolina,Manual,75458,Usado,21364.38,Q7
+1550,Mercedes,2021,4,Gasolina,Automatico,14739,Usado,46853.75,GLC
+1551,Toyota,2020,1.8,Hibrido,Automatico,56321,Usado,22040.25,Prius
+1552,Tesla,2022,NA,Electrico,Automatico,16956,Usado,46649.65,Model Y
+1553,Audi,2018,3,Gasolina,Automatico,53871,Usado,30280.66,A4
+1554,Ford,2002,1.5,Gasolina,Manual,131544,Usado,2115.53,Fiesta
+1555,Ford,2009,1.25,Gasolina,Manual,89732,Usado,3486.59,Fiesta
+1556,Toyota,2001,1.8,Gasolina,Automatico,110573,Usado,3388.2,Corolla
+1557,BMW,2012,2,Gasolina,Manual,65558,Usado,18889.41,5 Series
+1558,Tesla,2018,NA,Electrico,Automatico,49284,Usado,57298.82,Model X
+1559,Honda,2016,2.2,Diesel,Manual,44814,Usado,18451.54,CR-V
+1560,Ford,2020,1,Hibrido,Automatico,21793,Usado,7575.96,Fiesta
+1561,Mercedes,2013,6.2,Gasolina,Manual,75458,Usado,21637.26,E-Class
+1563,Ford,2020,1.5,Diesel,Manual,29296,Usado,8115.57,Fiesta
+1564,BMW,2011,1.6,Gasolina,Manual,88977,Usado,19744.37,3 Series
+1565,BMW,2010,3,Diesel,Automatico,138132,Usado,14254.61,3 Series
+1567,Mercedes,2003,3.5,Gasolina,Automatico,141735,Usado,9084.37,C-Class
+1568,Audi,2018,3,Diesel,Automatico,51259,Usado,29403,A4
+1570,Tesla,2023,NA,Electrico,Automatico,21831,Usado,75422.95,Model S
+1572,Honda,2012,2.4,Gasolina,Manual,78142,Usado,10548.73,Accord
+1574,Honda,2001,1.3,Hibrido,Automatico,130850,Usado,4769.64,Civic
+1576,Toyota,2003,3.3,Gasolina,Manual,142042,Usado,5864.86,Camry
+1577,Tesla,2018,NA,Electrico,Automatico,32050,Usado,46441.53,Model X
+1578,Audi,2016,1.4,Gasolina,Manual,20235,Usado,18075.3,A4
+1579,Ford,2002,4,Gasolina,Automatico,177025,Usado,7193.82,Explorer
+1580,Audi,2017,4,Diesel,Manual,40607,Usado,36776.45,Q7
+1581,Ford,2007,2,Gasolina,Automatico,101416,Usado,4274.32,Fiesta
+1582,BMW,2021,3,Diesel,Manual,26185,Usado,65421.84,5 Series
+1585,Honda,2004,1.3,Gasolina,Manual,134895,Usado,5244.74,Fit
+1586,Honda,2006,1.2,Gasolina,Manual,83105,Usado,4743.98,Fit
+1587,Toyota,2020,2,Gasolina,Manual,62684,Usado,22390.55,Corolla
+1589,Audi,2004,2.5,Diesel,Manual,121484,Usado,5977.04,A4
+1590,BMW,2016,1.6,Gasolina,Automatico,25527,Usado,21737.42,3 Series
+1591,Ford,2004,3.9,Gasolina,Automatico,168880,Usado,10465.83,Mustang
+1592,Honda,2003,2.4,Gasolina,Automatico,164795,Usado,6911.31,CR-V
+1593,Tesla,2021,NA,Electrico,Automatico,20695,Usado,40045.16,Model 3
+1594,Honda,2018,1.5,Gasolina,Automatico,44448,Usado,19274.34,CR-V
+1595,Ford,2020,2.3,Gasolina,Automatico,52212,Usado,23669.29,Explorer
+1598,BMW,2021,3,Gasolina,Automatico,7334,Usado,33950.92,X3
+1600,Audi,2014,1.6,Diesel,Manual,83396,Usado,9679.3,A3
+1601,Audi,2011,3,Diesel,Automatico,82244,Usado,20869.52,Q5
+1602,Mercedes,2021,3,Diesel,Manual,22927,Usado,50190.4,GLC
+1603,Mercedes,2020,2.1,Diesel,Manual,36042,Usado,29181.86,C-Class
+1604,Toyota,2021,3.5,Gasolina,Manual,27847,Usado,29138.77,Camry
+1605,Honda,2010,1.5,Gasolina,Automatico,115664,Usado,7667.29,Fit
+1606,Audi,2006,1.2,Gasolina,Automatico,93595,Usado,6677.48,A3
+1610,Honda,2019,2.4,Gasolina,Manual,22953,Usado,12767.76,CR-V
+1611,Mercedes,2008,3.5,Gasolina,Manual,121888,Usado,12626.61,C-Class
+1612,BMW,2013,2,Gasolina,Manual,93025,Usado,21322.07,X3
+1613,Toyota,2011,2.4,Gasolina,Manual,83663,Usado,11049.41,Corolla
+1614,Honda,2005,1.4,Gasolina,Automatico,169243,Usado,6785.27,Civic
+1616,Ford,2018,2,Gasolina,Automatico,53933,Usado,24260.48,Explorer
+1617,Mercedes,2018,2.1,Diesel,Automatico,49681,Usado,31038.29,GLA
+1619,Toyota,2011,2.4,Gasolina,Manual,64460,Usado,8169.01,Corolla
+1620,Honda,2011,2.4,Gasolina,Automatico,50282,Usado,8444.48,CR-V
+1621,Ford,2019,5.2,Gasolina,Automatico,32999,Usado,23083.52,Mustang
+1622,Toyota,2005,2,Diesel,Manual,142923,Usado,6755.77,RAV4
+1623,Mercedes,2022,1.6,Diesel,Manual,7493,Usado,43490.82,E-Class
+1624,Toyota,2003,1.8,Gasolina,Manual,136813,Usado,5030.91,Corolla
+1625,Honda,2005,1.2,Gasolina,Automatico,138738,Usado,5708.77,Fit
+1626,Audi,2010,2.5,Gasolina,Manual,113485,Usado,8348.5,A3
+1627,Toyota,2000,2,Diesel,Manual,152710,Usado,7612.12,RAV4
+1628,Tesla,2023,NA,Electrico,Automatico,19434,Usado,72905.4,Model S
+1629,Toyota,2022,2,Gasolina,Automatico,12232,Usado,24037.55,Camry
+1631,Mercedes,2010,2.1,Diesel,Manual,76728,Usado,7207.35,C-Class
+1632,Ford,2018,2.3,Gasolina,Manual,52785,Usado,27463.46,Mustang
+1633,Mercedes,2017,4,Gasolina,Automatico,44386,Usado,39786.32,E-Class
+1634,BMW,2016,2,Gasolina,Manual,25947,Usado,23700.38,5 Series
+1635,Honda,2018,1.5,Hibrido,Automatico,42272,Usado,15644.93,Fit
+1636,Honda,2020,1.3,Gasolina,Manual,24246,Usado,10934.03,Fit
+1637,Audi,2013,4.2,Gasolina,Automatico,73868,Usado,22015.45,Q7
+1638,Audi,2017,3,Hibrido,Automatico,60295,Usado,51432.33,Q7
+1639,Honda,2018,2,Gasolina,Manual,24447,Usado,12889.49,Accord
+1641,Audi,2014,3.6,Gasolina,Manual,98242,Usado,27060.52,Q7
+1642,Ford,2003,1.6,Gasolina,Manual,170120,Usado,3217.73,Fiesta
+1644,Honda,2012,2.4,Gasolina,Automatico,55627,Usado,9286.18,CR-V
+1646,Honda,2015,2.2,Diesel,Manual,62300,Usado,9844.94,CR-V
+1647,BMW,2008,3,Diesel,Automatico,114126,Usado,11229.91,3 Series
+1648,Toyota,2007,2.2,Diesel,Manual,97290,Usado,7105.47,RAV4
+1649,Mercedes,2019,4,Gasolina,Automatico,54867,Usado,40605.34,GLC
+1650,Honda,2012,1.8,Gasolina,Manual,106100,Usado,13545.02,Civic
+1651,Toyota,2016,2,Diesel,Automatico,57690,Usado,25247.81,RAV4
+1652,Audi,2016,3,Diesel,Manual,36879,Usado,27160.52,Q5
+1653,Toyota,2016,2.5,Diesel,Manual,60295,Usado,24670.9,RAV4
+1655,Honda,2007,1.5,Gasolina,Automatico,136282,Usado,9368.3,Fit
+1658,Audi,2002,1.8,Gasolina,Automatico,164016,Usado,9346.12,A4
+1659,Honda,2004,1.3,Hibrido,Automatico,158380,Usado,6214.93,Civic
+1660,Mercedes,2012,2.5,Gasolina,Manual,83892,Usado,20472.95,C-Class
+1661,Audi,2014,2.7,Diesel,Manual,69889,Usado,13977.75,A4
+1662,Ford,2013,5,Gasolina,Automatico,79252,Usado,16642.91,Mustang
+1663,Toyota,2022,2.2,Diesel,Automatico,17028,Usado,31262.15,RAV4
+1665,Mercedes,2017,1.5,Gasolina,Automatico,36048,Usado,30643.61,C-Class
+1666,Ford,2021,1.1,Gasolina,Automatico,17453,Usado,15730.28,Fiesta
+1667,Honda,2021,2,Hibrido,Automatico,18779,Usado,30152.1,CR-V
+1668,BMW,2010,3,Diesel,Manual,140403,Usado,17592.38,X5
+1669,Audi,2002,3,Gasolina,Automatico,107310,Usado,5252.72,A4
+1670,Toyota,2021,1.8,Hibrido,Automatico,21762,Usado,28732.17,Prius
+1671,Audi,2009,1.2,Gasolina,Manual,127183,Usado,9718.3,A3
+1673,Honda,2020,2,Hibrido,Automatico,20028,Usado,12607.76,CR-V
+1675,Toyota,2011,1.8,Hibrido,Automatico,104375,Usado,16111,Prius
+1676,Honda,2001,2,Gasolina,Automatico,169314,Usado,7178.23,CR-V
+1677,Audi,2008,3.2,Gasolina,Automatico,133707,Usado,10889.2,A3
+1678,BMW,2023,3,Diesel,Manual,19324,Usado,57189.33,5 Series
+1679,Mercedes,2002,3,Diesel,Manual,114673,Usado,6283.89,C-Class
+1680,Honda,2023,2,Gasolina,Manual,12911,Usado,23164.28,Accord
+1681,Mercedes,2014,2.1,Diesel,Manual,68278,Usado,21311.01,GLA
+1682,Honda,2002,1.7,Diesel,Manual,184185,Usado,7209.26,Civic
+1683,BMW,2018,1.6,Gasolina,Manual,31270,Usado,23509.86,3 Series
+1684,Mercedes,2017,3,Diesel,Automatico,18248,Usado,24526.27,GLC
+1685,Ford,2007,4,Gasolina,Automatico,123178,Usado,8484.89,Explorer
+1686,Toyota,2016,2,Gasolina,Manual,53282,Usado,22987.7,RAV4
+1687,Ford,2007,4.6,Gasolina,Automatico,140164,Usado,13406.91,Mustang
+1688,Audi,2006,2,Diesel,Manual,118480,Usado,11310.04,A4
+1689,BMW,2006,3,Diesel,Manual,113212,Usado,10566.41,X3
+1690,Ford,2002,4.6,Gasolina,Manual,130959,Usado,6446.16,Mustang
+1691,Honda,2000,1.6,Gasolina,Manual,117843,Usado,3892.14,Civic
+1692,Audi,2003,1.8,Gasolina,Automatico,133038,Usado,6767.68,A3
+1694,Ford,2000,1,Gasolina,Automatico,166014,Usado,3255.41,Fiesta
+1695,Ford,2014,1,Gasolina,Manual,99799,Usado,11306.55,Focus
+1696,BMW,2004,3,Gasolina,Manual,161838,Usado,11183.79,X5
+1697,Toyota,2012,1.8,Gasolina,Automatico,69889,Usado,9432.48,Corolla
+1698,Ford,2007,5.4,Gasolina,Manual,134860,Usado,12171.77,Mustang
+1700,Ford,2004,3.8,Gasolina,Automatico,142864,Usado,7929.26,Mustang
+1701,Mercedes,2008,5,Gasolina,Automatico,90865,Usado,11065.32,E-Class
+1702,Honda,2000,1.8,Gasolina,Manual,115860,Usado,3793,Civic
+1707,Audi,2022,NA,Electrico,Automatico,5099,Como Nuevo,23141.45,A3
+1708,Toyota,2008,1.8,Gasolina,Manual,131425,Usado,8275.16,Corolla
+1709,Honda,2001,1.5,Gasolina,Automatico,137183,Usado,5627.11,Fit
+1710,BMW,2013,1.6,Gasolina,Automatico,84878,Usado,24905.53,5 Series
+1712,BMW,2003,3,Gasolina,Automatico,157997,Usado,11339.69,X5
+1713,Ford,2005,4,Gasolina,Automatico,136811,Usado,5082.56,Explorer
+1714,Ford,2010,4,Gasolina,Automatico,149931,Usado,14560.56,Mustang
+1716,Ford,2007,4.6,Gasolina,Automatico,113382,Usado,7529.78,Explorer
+1717,Toyota,2002,3.3,Gasolina,Manual,107307,Usado,3911.01,Camry
+1718,Mercedes,2013,4.7,Gasolina,Manual,90045,Usado,26013.59,E-Class
+1719,Ford,2012,2.3,Gasolina,Manual,103635,Usado,11817.97,Focus
+1720,Audi,2012,1.8,Gasolina,Manual,63566,Usado,12713.24,A4
+1721,Ford,2001,3.9,Gasolina,Manual,166915,Usado,9784.93,Mustang
+1722,Honda,2012,1.3,Gasolina,Manual,99333,Usado,12755.53,Fit
+1723,Toyota,2018,1.8,Gasolina,Manual,59550,Usado,21700.92,Corolla
+1725,Honda,2015,2,Hibrido,Automatico,104078,Usado,14026.34,Accord
+1726,Audi,2001,2.5,Diesel,Manual,119844,Usado,5864.25,A4
+1727,Toyota,2007,2.2,Diesel,Manual,97622,Usado,7136.37,RAV4
+1728,Toyota,2016,1.8,Hibrido,Automatico,32460,Usado,16528.25,Prius
+1729,Toyota,2022,2,Gasolina,Manual,10833,Usado,23866.65,Corolla
+1730,Toyota,2001,1.5,Hibrido,Automatico,133038,Usado,6984.5,Prius
+1731,Toyota,2009,1.5,Hibrido,Automatico,98799,Usado,8375.88,Prius
+1732,Audi,2015,3.2,Gasolina,Manual,58224,Usado,11644.76,A4
+1733,Ford,2005,2,Gasolina,Manual,162680,Usado,5719.35,Focus
+1734,Honda,2001,1.7,Gasolina,Automatico,169312,Usado,6788.88,Civic
+1735,Toyota,2001,1.8,Gasolina,Manual,119258,Usado,4685.1,RAV4
+1739,Honda,2001,2,Gasolina,Manual,127459,Usado,4482.07,Accord
+1741,BMW,2002,4.9,Gasolina,Automatico,137576,Usado,8702.31,5 Series
+1742,BMW,2007,4,Gasolina,Automatico,106341,Usado,10249.01,3 Series
+1743,Ford,2022,1.1,Gasolina,Manual,15775,Usado,14309.87,Fiesta
+1744,Mercedes,2013,2.1,Hibrido,Automatico,64966,Usado,19414.38,E-Class
+1745,Mercedes,2023,1.5,Hibrido,Automatico,0,Nuevo,42347.62,C-Class
+1746,Honda,2022,2,Hibrido,Automatico,20098,Usado,27340.98,Accord
+1747,BMW,2021,2,Gasolina,Manual,20119,Usado,61166.06,X5
+1748,Ford,2006,4.6,Gasolina,Manual,131852,Usado,11833.32,Mustang
+1749,Audi,2020,1.4,Gasolina,Manual,72791,Usado,20063.45,A3
+1750,BMW,2006,2,Gasolina,Manual,133106,Usado,12972.75,3 Series
+1751,Ford,2000,5.4,Gasolina,Automatico,148105,Usado,8440.25,Mustang
+1752,Ford,2016,3.7,Gasolina,Manual,21123,Usado,18695.47,Mustang
+1753,Toyota,2008,3.5,Gasolina,Manual,116311,Usado,8371.74,Camry
+1754,Audi,2020,1.4,Gasolina,Manual,25280,Usado,19689.66,A4
+1755,Toyota,2012,1.8,Gasolina,Manual,79704,Usado,10455.67,Corolla
+1757,Toyota,2018,1.8,Gasolina,Manual,45511,Usado,18612.34,Corolla
+1758,Tesla,2020,NA,Electrico,Automatico,39471,Usado,30774.59,Model 3
+1759,Toyota,2018,3.5,Gasolina,Automatico,50543,Usado,20296.93,Camry
+1760,Tesla,2021,NA,Electrico,Automatico,25205,Usado,78965.13,Model S
+1761,BMW,2016,4.4,Gasolina,Automatico,40379,Usado,34314.25,5 Series
+1762,Mercedes,2022,2,Hibrido,Automatico,16112,Usado,47834.21,GLC
+1763,Ford,2022,1.5,Gasolina,Automatico,11201,Usado,13104.47,Fiesta
+1765,Audi,2009,4.2,Diesel,Manual,142161,Usado,17163.87,Q7
+1766,Toyota,2003,3,Gasolina,Manual,133256,Usado,5370.65,Camry
+1768,Audi,2021,3,Gasolina,Automatico,24265,Usado,45255.48,A4
+1769,Mercedes,2019,2,Diesel,Manual,34385,Usado,33163.8,E-Class
+1770,Mercedes,2019,1.5,Diesel,Manual,28473,Usado,22491.15,GLA
+1771,Toyota,2017,3.5,Gasolina,Automatico,26853,Usado,14327,Camry
+1772,Honda,2013,2,Gasolina,Automatico,107860,Usado,17512.89,CR-V
+1773,Toyota,2017,1.8,Gasolina,Automatico,62897,Usado,23559.13,Corolla
+1774,BMW,2013,3,Hibrido,Automatico,89799,Usado,20947.26,3 Series
+1775,Tesla,2019,NA,Electrico,Automatico,61154,Usado,64777,Model X
+1776,Ford,2020,2.3,Gasolina,Automatico,52164,Usado,23652.73,Explorer
+1777,Honda,2023,1.5,Gasolina,Manual,10386,Usado,19939.11,Fit
+1778,Toyota,2014,2,Gasolina,Automatico,83942,Usado,12695.9,Camry
+1779,Audi,2021,2,Diesel,Automatico,11676,Usado,60912.19,Q7
+1780,Honda,2003,2.4,Gasolina,Automatico,153944,Usado,6270.43,Accord
+1782,Honda,2022,1.5,Gasolina,Manual,27387,Usado,26059.35,Civic
+1784,Toyota,2017,1.8,Hibrido,Automatico,32933,Usado,16637.53,Prius
+1786,Honda,2022,2,Hibrido,Automatico,11119,Usado,21213.09,Civic
+1787,Audi,2013,3,Gasolina,Automatico,98150,Usado,28389.43,Q7
+1790,Tesla,2023,NA,Electrico,Automatico,22767,Usado,41173.41,Model 3
+1791,Mercedes,2001,5.4,Gasolina,Automatico,131694,Usado,8161.9,C-Class
+1793,Audi,2008,1.9,Diesel,Automatico,108986,Usado,8293.48,A3
+1795,Toyota,2016,2.2,Diesel,Manual,32341,Usado,17961.86,RAV4
+1796,Ford,2014,1.5,Diesel,Manual,56336,Usado,5528.02,Fiesta
+1797,Honda,2016,1.5,Hibrido,Automatico,57777,Usado,19226.5,Fit
+1799,Tesla,2021,NA,Electrico,Automatico,10105,Usado,43985.31,Model Y
+1800,Audi,2005,1.9,Diesel,Automatico,139755,Usado,7594.84,A4
+1801,Honda,2016,2,Gasolina,Manual,33353,Usado,14670.54,Accord
+1802,Tesla,2022,NA,Electrico,Automatico,10946,Usado,44312.45,Model Y
+1803,Mercedes,2023,1.6,Gasolina,Manual,15178,Usado,54248.67,E-Class
+1804,BMW,2017,4.4,Gasolina,Manual,33405,Usado,31745.28,X5
+1806,Ford,2008,2,Gasolina,Automatico,88931,Usado,3618.86,Fiesta
+1807,Honda,2005,1.6,Gasolina,Manual,174200,Usado,6710.01,Civic
+1808,Ford,2004,4.6,Gasolina,Automatico,173501,Usado,7008.78,Explorer
+1809,Honda,2011,2.2,Diesel,Automatico,96237,Usado,15682.32,CR-V
+1811,Toyota,2000,1.6,Gasolina,Automatico,110184,Usado,3360.15,Corolla
+1813,Tesla,2018,NA,Electrico,Automatico,28474,Usado,35306.95,Model S
+1814,Ford,2008,1.4,Gasolina,Automatico,81902,Usado,3249.84,Fiesta
+1815,BMW,2001,2.9,Diesel,Automatico,133038,Usado,8285.36,5 Series
+1816,BMW,2011,2,Diesel,Automatico,99333,Usado,23823.28,X3
+1818,Honda,2003,2,Gasolina,Manual,175846,Usado,7203.86,CR-V
+1819,Ford,2017,1.25,Gasolina,Manual,21476,Usado,7177.17,Fiesta
+1820,Audi,2014,2,Gasolina,Manual,118027,Usado,16605.33,A3
+1821,Ford,2018,2,Diesel,Manual,45649,Usado,11730.78,Focus
+1822,Honda,2012,1.3,Hibrido,Automatico,101107,Usado,13610.58,Fit
+1825,BMW,2005,3,Diesel,Automatico,126089,Usado,7646.92,5 Series
+1826,Tesla,2015,NA,Electrico,Automatico,54885,Usado,60827.65,Model X
+1827,Tesla,2023,NA,Electrico,Automatico,21925,Usado,40714.46,Model 3
+1828,Toyota,2011,2,Gasolina,Manual,69071,Usado,11542.74,RAV4
+1829,BMW,2018,3,Diesel,Automatico,46340,Usado,41179.67,X5
+1830,Audi,2004,1.8,Gasolina,Manual,101166,Usado,5051.02,A3
+1831,Mercedes,2016,1.6,Gasolina,Automatico,31584,Usado,24704.49,GLA
+1832,Toyota,2022,1.8,Hibrido,Automatico,21291,Usado,28573.76,Prius
+1834,Honda,2023,1.5,Gasolina,Manual,14493,Usado,23797.11,Accord
+1835,Toyota,2022,3.5,Gasolina,Automatico,10553,Usado,23332.23,Camry
+1836,Audi,2009,3,Diesel,Manual,98187,Usado,8773.36,A4
+1837,Honda,2014,1.2,Gasolina,Manual,54642,Usado,7541.58,Fit
+1839,Mercedes,2020,1.6,Gasolina,Manual,25399,Usado,28916,E-Class
+1840,Honda,2020,2.6,Gasolina,Manual,44847,Usado,15466.36,Civic
+1842,Ford,2012,1.25,Gasolina,Automatico,100063,Usado,9630.51,Fiesta
+1843,Honda,2004,3,Gasolina,Automatico,127619,Usado,4715.6,Accord
+1844,Honda,2000,2,Gasolina,Automatico,124257,Usado,4517.07,CR-V
+1845,Mercedes,2023,3,Hibrido,Automatico,20272,Usado,50803.98,GLC
+1846,Ford,2011,2,Gasolina,Automatico,67978,Usado,7416.92,Focus
+1849,Audi,2003,1.8,Gasolina,Automatico,163077,Usado,8147.6,A3
+1850,Honda,2014,2.4,Gasolina,Manual,64829,Usado,8730.05,Civic
+1851,Ford,2008,4.6,Gasolina,Automatico,92194,Usado,7740.46,Mustang
+1852,Ford,2020,1.5,Diesel,Manual,40933,Usado,9511.93,Fiesta
+1853,Tesla,2019,NA,Electrico,Automatico,27403,Usado,34677.12,Model S
+1854,Mercedes,2018,1.5,Gasolina,Automatico,22122,Usado,28735.02,E-Class
+1855,BMW,2018,2,Hibrido,Automatico,47489,Usado,41876.68,X5
+1857,Mercedes,2004,1.8,Gasolina,Manual,121349,Usado,6868.02,C-Class
+1858,Toyota,2009,1.5,Hibrido,Automatico,90745,Usado,7711.49,Prius
+1859,Audi,2016,4,Gasolina,Automatico,26366,Usado,29344.25,Q7
+1860,Mercedes,2004,2.6,Gasolina,Manual,106577,Usado,5575.5,C-Class
+1861,Audi,2021,3,Gasolina,Automatico,24678,Usado,77294.44,Q7
+1862,BMW,2015,1.6,Gasolina,Automatico,73267,Usado,16607.51,3 Series
+1864,BMW,2008,5,Gasolina,Automatico,118860,Usado,14104.44,5 Series
+1866,Toyota,2014,2,Diesel,Automatico,98386,Usado,16224.1,RAV4
+1867,Honda,2015,2.4,Gasolina,Manual,102349,Usado,13171.14,Accord
+1869,Toyota,2013,1.8,Hibrido,Automatico,91862,Usado,14578.12,Prius
+1872,BMW,2008,2,Gasolina,Automatico,116197,Usado,11490.85,3 Series
+1873,Audi,2006,1.8,Gasolina,Manual,132908,Usado,13113.49,A4
+1876,Toyota,2017,2.5,Diesel,Automatico,51114,Usado,23590.7,RAV4
+1877,Ford,2004,5.4,Gasolina,Automatico,111020,Usado,4824.5,Mustang
+1878,Audi,2012,3.2,Gasolina,Manual,53603,Usado,14588.31,Q5
+1881,Honda,2015,3.5,Gasolina,Automatico,72410,Usado,10424.18,Accord
+1882,BMW,2008,4,Gasolina,Automatico,149954,Usado,15744.26,3 Series
+1883,Honda,2008,2.2,Diesel,Automatico,88912,Usado,6185.8,CR-V
+1885,Audi,2010,2,Gasolina,Manual,91218,Usado,10818.69,Q5
+1886,Toyota,2021,2.5,Hibrido,Automatico,24678,Usado,29264.81,Camry
+1887,Toyota,2023,2,Gasolina,Automatico,19444,Usado,27953.12,Corolla
+1888,Audi,2021,3,Gasolina,Manual,15016,Usado,36810.63,A4
+1889,Mercedes,2000,2,Gasolina,Manual,145847,Usado,9584.69,E-Class
+1891,Toyota,2012,1.8,Gasolina,Automatico,85586,Usado,11904.77,Corolla
+1892,Tesla,2022,NA,Electrico,Automatico,30159,Usado,51784.06,Model Y
+1893,Toyota,2012,2.5,Gasolina,Manual,74365,Usado,12248.7,RAV4
+1894,Toyota,2012,2.2,Diesel,Manual,82128,Usado,13283.71,RAV4
+1895,BMW,2001,4.6,Gasolina,Manual,127277,Usado,7727.75,X5
+1896,BMW,2008,3,Gasolina,Automatico,82920,Usado,9619.72,X5
+1897,Ford,2023,2,Diesel,Automatico,17486,Usado,18071.11,Focus
+1898,Honda,2007,1.6,Gasolina,Automatico,141814,Usado,9824.66,Civic
+1901,Audi,2017,2,Hibrido,Automatico,20944,Usado,23042.44,Q5
+1903,BMW,2005,2,Gasolina,Manual,108694,Usado,7068.21,X3
+1904,Mercedes,2011,5.5,Gasolina,Manual,64114,Usado,18234.1,E-Class
+1906,Tesla,2020,NA,Electrico,Automatico,20705,Usado,43420.35,Model Y
+1908,Ford,2021,3.3,Hibrido,Automatico,36201,Usado,44742.62,Explorer
+1909,Mercedes,2021,2,Diesel,Manual,23625,Usado,43410.23,GLA
+1910,Audi,2000,1.6,Gasolina,Manual,175749,Usado,8314,A3
+1912,Toyota,2020,2,Gasolina,Manual,38970,Usado,17173.33,Corolla
+1914,BMW,2002,4.4,Gasolina,Manual,102362,Usado,5206.7,5 Series
+1915,BMW,2012,4,Gasolina,Manual,77216,Usado,16804.1,3 Series
+1916,Ford,2016,1,Gasolina,Automatico,54850,Usado,13722.47,Focus
+1917,BMW,2021,2,Diesel,Manual,26176,Usado,51176.46,X3
+1918,Audi,2021,3,Gasolina,Manual,21444,Usado,41181.98,A4
+1920,Mercedes,2020,1.5,Gasolina,Automatico,63499,Usado,49273.11,E-Class
+1922,Ford,2014,1,Gasolina,Manual,90414,Usado,10055.22,Focus
+1923,Audi,2020,3,Diesel,Manual,63380,Usado,35833.48,Q5
+1924,Mercedes,2009,2.5,Gasolina,Automatico,93231,Usado,9647.15,C-Class
+1926,Ford,2012,1,Gasolina,Automatico,98109,Usado,9459.53,Fiesta
+1928,Toyota,2005,1.8,Gasolina,Automatico,150617,Usado,6278.91,Corolla
+1929,Honda,2023,1.3,Hibrido,Automatico,28326,Usado,27717.11,Fit
+1930,Toyota,2001,2.4,Gasolina,Automatico,130143,Usado,5919.36,RAV4
+1931,Toyota,2021,1.8,Hibrido,Automatico,14995,Usado,26458.26,Corolla
+1932,Honda,2016,2.2,Diesel,Manual,69580,Usado,24890.9,CR-V
+1933,Ford,2003,1.6,Gasolina,Automatico,157871,Usado,3011.14,Fiesta
+1935,Audi,2009,6,Diesel,Automatico,134381,Usado,17150.64,Q7
+1940,Toyota,2016,2.5,Gasolina,Manual,27785,Usado,13868.34,Camry
+1941,Toyota,2011,1.8,Gasolina,Manual,105909,Usado,14386.33,Corolla
+1942,Ford,2021,3.7,Gasolina,Manual,28449,Usado,48572.77,Mustang
+1943,BMW,2019,4.4,Gasolina,Manual,28020,Usado,24990.03,5 Series
+1944,Honda,2023,1.5,Hibrido,Automatico,16475,Usado,23237.62,Fit
+1947,Ford,2005,1.3,Gasolina,Automatico,123681,Usado,1985.45,Fiesta
+1948,Honda,2000,1.3,Gasolina,Manual,130124,Usado,5006.18,Fit
+1949,Ford,2019,2.3,Gasolina,Automatico,64505,Usado,27893.38,Explorer
+1950,Honda,2022,2,Gasolina,Automatico,12526,Usado,21744.92,Civic
+1951,Honda,2015,2,Gasolina,Manual,73567,Usado,11535.03,CR-V
+1952,Mercedes,2014,2,Gasolina,Manual,55646,Usado,16258.47,GLA
+1954,Ford,2007,4,Gasolina,Manual,87996,Usado,6899.5,Mustang
+1955,Ford,2011,2,Gasolina,Manual,78182,Usado,8424.3,Focus
+1956,Mercedes,2021,3,Gasolina,Automatico,11671,Usado,44663.44,GLC
+1957,Audi,2020,1.8,Gasolina,Automatico,48678,Usado,15542.48,A3
+1958,Audi,2009,3,Diesel,Automatico,127322,Usado,14609,Q5
+1960,Toyota,2008,2,Gasolina,Manual,135422,Usado,10646.33,RAV4
+1961,Toyota,2001,1.8,Gasolina,Automatico,175749,Usado,8093.1,Corolla
+1962,BMW,2004,2,Diesel,Manual,176053,Usado,11654.67,5 Series
+1964,Audi,2006,1.9,Diesel,Manual,95423,Usado,6542.34,A3
+1966,Ford,2000,1.4,Gasolina,Manual,113579,Usado,1602.25,Fiesta
+1967,Toyota,2022,2,Gasolina,Automatico,29243,Usado,31182.25,Camry
+1970,BMW,2011,2,Gasolina,Automatico,59210,Usado,14695.34,X3
+1971,Audi,2015,3.6,Gasolina,Manual,65349,Usado,18837.31,Q7
+1972,Toyota,2015,1.8,Gasolina,Manual,104521,Usado,14178.12,Corolla
+1973,Ford,2010,2,Gasolina,Automatico,145833,Usado,7968.75,Focus
+1974,Toyota,2020,1.8,Hibrido,Automatico,54716,Usado,21669.42,Prius
+1975,Honda,2003,1.5,Gasolina,Manual,132181,Usado,5109.07,Fit
+1976,BMW,2012,2,Gasolina,Manual,98386,Usado,22483.72,X3
+1977,Honda,2006,2,Gasolina,Automatico,96508,Usado,6983.33,CR-V
+1980,Toyota,2018,2,Gasolina,Automatico,54753,Usado,24507.67,RAV4
+1981,Audi,2008,2.5,Gasolina,Automatico,92483,Usado,6560.67,A3
+1982,Ford,2010,1.5,Gasolina,Manual,110588,Usado,4529.4,Fiesta
+1983,Ford,2007,5.4,Gasolina,Manual,89705,Usado,7091.84,Mustang
+1984,Honda,2000,2.3,Gasolina,Automatico,178288,Usado,7708.28,Accord
+1985,BMW,2022,1.6,Gasolina,Manual,27107,Usado,52106.62,3 Series
+1988,Ford,2012,1.6,Diesel,Manual,66100,Usado,6341.71,Fiesta
+1989,Audi,2021,2.9,Gasolina,Automatico,10482,Usado,35414.2,A4
+1990,Honda,2003,2,Gasolina,Automatico,188012,Usado,8282.59,CR-V
+1991,Honda,2007,2.4,Gasolina,Manual,97907,Usado,6279.1,Accord
+1992,Mercedes,2002,2.8,Gasolina,Manual,131525,Usado,8152.54,E-Class
+1994,BMW,2001,1.6,Gasolina,Manual,163077,Usado,8730.77,3 Series
+1996,BMW,2012,3,Diesel,Manual,84665,Usado,19510.78,X3
+1997,Audi,2014,2,Gasolina,Automatico,60902,Usado,12789.47,A4
+1999,Toyota,2011,1.8,Hibrido,Automatico,76186,Usado,12657.81,Prius
+2000,Honda,2003,2,Gasolina,Manual,181087,Usado,7498.67,Accord
+2003,Audi,2022,2,Gasolina,Manual,25456,Usado,43910.32,A4
+2004,Ford,2004,5.4,Gasolina,Manual,157394,Usado,8900.84,Mustang
+2005,Honda,2023,2,Gasolina,Automatico,6672,Usado,21702.07,Accord
+2006,Ford,2019,5.2,Gasolina,Automatico,17138,Usado,18471.64,Mustang
+2007,Honda,2017,1.6,Diesel,Manual,22902,Usado,12754.52,CR-V
+2008,Ford,2010,1.4,Gasolina,Automatico,95741,Usado,3976.42,Fiesta
+2009,Audi,2014,3.2,Gasolina,Manual,67324,Usado,13464.77,A4
+2010,Audi,2021,2,Hibrido,Automatico,9829,Usado,25128.14,A3
+2011,Toyota,2008,1.5,Hibrido,Automatico,87593,Usado,7451.4,Prius
+2013,Ford,2011,2,Gasolina,Manual,81496,Usado,8866.13,Focus
+2014,BMW,2006,2.5,Diesel,Manual,122522,Usado,13969.9,5 Series
+2015,Toyota,2009,3.5,Gasolina,Automatico,103150,Usado,8032.11,RAV4
+2016,Ford,2009,4,Gasolina,Automatico,83316,Usado,6691.72,Mustang
+2017,Ford,2012,3.7,Gasolina,Manual,60753,Usado,12150.5,Mustang
+2018,Toyota,2018,1.8,Hibrido,Automatico,36312,Usado,17418.1,Prius
+2019,Audi,2010,2,Diesel,Manual,79830,Usado,9842.61,Q5
+2020,Ford,2012,3.5,Gasolina,Automatico,75827,Usado,10673.71,Explorer
+2021,Audi,2020,3,Gasolina,Manual,48832,Usado,27226.39,A4
+2022,Toyota,2007,3.5,Gasolina,Automatico,84716,Usado,5709.81,Camry
+2023,Audi,2007,2,Gasolina,Manual,83390,Usado,6923.8,A4
+2024,Honda,2003,3,Gasolina,Automatico,113972,Usado,3909.61,Accord
+2025,BMW,2014,1.6,Gasolina,Automatico,73988,Usado,22046.72,5 Series
+2027,Ford,2010,2,Gasolina,Automatico,132085,Usado,7040.74,Focus
+2029,BMW,2016,3,Diesel,Automatico,59584,Usado,39472.4,X3
+2031,Audi,2019,1.4,Gasolina,Automatico,52224,Usado,29727.16,A4
+2032,Ford,2005,1.6,Gasolina,Manual,136010,Usado,2243.13,Fiesta
+2034,Honda,2021,1.2,Gasolina,Manual,10482,Usado,19973.55,Fit
+2035,Toyota,2014,2.5,Diesel,Manual,55211,Usado,9694.77,RAV4
+2036,Ford,2008,2,Gasolina,Manual,114717,Usado,5588.96,Focus
+2039,Honda,2016,1.5,Hibrido,Automatico,31464,Usado,13148.19,Fit
+2040,Honda,2017,1.2,Gasolina,Automatico,67657,Usado,21508.76,Fit
+2041,Ford,2004,4.6,Gasolina,Automatico,113072,Usado,3836.3,Explorer
+2042,Audi,2019,4,Gasolina,Automatico,29917,Usado,31655.75,Q7
+2043,Mercedes,2019,1.5,Gasolina,Automatico,24994,Usado,30160.52,E-Class
+2047,BMW,2021,3,Gasolina,Automatico,8892,Usado,35586.99,X3
+2048,Honda,2000,2,Gasolina,Manual,144983,Usado,5467.79,CR-V
+2049,Mercedes,2017,4,Gasolina,Manual,69552,Usado,49788.25,E-Class
+2051,Audi,2001,1.8,Gasolina,Automatico,102551,Usado,5367.2,A3
+2052,BMW,2014,3,Diesel,Automatico,77540,Usado,18865.45,X3
+2053,Tesla,2020,NA,Electrico,Automatico,31977,Usado,27932.81,Model 3
+2054,Honda,2013,1.6,Gasolina,Manual,107528,Usado,13711.61,Civic
+2056,Mercedes,2005,3,Diesel,Automatico,162000,Usado,10946.29,C-Class
+2057,Ford,2005,4.6,Gasolina,Automatico,150242,Usado,5787.69,Explorer
+2058,Toyota,2021,2.5,Diesel,Automatico,13422,Usado,29444.45,RAV4
+2059,Toyota,2017,1.8,Hibrido,Automatico,34437,Usado,16984.84,Prius
+2060,Toyota,2013,2,Diesel,Automatico,58278,Usado,10608.94,RAV4
+2062,Honda,2013,1.5,Gasolina,Manual,109066,Usado,13890.99,Fit
+2063,BMW,2012,2.5,Gasolina,Automatico,53068,Usado,16555.26,5 Series
+2064,Audi,2002,1.9,Diesel,Manual,112273,Usado,5536.94,A3
+2065,Ford,2005,2.3,Gasolina,Automatico,133376,Usado,4124.94,Focus
+2067,Ford,2011,2,Gasolina,Manual,89244,Usado,9899.15,Focus
+2068,Mercedes,2012,4.7,Gasolina,Manual,70001,Usado,20000.42,E-Class
+2070,Honda,2011,1.3,Hibrido,Automatico,82189,Usado,11293.14,Fit
+2071,Toyota,2000,1.6,Gasolina,Automatico,160779,Usado,7012.49,Corolla
+2072,Honda,2016,1.3,Gasolina,Manual,48832,Usado,16343.15,Fit
+2074,BMW,2010,2.5,Diesel,Manual,87194,Usado,8788.48,5 Series
+2075,BMW,2012,1.6,Gasolina,Automatico,64150,Usado,14214.28,3 Series
+2077,Mercedes,2010,3.5,Hibrido,Automatico,142870,Usado,19802.21,E-Class
+2078,Audi,2011,4.2,Gasolina,Manual,86536,Usado,17307.21,A4
+2080,Mercedes,2008,2.5,Gasolina,Automatico,141498,Usado,15728.74,C-Class
+2081,BMW,2015,2,Diesel,Manual,57279,Usado,11819.74,3 Series
+2082,BMW,2003,4.8,Gasolina,Manual,158603,Usado,10860.25,X5
+2083,BMW,2002,2.8,Gasolina,Manual,177099,Usado,11746.2,5 Series
+2084,Honda,2015,2,Hibrido,Automatico,108553,Usado,14535.39,Accord
+2085,BMW,2023,NA,Electrico,Automatico,11709,Usado,38543.96,3 Series
+2086,Ford,2011,3.5,Gasolina,Automatico,72491,Usado,9973.16,Explorer
+2087,Toyota,2010,2.2,Diesel,Automatico,90238,Usado,6773.25,RAV4
+2088,BMW,2004,4.8,Gasolina,Automatico,136765,Usado,9110.27,X5
+2089,Mercedes,2017,2,Gasolina,Manual,32733,Usado,23911.01,GLA
+2090,Toyota,2018,3.5,Gasolina,Automatico,33970,Usado,16120.53,Camry
+2092,Mercedes,2022,2,Hibrido,Automatico,27755,Usado,75450.57,E-Class
+2093,Toyota,2005,2.4,Gasolina,Automatico,119185,Usado,4808.11,Camry
+2094,Mercedes,2021,1.6,Diesel,Automatico,20914,Usado,65393.46,E-Class
+2095,Honda,2017,2.4,Gasolina,Automatico,58286,Usado,23052.14,CR-V
+2098,Honda,2011,1.3,Hibrido,Automatico,78853,Usado,10884.52,Civic
+2099,Mercedes,2018,2.1,Diesel,Automatico,15937,Usado,19227.78,GLA
+2101,Audi,2016,3,Diesel,Manual,16754,Usado,20574.04,Q5
+2102,BMW,2010,4.8,Gasolina,Manual,84737,Usado,9428.15,X5
+2103,BMW,2010,2,Diesel,Manual,127365,Usado,11887.45,X3
+2104,Ford,2020,3.3,Hibrido,Automatico,46749,Usado,21792.09,Explorer
+2105,Ford,2015,2.3,Gasolina,Automatico,105487,Usado,16902.23,Explorer
+2106,BMW,2001,2.2,Gasolina,Automatico,166408,Usado,11351.21,5 Series
+2108,BMW,2022,3,Diesel,Manual,12204,Usado,37204.06,X3
+2110,Audi,2012,2,Gasolina,Automatico,81827,Usado,20788.71,Q5
+2111,Ford,2009,4,Gasolina,Automatico,118933,Usado,8070.99,Explorer
+2112,Toyota,2007,1.5,Hibrido,Automatico,110281,Usado,9323.15,Prius
+2113,Mercedes,2003,2.6,Gasolina,Automatico,151858,Usado,10014.42,C-Class
+2116,Ford,2010,4.6,Gasolina,Automatico,100739,Usado,6297.03,Explorer
+2117,Ford,2006,2.3,Gasolina,Automatico,107115,Usado,5355.29,Focus
+2118,Honda,2016,2.4,Gasolina,Automatico,54508,Usado,22020.75,CR-V
+2119,Tesla,2019,NA,Electrico,Automatico,42020,Usado,52722.58,Model X
+2120,Honda,2023,2,Hibrido,Automatico,23569,Usado,28798.97,Accord
+2121,Honda,2017,1.6,Diesel,Automatico,68521,Usado,21708.42,Civic
+2122,Mercedes,2021,1.6,Gasolina,Manual,5167,Como Nuevo,35167.21,C-Class
+2124,Audi,2011,2,Diesel,Automatico,100483,Usado,24405.24,Q5
+2125,BMW,2008,2,Gasolina,Automatico,78109,Usado,7654.67,X3
+2126,Toyota,2004,2.4,Gasolina,Automatico,175433,Usado,10080.43,RAV4
+2127,Ford,2009,1.6,Diesel,Manual,130990,Usado,5549.51,Fiesta
+2128,Audi,2003,1.9,Diesel,Automatico,107596,Usado,5273.3,A4
+2129,Toyota,2004,1.8,Gasolina,Manual,147793,Usado,5785.79,Corolla
+2132,Tesla,2020,NA,Electrico,Automatico,51498,Usado,58693.56,Model X
+2133,Audi,2023,2,Gasolina,Manual,10158,Usado,33507.36,A4
+2134,Audi,2009,2,Gasolina,Manual,102141,Usado,9267.67,A4
+2135,Ford,2007,1.3,Gasolina,Automatico,116417,Usado,5061.87,Fiesta
+2136,BMW,2001,4.8,Gasolina,Manual,123803,Usado,7380.35,X5
+2137,Honda,2022,2.4,Gasolina,Automatico,25259,Usado,33962.03,CR-V
+2139,Mercedes,2015,3,Diesel,Manual,69790,Usado,19936.96,E-Class
+2140,BMW,2021,2,Hibrido,Automatico,5853,Como Nuevo,43075.37,5 Series
+2142,Ford,2002,4.6,Gasolina,Manual,155060,Usado,8684.1,Mustang
+2143,Ford,2011,1,Gasolina,Automatico,76617,Usado,7578.97,Fiesta
+2144,Ford,2012,1.5,Gasolina,Automatico,59826,Usado,6109.77,Fiesta
+2145,Toyota,2012,2.5,Gasolina,Automatico,54757,Usado,10115.98,RAV4
+2146,Mercedes,2009,5.4,Gasolina,Manual,104039,Usado,12646.32,E-Class
+2147,BMW,2003,4.9,Gasolina,Manual,105817,Usado,5509.01,5 Series
+2148,BMW,2008,2,Diesel,Manual,146485,Usado,13671.97,X3
+2149,Audi,2021,2,Diesel,Manual,25234,Usado,43758.86,A4
+2151,Tesla,2022,NA,Electrico,Automatico,26568,Usado,85646.3,Model X
+2152,Audi,2001,1.9,Diesel,Manual,143770,Usado,6914.95,A3
+2153,Ford,2018,1,Hibrido,Automatico,70549,Usado,16120.25,Focus
+2154,BMW,2000,2.9,Diesel,Manual,140610,Usado,9061.01,X5
+2156,Ford,2016,2.3,Gasolina,Manual,61449,Usado,14029.01,Focus
+2157,Toyota,2002,1.5,Hibrido,Automatico,109017,Usado,5723.41,Prius
+2158,Audi,2019,1.2,Gasolina,Automatico,49587,Usado,15750.81,A3
+2159,Ford,2019,2.3,Gasolina,Automatico,22860,Usado,13582.73,Explorer
+2160,Ford,2020,3,Hibrido,Automatico,74580,Usado,31355.68,Explorer
+2161,Toyota,2002,1.8,Gasolina,Manual,100330,Usado,2522.68,Corolla
+2162,Honda,2002,2.4,Gasolina,Manual,164743,Usado,6579.31,CR-V
+2163,BMW,2016,2,Hibrido,Automatico,41933,Usado,35329.39,5 Series
+2167,Audi,2017,1.6,Diesel,Manual,78486,Usado,21305.94,A3
+2168,Ford,2012,1.25,Gasolina,Manual,76424,Usado,7202,Fiesta
+2169,Toyota,2019,1.8,Hibrido,Automatico,27806,Usado,15453.19,Prius
+2170,Toyota,2019,2.5,Hibrido,Automatico,64623,Usado,23845.05,Camry
+2171,BMW,2020,4.4,Gasolina,Manual,32626,Usado,27856.13,5 Series
+2172,Honda,2017,1.2,Gasolina,Manual,42156,Usado,14874.21,Fit
+2174,BMW,2000,2,Gasolina,Manual,172395,Usado,9429.62,3 Series
+2175,Ford,2017,1.25,Gasolina,Manual,32989,Usado,8558.73,Fiesta
+2176,BMW,2000,2,Diesel,Manual,170931,Usado,11206.47,5 Series
+2179,Toyota,2019,3.5,Gasolina,Manual,23233,Usado,12775.92,Camry
+2180,Audi,2022,2,Hibrido,Automatico,20749,Usado,52509.2,Q5
+2183,Ford,2008,1.4,Gasolina,Manual,96505,Usado,3825.26,Fiesta
+2187,Tesla,2016,NA,Electrico,Automatico,65216,Usado,67335.95,Model X
+2188,Ford,2021,1.5,Gasolina,Manual,10761,Usado,12304.38,Fiesta
+2189,Audi,2001,2,Gasolina,Manual,175813,Usado,9712.15,A4
+2190,BMW,2023,1.6,Gasolina,Manual,22114,Usado,47114.33,3 Series
+2191,Audi,2012,3.2,Gasolina,Manual,54342,Usado,14724.61,Q5
+2192,BMW,2008,4.8,Gasolina,Manual,147042,Usado,18566.09,X5
+2193,Honda,2003,2.4,Gasolina,Manual,185628,Usado,7754.09,Accord
+2194,Ford,2004,2.3,Gasolina,Manual,165785,Usado,5909.1,Focus
+2195,BMW,2010,2,Diesel,Automatico,148191,Usado,14522.73,X3
+2196,Mercedes,2023,1.5,Hibrido,Automatico,25005,Usado,57755.43,C-Class
+2198,Toyota,2020,2,Gasolina,Automatico,69164,Usado,25006.79,Corolla
+2200,Mercedes,2011,1.8,Gasolina,Manual,98561,Usado,24140.17,C-Class
+2201,Tesla,2018,NA,Electrico,Automatico,52028,Usado,59027.41,Model X
+2202,Toyota,2018,1.8,Gasolina,Manual,47356,Usado,19018.4,Corolla
+2204,BMW,2006,3,Gasolina,Automatico,95956,Usado,9403.64,X3
+2205,BMW,2014,4.4,Gasolina,Manual,104613,Usado,30383.96,X5
+2206,BMW,2022,4.4,Gasolina,Manual,23953,Usado,62743.39,5 Series
+2207,Toyota,2006,3.5,Gasolina,Automatico,142759,Usado,11893.96,RAV4
+2208,Mercedes,2007,2,Gasolina,Manual,81255,Usado,7750.58,C-Class
+2209,Toyota,2004,1.5,Hibrido,Automatico,122392,Usado,6425.58,Prius
+2210,BMW,2020,3,Diesel,Automatico,26051,Usado,23823.63,X3
+2212,Mercedes,2003,1.8,Gasolina,Manual,128786,Usado,7518.77,C-Class
+2213,Mercedes,2022,2,Gasolina,Manual,21205,Usado,41667.95,GLA
+2214,Audi,2009,2,Diesel,Manual,87163,Usado,10471.09,Q5
+2215,Audi,2019,1.8,Gasolina,Automatico,75828,Usado,21762.32,A3
+2216,Honda,2014,2,Gasolina,Manual,86530,Usado,11457.38,Accord
+2217,Ford,2017,2.3,Gasolina,Automatico,34859,Usado,17706.22,Explorer
+2219,Toyota,2012,2.4,Gasolina,Manual,104896,Usado,14234.36,Corolla
+2220,Audi,2007,2.5,Gasolina,Manual,110513,Usado,8051.3,A3
+2221,Honda,2008,2.2,Diesel,Manual,142387,Usado,11238.65,CR-V
+2222,Mercedes,2015,1.6,Gasolina,Automatico,67072,Usado,21870.16,GLA
+2223,Honda,2018,1.5,Gasolina,Manual,31629,Usado,12558.4,Civic
+2224,Mercedes,2015,3.5,Hibrido,Automatico,107350,Usado,32765.32,E-Class
+2227,Mercedes,2013,2.1,Diesel,Manual,87644,Usado,21411.03,C-Class
+2228,Ford,2003,4,Gasolina,Automatico,159797,Usado,6289.32,Explorer
+2229,Audi,2014,4.2,Diesel,Manual,75216,Usado,21304.07,Q7
+2230,Toyota,2002,1.5,Hibrido,Automatico,153824,Usado,8075.76,Prius
+2231,Toyota,2004,3,Gasolina,Automatico,175004,Usado,8104.93,Camry
+2232,BMW,2000,4.6,Gasolina,Manual,110468,Usado,6046.82,X5
+2233,Mercedes,2002,2.2,Diesel,Automatico,147767,Usado,10265.49,E-Class
+2234,Toyota,2014,1.8,Hibrido,Automatico,104259,Usado,16096.72,Prius
+2235,Ford,2023,1.5,Diesel,Manual,11681,Usado,12672.3,Fiesta
+2237,Ford,2003,1.3,Gasolina,Manual,126052,Usado,1958.63,Fiesta
+2238,Toyota,2001,2,Gasolina,Manual,160012,Usado,8251.01,RAV4
+2239,Toyota,2023,1.8,Hibrido,Automatico,27289,Usado,30588.95,Corolla
+2240,BMW,2023,1.6,Gasolina,Manual,21093,Usado,46092.69,3 Series
+2241,Toyota,2009,1.5,Hibrido,Automatico,109198,Usado,9233.83,Prius
+2244,Mercedes,2001,4.3,Gasolina,Automatico,165217,Usado,12097.83,E-Class
+2245,Mercedes,2016,5.5,Gasolina,Manual,62303,Usado,46361.31,E-Class
+2246,BMW,2022,1.6,Gasolina,Automatico,14680,Usado,41663.82,3 Series
+2247,BMW,2020,3,Diesel,Automatico,62707,Usado,40822.69,3 Series
+2248,Toyota,2023,2,Diesel,Automatico,21014,Usado,33270.96,RAV4
+2249,Honda,2019,1.5,Hibrido,Automatico,23913,Usado,11403.89,Fit
+2251,BMW,2012,2.5,Gasolina,Manual,55686,Usado,16421.44,5 Series
+2252,Toyota,2004,3,Gasolina,Manual,163897,Usado,7094.22,Camry
+2253,Honda,2020,1.6,Diesel,Manual,49538,Usado,19679.84,CR-V
+2254,Toyota,2008,1.8,Gasolina,Automatico,107399,Usado,6346.41,Corolla
+2255,Toyota,2021,2,Diesel,Automatico,17977,Usado,31740.32,RAV4
+2256,Toyota,2005,1.8,Gasolina,Manual,179819,Usado,7987.54,Corolla
+2259,Toyota,2007,2,Gasolina,Automatico,109805,Usado,8156.02,Camry
+2261,BMW,2006,4.4,Gasolina,Manual,75499,Usado,6059.9,3 Series
+2262,Honda,2005,2,Gasolina,Manual,153126,Usado,5925.83,Accord
+2263,Mercedes,2020,2,Diesel,Manual,59656,Usado,32885.46,GLA
+2264,Tesla,2019,NA,Electrico,Automatico,34865,Usado,39064.68,Model S
+2265,Honda,2002,2.3,Gasolina,Automatico,135016,Usado,5152.5,Accord
+2266,Mercedes,2018,1.5,Gasolina,Manual,58320,Usado,44478.66,E-Class
+2267,Tesla,2021,NA,Electrico,Automatico,13758,Usado,45405.76,Model Y
+2268,Honda,2014,2.4,Gasolina,Automatico,74616,Usado,10365.41,Civic
+2269,Mercedes,2003,3,Diesel,Manual,142435,Usado,9243.46,E-Class
+2270,Honda,2011,2.4,Gasolina,Manual,89582,Usado,11788.05,Accord
+2271,Honda,2005,1.5,Gasolina,Automatico,143881,Usado,5978.76,Fit
+2273,Honda,2003,2,Gasolina,Manual,118395,Usado,3972.24,CR-V
+2274,Honda,2014,2,Gasolina,Automatico,66866,Usado,11056.32,CR-V
+2276,BMW,2004,2.5,Gasolina,Automatico,137900,Usado,9174.03,X3
+2277,Toyota,2012,3.5,Gasolina,Automatico,85407,Usado,12926.53,Camry
+2278,Ford,2022,1,Gasolina,Manual,19041,Usado,15616.47,Fiesta
+2279,Audi,2017,2.9,Gasolina,Automatico,68107,Usado,35063.86,A4
+2280,Ford,2004,4,Gasolina,Automatico,133604,Usado,4914.22,Explorer
+2281,Ford,2015,5.2,Gasolina,Automatico,69004,Usado,14490.75,Mustang
+2282,Mercedes,2018,1.5,Gasolina,Manual,25916,Usado,29160.07,E-Class
+2283,Toyota,2013,2.2,Diesel,Automatico,63536,Usado,11345.07,RAV4
+2284,Mercedes,2015,1.6,Gasolina,Automatico,57382,Usado,17800.27,GLA
+2285,Toyota,2014,1.8,Gasolina,Manual,91790,Usado,12268.51,Corolla
+2286,Tesla,2021,NA,Electrico,Automatico,24043,Usado,77745.26,Model S
+2289,Honda,2015,1.6,Gasolina,Automatico,70272,Usado,9833.27,Civic
+2290,BMW,2023,2,Hibrido,Automatico,18268,Usado,45430.96,3 Series
+2291,Honda,2021,1.5,Gasolina,Automatico,24390,Usado,33451.05,CR-V
+2292,BMW,2020,2,Hibrido,Automatico,48348,Usado,34229.03,X3
+2293,Mercedes,2021,1.6,Diesel,Manual,28878,Usado,73428.58,E-Class
+2294,BMW,2020,2,Hibrido,Automatico,36606,Usado,28749.47,X3
+2297,Ford,2015,2.3,Gasolina,Manual,89179,Usado,17835.7,Mustang
+2298,Tesla,2022,NA,Electrico,Automatico,27298,Usado,43640.1,Model 3
+2300,Ford,2009,4.6,Gasolina,Automatico,93114,Usado,5553.66,Explorer
+2302,BMW,2008,4.4,Gasolina,Manual,135701,Usado,13284.1,3 Series
+2303,Mercedes,2016,3,Diesel,Automatico,54541,Usado,40462.16,GLC
+2304,Honda,2010,1.3,Hibrido,Automatico,128923,Usado,8761.12,Fit
+2305,Mercedes,2009,1.8,Gasolina,Manual,76384,Usado,7166.05,C-Class
+2308,Ford,2003,2,Gasolina,Manual,133361,Usado,3927.61,Focus
+2309,Tesla,2015,NA,Electrico,Automatico,33928,Usado,38513.52,Model S
+2310,Toyota,2019,3.5,Gasolina,Manual,34003,Usado,15360.72,Camry
+2312,Honda,2020,2,Hibrido,Automatico,39990,Usado,16797.93,Accord
+2313,Mercedes,2004,3,Diesel,Manual,156695,Usado,9960.78,C-Class
+2314,Ford,2005,2.3,Gasolina,Manual,159605,Usado,5531.41,Focus
+2315,Honda,2016,1.2,Gasolina,Manual,50312,Usado,16668.62,Fit
+2316,Mercedes,2000,4.2,Gasolina,Manual,120584,Usado,7058.42,E-Class
+2317,BMW,2018,2,Diesel,Manual,44621,Usado,38225.32,X5
+2319,BMW,2016,1.5,Gasolina,Manual,31033,Usado,23393.99,3 Series
+2320,Audi,2008,1.8,Gasolina,Manual,108197,Usado,7819.71,A3
+2321,Toyota,2023,2,Hibrido,Automatico,11541,Usado,25297.71,Prius
+2323,Ford,2007,2,Gasolina,Manual,140289,Usado,7232.88,Focus
+2324,Honda,2014,2.4,Gasolina,Automatico,65661,Usado,9268.49,Civic
+2325,Ford,2006,2,Gasolina,Manual,127583,Usado,6416.07,Focus
+2328,BMW,2014,1.5,Gasolina,Manual,103474,Usado,23368.54,3 Series
+2329,Audi,2022,3,Gasolina,Manual,29500,Usado,79399.84,Q7
+2330,Audi,2006,2,Diesel,Manual,123732,Usado,9373.24,A3
+2331,Tesla,2016,NA,Electrico,Automatico,54152,Usado,60366,Model X
+2334,Ford,2008,2,Gasolina,Automatico,157349,Usado,8746.09,Focus
+2335,BMW,2012,1.6,Gasolina,Automatico,83198,Usado,24464.41,5 Series
+2336,Honda,2005,1.5,Gasolina,Manual,112567,Usado,3628.36,Civic
+2338,Honda,2019,1.2,Gasolina,Manual,64653,Usado,19823.57,Fit
+2339,Ford,2019,5.2,Gasolina,Manual,31685,Usado,21620.59,Mustang
+2342,Toyota,2016,1.8,Gasolina,Automatico,44530,Usado,19316.37,Corolla
+2343,Ford,2016,2.3,Gasolina,Automatico,54912,Usado,24597.15,Explorer
+2344,Ford,2011,5.4,Gasolina,Manual,60383,Usado,12076.64,Mustang
+2345,BMW,2015,2,Diesel,Manual,63955,Usado,18186.48,X5
+2346,Honda,2014,2,Hibrido,Automatico,77139,Usado,10962.03,Accord
+2348,Ford,2022,1,Hibrido,Automatico,30078,Usado,21470.97,Focus
+2349,Audi,2000,1.9,Diesel,Automatico,147396,Usado,7427.24,A3
+2350,Audi,2016,1,Gasolina,Manual,53541,Usado,15863.43,A3
+2351,Mercedes,2002,4.3,Gasolina,Automatico,172449,Usado,12857.16,E-Class
+2354,Toyota,2003,1.8,Gasolina,Automatico,102126,Usado,2778.46,Corolla
+2355,Tesla,2017,NA,Electrico,Automatico,35688,Usado,48733.64,Model X
+2356,BMW,2016,2.5,Gasolina,Manual,56685,Usado,42826.1,5 Series
+2357,Toyota,2018,2,Gasolina,Automatico,22014,Usado,13107.53,Camry
+2358,Mercedes,2010,1.8,Gasolina,Manual,96123,Usado,9534.74,C-Class
+2359,Audi,2019,3,Gasolina,Automatico,42265,Usado,26381.05,A4
+2361,Honda,2007,1.5,Gasolina,Manual,130656,Usado,8480.11,Fit
+2362,Audi,2013,1.6,Gasolina,Automatico,116017,Usado,17013.6,A3
+2363,BMW,2000,2.9,Diesel,Automatico,172408,Usado,12852.83,X5
+2364,Audi,2013,2,Diesel,Manual,60506,Usado,15862.66,Q5
+2365,BMW,2001,2.5,Diesel,Automatico,147261,Usado,9592.07,5 Series
+2366,BMW,2022,3,Diesel,Automatico,14785,Usado,41774.65,3 Series
+2367,BMW,2003,4.6,Gasolina,Automatico,167065,Usado,12291.86,X5
+2368,Mercedes,2023,3,Hibrido,Automatico,29943,Usado,57709.56,GLC
+2370,BMW,2005,3,Diesel,Manual,95756,Usado,6328.94,X3
+2371,Honda,2000,2,Gasolina,Automatico,174693,Usado,7495.91,CR-V
+2372,Toyota,2016,2.5,Hibrido,Automatico,46622,Usado,19308.81,Camry
+2373,Ford,2007,2,Gasolina,Manual,91763,Usado,3588.13,Fiesta
+2374,Toyota,2018,1.8,Gasolina,Manual,38197,Usado,17003.36,Corolla
+2375,BMW,2020,1.6,Gasolina,Automatico,45223,Usado,31847.59,3 Series
+2376,Honda,2000,1.3,Gasolina,Automatico,148234,Usado,6207.28,Fit
+2378,Honda,2015,1.5,Hibrido,Automatico,95669,Usado,12944.47,Fit
+2379,BMW,2005,3,Gasolina,Manual,126335,Usado,8076.29,X3
+2380,Honda,2007,1.6,Gasolina,Automatico,139793,Usado,9657.94,Civic
+2382,Honda,2015,1.3,Gasolina,Manual,68801,Usado,9193.42,Fit
+2383,BMW,2002,3.2,Gasolina,Manual,152776,Usado,7958.2,3 Series
+2384,Mercedes,2018,4,Gasolina,Automatico,52106,Usado,43617.91,E-Class
+2386,Honda,2015,2.4,Gasolina,Automatico,90983,Usado,12536.8,Accord
+2387,Ford,2010,5,Gasolina,Automatico,117820,Usado,10767.49,Mustang
+2388,Ford,2009,2,Gasolina,Manual,123696,Usado,6166.19,Focus
+2389,Honda,2019,1.5,Gasolina,Manual,26461,Usado,13679.75,CR-V
+2390,Mercedes,2003,3.2,Gasolina,Automatico,125584,Usado,7936.33,E-Class
+2391,Audi,2011,3.6,Gasolina,Manual,60285,Usado,17571.19,Q7
+2392,BMW,2022,2,Gasolina,Automatico,15257,Usado,42269.33,X3
+2393,Ford,2001,4,Gasolina,Automatico,121871,Usado,4298.23,Explorer
+2394,Audi,2023,3,Hibrido,Automatico,25161,Usado,77902.86,Q7
+2396,Audi,2018,2,Hibrido,Automatico,33018,Usado,33674.95,Q7
+2398,Toyota,2007,2.5,Gasolina,Automatico,87622,Usado,6518.17,RAV4
+2399,Ford,2006,2,Gasolina,Manual,124199,Usado,6198.52,Focus
+2401,BMW,2023,3,Diesel,Automatico,7073,Usado,33676.99,X3
+2402,Mercedes,2022,1.5,Hibrido,Automatico,19234,Usado,51695.26,C-Class
+2404,Honda,2017,1.5,Gasolina,Automatico,43520,Usado,19021.06,CR-V
+2406,Mercedes,2022,1.5,Hibrido,Automatico,19811,Usado,52301.69,C-Class
+2407,Mercedes,2018,3,Gasolina,Manual,47570,Usado,35620.06,GLC
+2408,Honda,2018,1.3,Gasolina,Automatico,47149,Usado,16771.36,Fit
+2410,Audi,2019,2.9,Gasolina,Automatico,30512,Usado,22432,A4
+2411,Audi,2015,3,Gasolina,Manual,104763,Usado,20952.69,A4
+2412,Mercedes,2007,3.2,Gasolina,Manual,99279,Usado,9913.44,C-Class
+2413,Audi,2000,1.8,Gasolina,Automatico,154251,Usado,7742.14,A3
+2414,Toyota,2016,1.8,Gasolina,Manual,33211,Usado,15906.51,Corolla
+2415,Mercedes,2011,2,Gasolina,Automatico,76718,Usado,23116.18,E-Class
+2416,Mercedes,2020,2.1,Diesel,Automatico,40563,Usado,32712.58,C-Class
+2417,BMW,2010,2.5,Diesel,Manual,80575,Usado,7817.62,5 Series
+2420,Mercedes,2016,1.5,Hibrido,Automatico,23696,Usado,24984.26,C-Class
+2422,Toyota,2000,1.6,Gasolina,Manual,113713,Usado,3442.77,Corolla
+2423,BMW,2004,2.9,Diesel,Automatico,167041,Usado,12289.35,X5
+2426,Mercedes,2021,1.6,Gasolina,Automatico,16356,Usado,58693.11,E-Class
+2427,Toyota,2023,2.5,Hibrido,Automatico,25161,Usado,35361.14,RAV4
+2428,Ford,2000,5,Gasolina,Manual,133433,Usado,4671.65,Explorer
+2429,Toyota,2017,1.8,Gasolina,Automatico,50859,Usado,20778.51,Corolla
+2430,Toyota,2015,1.8,Gasolina,Manual,61970,Usado,7795.45,Corolla
+2431,BMW,2008,3,Gasolina,Manual,120468,Usado,11456.14,3 Series
+2432,Honda,2018,2.6,Gasolina,Manual,55196,Usado,17743.22,Civic
+2433,Ford,2021,5.2,Gasolina,Manual,19516,Usado,40354.31,Mustang
+2434,Audi,2004,1.8,Gasolina,Manual,106254,Usado,5273.63,A3
+2438,BMW,2003,2,Gasolina,Automatico,125949,Usado,6243.46,3 Series
+2439,BMW,2000,3,Gasolina,Manual,125541,Usado,7554.09,X5
+2440,Audi,2012,1.4,Gasolina,Automatico,95714,Usado,12749.87,A3
+2441,Tesla,2019,NA,Electrico,Automatico,31756,Usado,46256.35,Model X
+2442,Tesla,2021,NA,Electrico,Automatico,25424,Usado,49942.64,Model Y
+2444,Ford,2014,2.3,Gasolina,Automatico,65401,Usado,8484.16,Explorer
+2445,Honda,2022,2,Gasolina,Manual,29628,Usado,26866.11,Civic
+2446,Ford,2013,2,Gasolina,Automatico,81849,Usado,11938.36,Explorer
+2447,Mercedes,2022,2,Gasolina,Automatico,29791,Usado,50242.31,GLA
+2448,Mercedes,2018,2,Hibrido,Automatico,58181,Usado,40784.88,C-Class
+2449,Honda,2021,1.5,Gasolina,Automatico,21605,Usado,27973.98,Accord
+2450,Audi,2023,1,Gasolina,Automatico,25801,Usado,31836.36,A3
+2451,Honda,2019,2,Hibrido,Automatico,23181,Usado,13468.46,CR-V
+2452,BMW,2023,2,Gasolina,Manual,11525,Usado,36525.45,X3
+2453,Mercedes,2017,1.5,Gasolina,Automatico,26686,Usado,26354.46,C-Class
+2454,Toyota,2009,2.4,Gasolina,Manual,119745,Usado,7190.62,Corolla
+2455,Toyota,2008,1.5,Hibrido,Automatico,132497,Usado,11155.98,Prius
+2456,Audi,2007,6,Diesel,Manual,88677,Usado,11458.87,Q7
+2457,BMW,2009,5,Gasolina,Manual,86125,Usado,8631.64,5 Series
+2458,Ford,2016,2,Gasolina,Automatico,74727,Usado,31406.25,Explorer
+2459,BMW,2001,3,Gasolina,Manual,136185,Usado,8166.18,5 Series
+2460,Toyota,2005,1.8,Gasolina,Manual,146729,Usado,5712.65,Corolla
+2461,Toyota,2004,1.5,Hibrido,Automatico,108628,Usado,5702.95,Prius
+2462,Mercedes,2008,2.7,Diesel,Automatico,124286,Usado,16680.1,E-Class
+2463,BMW,2004,2,Gasolina,Manual,152514,Usado,9572.21,X3
+2464,BMW,2017,1.6,Gasolina,Automatico,21196,Usado,19513.83,3 Series
+2465,Toyota,2019,1.8,Hibrido,Automatico,30512,Usado,16078.25,Prius
+2466,Ford,2008,4,Gasolina,Automatico,153891,Usado,11479.35,Explorer
+2467,Audi,2016,2,Diesel,Manual,31756,Usado,31288.79,Q7
+2469,Audi,2011,4.2,Diesel,Automatico,95387,Usado,27663.97,Q7
+2470,BMW,2006,2,Gasolina,Manual,108923,Usado,10166.18,X3
+2472,Toyota,2009,1.8,Gasolina,Manual,139650,Usado,9038.89,Corolla
+2475,BMW,2015,2,Diesel,Manual,79175,Usado,18321.24,X3
+2477,Tesla,2023,NA,Electrico,Automatico,17496,Usado,76121.24,Model X
+2479,BMW,2005,2,Gasolina,Automatico,153393,Usado,10103.57,X3
+2480,Ford,2021,2.3,Gasolina,Manual,36701,Usado,22151.78,Focus
+2482,BMW,2022,3,Diesel,Automatico,7425,Usado,34046.52,3 Series
+2483,Honda,2006,2,Gasolina,Automatico,142641,Usado,9892.86,Civic
+2484,Mercedes,2014,1.5,Diesel,Manual,66345,Usado,20537.93,GLA
+2485,Honda,2005,1.5,Gasolina,Manual,187591,Usado,7379.56,Civic
+2486,Toyota,2019,1.8,Hibrido,Automatico,58769,Usado,22605.69,Prius
+2489,BMW,2019,3,Diesel,Automatico,52565,Usado,36196.79,X3
+2490,Honda,2011,1.5,Hibrido,Automatico,56669,Usado,8166.9,Fit
+2491,Audi,2018,3,Diesel,Manual,30963,Usado,25224.32,Q5
+2492,Toyota,2019,1.8,Hibrido,Automatico,23909,Usado,14552.96,Prius
+2494,Ford,2014,1,Gasolina,Automatico,76669,Usado,8633.72,Focus
+2495,Mercedes,2001,2.4,Gasolina,Manual,136543,Usado,8654.28,E-Class
+2496,Audi,2020,3,Diesel,Automatico,23432,Usado,23897.7,Q5
+2497,Audi,2001,1.6,Gasolina,Manual,173987,Usado,8236.94,A3
+2500,Toyota,2005,1.8,Gasolina,Automatico,118810,Usado,4878.15,RAV4
