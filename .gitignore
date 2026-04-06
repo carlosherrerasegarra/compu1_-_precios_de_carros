@@ -13,4 +13,5 @@
 **/template.tex
 **/bibliografia.bib
 **/plantilla.Rproj
-./python/dist/*
+./python/dist/run_app.exe
+./python/build
