@@ -1,39 +1,31 @@
 ---
-# --- Metadatos Básicos ---
-title: "Título del Trabajo Final"
+title: "Analisis del Mercado de Videojuegos"
 author:
-   - Primer participante
-   - Segundo participante
-   - Tercer participante
-date: "Febrero 2026"
-
-# --- Metadatos Específicos de Plantilla ---
-degree: "Computación I"
-director: 
-  - Jesus Ochoa 
-  - Oliver Triveño
-lugar: "Caracas"
-facultad: 
-  - Facultad de Ciencias Económicas y Sociales
-  - Escuela de Estadistica y Ciencias Actuariales
-# Ruta al escudo (relativa al archivo .Rmd)
-escudo: "Latex/Classes/Escudos/faces"
-
-# --- Bibliografía ---
-bibliography: bibliografia.bib
-
-# --- Configuración de Salida ---
-output: 
+- Carlos Herrera
+- Juan Hernandez
+date: "Abril 2026"
+output:
   pdf_document:
-    template: template.tex  # Llamamos al archivo de plantilla
-    keep_tex: true                 # Útil para ver errores si ocurren
-    toc: true                      # Generar índice
+    template: template.tex
+    keep_tex: true
+    toc: true
     number_sections: true
-    citation_package: natbib       # Importante: forzar natbib porque tu plantilla lo usa
-
-# --- Resumen (Abstract) ---
+    citation_package: natbib
+  html_document:
+    toc: true
+    df_print: paged
+director:
+- Prof. Jesus Ochoa
+- Prof. Oliver Triveño
+lugar: Caracas
+facultad:
+- Facultad de Ciencias Económicas y Sociales
+- Escuela de Estadistica y Ciencias Actuariales
+escudo: Latex/Classes/Escudos/faces
+bibliography: bibliografia.bib
+degree: Computación I
 abstract: |
-  Resumen del trabajo de investigación...
+  En el presente informe se realiza un análisis exploratorio de los datos de precios para el año 2023 de una selección de carros. Partiendo de variables como marca, modelo, año, tipo de transmisión, millaje, entre otras; se examinan cuales los factores que afectan su precio, aplicando técnicas estadísticas descriptivas y visualización de datos con R.
 ---
 
 ```{r setup, include=FALSE}
@@ -53,160 +45,202 @@ library(tidyverse)
 library(knitr)
 library(kableExtra)
 library(scales)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(readr)
 ```
 
 \chapter*{Introducción}
 
-Introducción del trabajo de investigación
-
-\chapter{Planteamiento del Problema}
-Describir planteamiento del problema\
-
-Argumento final. Debido a esto, se plantea las siguientes preguntas de investigación:\
-
-
-\textbf{1.}	Pregunta1\
-
-\textbf{2.}	Pregunta2\
-
-\textbf{3.}	Pregunta3\
+  A lo largo de la vida de una persona, pocas decisiones económicas son tan importantes como la compra de una casa o un carro. El en el caso de un carro, el mercado automotriz es altamente dinámico y se caracteriza por la interacción de múltiples variables a la hora de determinar el valor de un vehículo. A diferencia de otros bienes, como un inmueble, un carro es un activo que suele sufrir de una rápida depreciación; cuyo valor, además de verse afectado por el uso, también podria verse afectado por factores como avances tecnológicos, prestigio de la marca, modelo especifico, entre otros.
+\newline
+\newline
+  Hoy en día, factores como el sistema de propulsión; ya sean los tradicionales, como gasolina o diésel, hasta las nuevas tecnologías hibridas y eléctricas, agregan nuevas dimensiones a la hora de determinar el valor de un carro. Entender como estas características técnicas, junto con el uso y la antigüedad del carro afectan su precio se vuelve entonces de suma importancia para aquellos consumidores o empresas que quieran maximizar u optimizar su inversión.
+\newline
+\newline
+  Es por ello que en el presente trabajo se busca aplicar la estadística descriptiva para explorar y caracterizar el mercado de vehículos, tratando de identificar patrones que nos permitan tener una visión más clara y objetiva sobre cuáles son los factores que afectan el valor de un carro
 
 
-\section{Justificación}
+\section*{Estructura del Informe}
 
-Justificación del trabajo de investigación\
+Este documento técnico se encuentra estructurado en cinco capítulos fundamentales:
 
-\section{Objetivos}
- 
-\subsection{Objetivo General}
 \begin{itemize}
-  \item{Describir objetivo general del trabajo de investigación}
+    
+    \item En el \textbf{Capítulo I}, se plantea la problemática de la volatilidad de precios en el mercado automotriz de segunda mano y el impacto de la depreciación técnica, formulando las preguntas de investigación y delimitando el alcance del estudio basado en las marcas y modelos analizados.
+    
+    \item El \textbf{Capítulo II} establece el Marco Teórico, definiendo los conceptos de estadística descriptiva fundamentales como las medidas de tendencia central, los cuartiles para la detección de valores atípicos y la correlación de Pearson, necesarios para interpretar la relación entre el kilometraje y el valor de mercado.
+
+    \item El \textbf{Capítulo III} describe el Marco Metodológico, detallando el proceso de limpieza y preparación de datos (ETL) realizado en R, el tratamiento de valores ausentes (especialmente en vehículos eléctricos) y los criterios de segmentación por tipo de combustible y transmisión.
+
+    \item El \textbf{Capítulo IV} presenta el Análisis de Resultados, donde se exhiben las tablas de frecuencia y los gráficos (histogramas y diagramas de caja) generados dinámicamente, discutiendo los hallazgos sobre la distribución de precios por marca y la eficiencia de los motores según su tamaño.
+
+    \item Finalmente, en el \textbf{Capítulo V}, se exponen las Conclusiones y Recomendaciones estratégicas derivadas del análisis cuantitativo, orientadas a la valoración precisa de activos y a la optimización de decisiones de compra y venta basadas en evidencia estadística.
 \end{itemize}
 
-\subsection{Objetivos Específicos}
-\begin{itemize}
-  \item{Describir objetivo 1 del trabajo de investigación}
-  \item{Describir objetivo 2 del trabajo de investigación}
-  \item{Describir objetivo 3 del trabajo de investigación}
-\end{itemize}
+Este reporte no solo pretende ofrecer una radiografía del estado actual del mercado de vehículos usados, sino también establecer una metodología reproducible para el análisis de activos físicos sujetos a depreciación temporal y tecnológica.
+
+\chapter{Planteamiento del Problema} 
+
+En el mercado automotriz actual, el valor de un vehículo no es una cifra estática, sino el resultado de una interacción multivariable donde convergen la obsolescencia tecnológica, el desgaste físico y las preferencias del consumidor. Para un analista o un comprador, la imprevisibilidad de los precios de reventa representa un riesgo financiero significativo.
+\newline
+\newline
+El conjunto de datos bajo estudio presenta una muestra heterogénea que incluye desde vehículos de combustión tradicional hasta modelos eléctricos de alta gama. Esta diversidad genera una alta dispersión en los precios, dificultando la identificación de un "valor justo". El problema radica en la falta de una caracterización estadística clara que permita entender cómo factores como el kilometraje acumulado, el año de fabricación y el tipo de combustible (especialmente ante el auge de los motores híbridos y eléctricos) impactan directamente en la valoración del activo.
+\newline
+\newline
+Sin un análisis descriptivo robusto, las decisiones de compra y venta se basan en percepciones subjetivas y no en el comportamiento real de los datos, lo que justifica la necesidad de este estudio.
+
+Para orientar el análisis, se plantean las siguientes interrogantes:
+
+**1.** ¿Cuál es el perfil de distribución de los precios de los vehículos y qué tan alta es su variabilidad interna?
+
+**2.** ¿Existe una relación inversamente proporcional clara entre el kilometraje y el precio en todas las marcas por igual?
+
+**3.** ¿Cómo se comportan los precios de los vehículos según su tipo de energía (Gasolina vs. Eléctrico/Híbrido)?
+
+\section{Justificación} 
 
 
-\section{Cobertura}
+La presente investigación se justifica desde tres dimensiones fundamentales: la económica, la técnica y la académica.
+\newline
+\newline
+Desde la dimensión económica, la adquisición de un vehículo representa una de las inversiones más significativas para el patrimonio personal o empresarial. No obstante, el mercado de automóviles de segunda mano se caracteriza por una alta asimetría de información, donde el precio suele estar sujeto a la especulación o a una valoración empírica del estado del bien. Este estudio proporciona una base objetiva que permite comprender la estructura de costos y la tasa de depreciación, facilitando una toma de decisiones informada que minimice el riesgo financiero.
+\newline
+\newline
+Desde la dimensión técnica, la industria automotriz atraviesa una transición energética sin precedentes. La coexistencia de motores de combustión interna con tecnologías híbridas y eléctricas plantea un reto para los métodos de valoración tradicionales. La aplicación de herramientas de **Estadística Descriptiva** en este contexto permite caracterizar estas nuevas categorías y determinar si su comportamiento de mercado sigue los patrones históricos o si, por el contrario, requieren de marcos de análisis diferenciados debido a su naturaleza tecnológica.
+\newline
+\newline
+Desde la dimensión académica, este trabajo se inserta en la formación de la Escuela de Estadística y Ciencias Actuariales, demostrando la capacidad del lenguaje de programación R para el manejo de grandes volúmenes de datos y la generación de reportes dinámicos. La relevancia del estudio reside en la transformación de datos crudos en indicadores estadísticos (medidas de posición, dispersión y forma), validando que el análisis exploratorio de datos (EDA) es una etapa indispensable para garantizar la robustez de cualquier inferencia o modelo predictivo posterior.
 
-\subsection{Horizontal}
+\section{Objetivos} 
 
-Describir la cobertura Horizontal del trabajo de investigación\
+\subsection{Objetivo General} 
+
+Analizar estadísticamente el comportamiento de los precios de los vehículos basándose en sus características técnicas y de uso, mediante la aplicación de herramientas de estadística descriptiva y visualización de datos en el lenguaje R.
+
+
+\subsection{Objetivos Específicos} 
+
+\begin{enumerate}
+  \item Caracterizar las variables cualitativas (Marca, Combustible, Transmisión) a través de tablas de frecuencias y sus graficos asociados.
+  \item Determinar las medidas de tendencia central y dispersión para las variables cuantitativas (Precio, Kilometraje, Año).
+  \item Identificar la presencia de valores atípicos (outliers) en los precios que puedan sesgar el análisis del mercado.
+  \item Comparar la estructura de costos entre vehículos de combustión interna y tecnologías alternativas.
+\end{enumerate}
+
+\section{Cobertura} 
+
+\subsection{Horizontal} 
+
+La cobertura horizontal abarca las características de cada vehículo registrado en la base de datos. Se consideran las dimensiones técnicas del producto (marca, modelo, tipo de motor y transmisión) y las métricas de valor y uso (precio de mercado, kilometraje y año de fabricación) que definen su perfil comercial.
+
+\subsection{Vertical} 
+
+La cobertura vertical del trabajo de investigación comprende un total de 2.500 observaciones (registros). Cada fila representa un vehículo único disponible en el mercado de segunda mano. El alcance temporal de los datos es longitudinal, abarcando modelos desde el año 2000 hasta el año 2024, lo que permite un análisis de la depreciación y evolución tecnológica a corto y mediano plazo.
+
 
 \begin{table}[ht]
 \centering
-\caption{Variables consideradas} 
-\resizebox{10cm}{!} {
-\begin{tabular}{ccc}
+\caption{Variables consideradas en el estudio} 
+\resizebox{15cm}{!} {
+\begin{tabular}{cll}
   \hline
-\ \ \ \ \ NOMBRE DE LA VARIABLE \\ 
+  \textbf{TIPO} & \textbf{VARIABLE} & \textbf{DESCRIPCIÓN} \\ 
   \hline
-   VARIABLE 1 \\ 
-VARIABLE 2\\ 
-VARIABLE n\\ 
+  Categórica & Brand & Nombre del fabricante del carro \\ 
+  Numérica & Year & Año en que fue fabricado el carro \\ 
+  Numérica & Engine.Size & Cilindrad del motor del carro en litros  \\ 
+  Categórica & Fuel.Type & Tipo de combustible o sistema de propulsion (e.g. Gasolina, Electrico) \\ 
+  Categórica & Transmission & Tipo de transmision del carro (Manual, Automatica) \\ 
+  Numérica & Mileage & Millas recorridas en el carro \\ 
+  Categórica & Condition & Condicion del carro segun su uso (e.g. Nuevo, Usado) \\ 
+  Numérica & Price & Precio de venta en dolares \\ 
+  Categórica & Model & Nombre del modelo especifico del carro \\ 
    \hline
 \end{tabular}
 }
 \end{table}
 
-\subsection{Vertical}
 
-Describir la cobertura Vertical del trabajo de investigación
+\section{Periodo de Referencia} 
 
+Los registros de precios de los carros presentes en la base de datos usados son los precios de dicho carro al momento de realizar la recolección de los datos, por lo que los precios son para el ano 2023.  Sin embargo, cabe acotar que los anos de producción de los carros presentes en la lista van desde el 2000 al 2023.  La base de datos analizada actúa como una fotografía del mercado secundario actual, reflejando cómo se valoran hoy los activos producidos en las últimas dos décadas.
 
-\section{Periodo de Referencia}
-
-Describir la fuente y el Periodo de Referencia utilizado en el trabajo de investigación
-
-\section{Variables}
-
-Describir la variable en estudio en el trabajo de investigación
-
-\chapter{Marco Teórico}
+\begin{itemize}
+  \item	Permite capturar el ciclo de vida completo de un vehículo, desde su salida de concesionario hasta su etapa de obsolescencia.
+  \item	Facilita el estudio de la transición tecnológica, integrando modelos de combustión de principios de siglo con las innovaciones eléctricas e híbridas comercializadas en el último bienio. \end{itemize}
 
 
-\section{Bases Teóricas}
+\section{Variables} 
 
-Resumen de las bases teoricas explicadas en el capitulo y su importancia\
+La variable principal en estudio (Variable Dependiente/Objetivo) es Price, que representa el valor de mercado del vehículo medido en unidades monetarias. Como variables explicativas o independientes se analizan:
 
-\subsection{Definición 1}
-
-Descripción de la definición 1\
-
-\subsection{Definición 2}
-
-Descripción de la definición 2\
-
-\subsection{Definición n}
-
-Descripción de la definición n\
-
+\begin{enumerate}
+  \item Variables de Uso y Desgaste: \textbf{Year} y \textbf{Mileage}
+  \item Variables Categóricas: \textbf{Brand}, \textbf{Model} y \textbf{Condition}
+  \item Variables de Especificación Técnica: \textbf{Engine.Size}, \textbf{Fuel.Type} y \textbf{Transmission}
+\end{enumerate}
 
 \chapter{Marco Metódico}
-En esta sección se presentan las metodologías y/o test necesarios relacionados con la práctica divulgada en el marco teórico, así como las fuentes de datos.
- 
+
+En esta sección se presentan las metodologías, procedimientos algorítmicos y técnicas de curaduría de datos implementadas para transformar la muestra inicial en un conjunto de datos técnicamente verosímil. Se detalla el tratamiento de la fuente de datos precios_carros.csv, los protocolos de limpieza (Data Wrangling) y el procedimiento de imputación mediante fuentes externas utilizado para corregir las inconsistencias detectadas en las variables de precio y millaje.
+\newline
+\newline
+Igualmente se explican las tecnicas estadisticas para posterior análisis utilizando el lenguaje de programación R (versión 4.x) bajo el entorno de desarrollo RStudio, empleando el paradigma "Tidyverse" para la manipulación y transformación de estructuras de datos, así como funciones de aleatorización controlada para el ajuste de la muestra.
+
 \section{Bases metódicas utilizadas en el trabajo de investigación}
 
-Desarrollo\
+El diseño de la investigación es de carácter cuantitativo, no experimental y de corte transversal con perspectiva histórica, dado que se analizan datos observados en un punto del tiempo, pero que abarcan modelos de distintos años de fabricación. A continuación, se describen las etapas fundamentales del procesamiento:
 
-\subsection{Item 1}
+\subsection{Procesamiento y Limpieza de Datos (ETL)}
 
-Descripción\
+La calidad de las conclusiones estadísticas depende directamente de la pureza de la base de datos original. Tras una inspección inicial del archivo precios_carros.csv mediante el lenguaje R, se identificaron anomalías estructurales y lógicas que requirieron una intervención inmediata bajo los siguientes criterios:
+\newline
+\newline
+**Depuración de Registros Incompletos**
 
-\subsection{Item 2}
+En primera instancia, se procedió a la eliminación de 250 registros que presentaban valores nulos (NA) en todos sus campos. Esta decisión se tomó para evitar sesgos en el cálculo de los momentos estadísticos (media, varianza) que podrían derivar en interpretaciones incorrectas de los datos.
+\newline
+\newline
+**Tratamiento de Discrepancias Lógicas y Técnicas**
 
-Descripción\
+Posteriormente, se realizó una auditoría de coherencia entre los registros y las especificaciones técnicas reales de la industria automotriz, aplicando los siguientes filtros de corrección:
 
-\subsubsection{Item 2.2}
+\begin{itemize}
 
-Descripción\
+ \item Anacronismos de Comercialización: Se eliminaron o corrigieron registros donde el año de fabricación era previo al lanzamiento oficial del modelo (ej. modelos de Tesla registrados antes de 2015).
 
-\subsection{Item n}
+ \item Consistencia en el Sistema de Propulsion: Se detectaron errores de clasificación en el tipo de combustible. Se ajustaron aquellos vehículos listados como Eléctricos que poseían cilindrada (Engine Size) y viceversa, garantizando que los modelos eléctricos tuvieran un valor de NA en el tamaño del motor.
 
-Descripción\
+ \item Validación de Cilindrada: Se filtraron registros con tamaños de motor fuera de los rangos mecánicos posibles para el modelo específico (ej. motores de 8 litros en sedanes compactos), ajustándolos a los estándares del fabricante para mantener la representatividad de la muestra.
+ \end{itemize}
+ 
 
-\chapter{Análisis de Resultados}
+**Reingeniería de Datos y Validación Externa**
 
-{\small Este capítulo presenta los resultados obtenidos al aplicar las metodologías descritas en el capítulo anterior, así como del análisis estadístico descriptivo de las variables estudiadas y las ventajas y desventajas al aplicar dichos tests.}
+Tras identificar que la base de datos original presentaba una distribución de precios y kilometrajes excesivamente uniforme e incoherente con el año de fabricación (ausencia de correlación entre antigüedad y valor), se procedió a una fase de curaduría de datos para aproximar la muestra a la realidad del mercado automotriz.
 
-\section{Presentación de resultados 1}
+El proceso de ajuste se ejecutó bajo la siguiente metodología:
 
-Descripción\
+\begin{itemize}
 
-\section{Presentación de resultados 2}
+ \item Recolección de Parámetros Reales: Se utilizó el portal especializado CarGurus como fuente de referencia externa para extraer métricas actualizadas de precios y millas recorridas según marca y modelo.
 
-Descripción\
+ \item Estratificación Temporal: Se segmentó la muestra en cohortes quinquenales (2000-2005, 2006-2010, 2011-2015, 2016-2020 y 2021-2023). Esta técnica de estratificación permitió capturar el comportamiento del valor del carro y su millaje en distintas etapas de su ciclo de vida.
 
-\section{Presentación de resultados n}
+ \item Muestreo de Referencia: Para cada estrato y modelo, se recolectó una submuestra representativa de aproximadamente 30 observaciones, estableciendo así los límites técnicos del mercado.
 
-Descripción\
+ \item Imputación Aleatoria Controlada: Utilizando el lenguaje de programación R, se reemplazaron los valores ilógicos originales mediante la generación de números aleatorios. Para garantizar la representatividad y evitar el ruido de los valores extremos, se restringió el rango de asignación al 75% central de los datos de millas y precios recopilados en la fase de investigación externa.
+\end{itemize}
 
-\chapter{Conclusiones y Recomendaciones}
 
-\textbf{1.-} Conclusion 1 del trabajo de investigación.\
+\subsection {Técnicas de Análisis Estadístico}
 
-\textbf{Recomendación} 
-Recomendación 1 del trabajo de investigación.\
+\begin{itemize}
+ \item Análisis Univariado: Se utilizarán medidas de tendencia central (Media, Mediana) y de dispersión (Desviación Estándar, Coeficiente de Variación) para caracterizar el comportamiento individual del Precio, el Kilometraje y el Año. Se emplearán histogramas de frecuencias para observar la forma de la distribución (Simetría y Curtosis).
 
-\textbf{2.-} Conclusion 2 del trabajo de investigación.\
+ \item Análisis Bivariado y Comparativo: Para cumplir con el objetivo de comparar marcas y tipos de combustible, se aplicará la técnica de Segmentación de Datos. Se utilizarán Diagramas de Caja (Boxplots), los cuales permiten visualizar la mediana, los cuartiles y, fundamentalmente, identificar la existencia de valores atípicos (outliers) en los precios de cada categoría.
 
-\textbf{Recomendación} 
-Recomendación 2 del trabajo de investigación.\
-
-\textbf{n.-} Conclusion n del trabajo de investigación.\
-
-\textbf{Recomendación} Recomendación n del trabajo de investigación.\
-
-\appendix
-\renewcommand{\thechapter}{\Alph{chapter}}
-
-\chapter{Anexo A}
-
-\chapter{Anexo B}
-
-\chapter{Anexo C}
-
+ \item Análisis de Relación: Para evaluar la relación entre el uso (Kilometraje) y el valor (Precio), se emplearán Diagramas de Dispersión (Scatter Plots) y el cálculo del Coeficiente de Correlación de Pearson, determinando así la intensidad y dirección de la asociación entre ambas variables.
+\end{itemize}
