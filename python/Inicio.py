@@ -80,62 +80,62 @@ class CarApp:
             st.markdown("<hr style='margin: 10px 0px 20px 0px; opacity: 0.2;'>", unsafe_allow_html=True)
 
             
-            precio_promedio, kilometraje_medio, vehiculos_filtrados, marca_mas_frecuente = st.columns(4)
-            precio_promedio.metric("Precio Promedio", f"${self.df['Precio'].mean():,.0f}")
-            kilometraje_medio.metric("Kilometraje Medio", f"{self.df['Kilometraje'].mean():,.0f} km")
-            vehiculos_filtrados.metric("Vehículos Filtrados", len(self.df))
+            highlight_promedio, highlight_kilometraje_promedio, highlight_vehiculos_filtrados, highlight_marca_popular = st.columns(4)
+            highlight_promedio.metric("Precio Promedio", f"${self.df['Precio'].mean():,.0f}")
+            highlight_kilometraje_promedio.metric("Kilometraje Medio", f"{self.df['Kilometraje'].mean():,.0f} km")
+            highlight_vehiculos_filtrados.metric("Vehículos Filtrados", len(self.df))
             marca_popular = self.df['Marca'].mode()[0] if not self.df.empty else "N/A"
-            marca_mas_frecuente.metric("Marca más Frecuente", marca_popular)
-
-            st.write("##") 
+            highlight_marca_popular.metric("Marca más Frecuente", marca_popular)
 
             
-            columna_evolucion_de_precios_por_año, columna_distribucion_por_combustible = st.columns([6, 4])
-            with columna_evolucion_de_precios_por_año:
-                st.subheader("Evolución de Precios por Año")
-                df_prom = self.df.groupby("Año")["Precio"].mean().reset_index()
-                fig_bar = px.bar(df_prom, x="Año", y="Precio", color_discrete_sequence=['#1f77b4'])
-                st.plotly_chart(fig_bar, use_container_width=True)
+            tab1, tab2 = st.tabs(["📊 Análisis Descriptivo", "📈 Dispersión y Densidad"])
 
-            with columna_distribucion_por_combustible:
-                st.subheader("Distribución por Combustible")
-                fig_pie = px.pie(self.df, names='Tipo de Combustible', hole=0.4)
-                st.plotly_chart(fig_pie, use_container_width=True)
-
-            
-            columna_top_marcas_por_precio, columna_precio_vs_condicion = st.columns([4, 6])
-            with columna_top_marcas_por_precio:
-                st.subheader("Top Marcas por Precio")
+            with tab1:
+                st.write("##")
+                
+                grafico_evolucion_de_precios, grafico_distribucion_por_combustible = st.columns([6, 4])
+                with grafico_evolucion_de_precios:
+                    st.subheader("Evolución de Precios por Año")
+                    df_prom = self.df.groupby("Año")["Precio"].mean().reset_index()
+                    figura_bar = px.bar(df_prom, x="Año", y="Precio", color_discrete_sequence=['#1f77b4'])
+                    st.plotly_chart(figura_bar, use_container_width=True)
+                with grafico_distribucion_por_combustible:
+                    st.subheader("Distribución por Combustible")
+                    figura_pie = px.pie(self.df, names='Tipo de Combustible', hole=0.4)
+                    st.plotly_chart(figura_pie, use_container_width=True)
+                
+                
+                st.subheader("Top Marcas por Precio Promedio")
                 df_m = self.df.groupby("Marca")["Precio"].mean().sort_values().reset_index()
-                fig_h = px.bar(df_m, x="Precio", y="Marca", orientation='h', color="Precio")
-                st.plotly_chart(fig_h, use_container_width=True)
+                figura_h = px.bar(df_m, x="Precio", y="Marca", orientation='h', color="Precio")
+                st.plotly_chart(figura_h, use_container_width=True)
 
-            with columna_precio_vs_condicion:
-                st.subheader("Precio vs. Condición")
-                fig_box = px.box(self.df, x="Condición", y="Precio", color="Condición")
-                st.plotly_chart(fig_box, use_container_width=True)
+            with tab2:
+                st.write("##")
+                
+                columna_precio_vs_condicion, columna_analisis_densidad = st.columns(2)
+                with columna_precio_vs_condicion:
+                    st.subheader("Precio vs. Condición (Boxplot)")
+                    figura_box = px.box(self.df, x="Condición", y="Precio", color="Condición")
+                    st.plotly_chart(figura_box, use_container_width=True)
+                with columna_analisis_densidad:
+                    st.subheader("Análisis de Densidad (Violin)")
+                    figura_violin = px.violin(self.df, x="Tipo de Combustible", y="Precio", 
+                                         color="Tipo de Combustible", box=True, points="all")
+                    st.plotly_chart(figura_violin, use_container_width=True)
 
-            
-            st.write("##")
-            st.subheader("Relación Precio vs. Kilometraje")
-            fig_scatter = px.scatter(
-                self.df, x="Kilometraje", y="Precio", 
-                color="Condición", opacity=0.5,
-                trendline="ols", 
-                hover_data=['Modelo', 'Año']
-            )
-            st.plotly_chart(fig_scatter, use_container_width=True)
+                
+                st.subheader("Relación Precio vs. Kilometraje (Regresión)")
+                figura_scatter = px.scatter(
+                    self.df, x="Kilometraje", y="Precio", 
+                    color="Condición", opacity=0.5,
+                    trendline="ols", 
+                    hover_data=['Modelo', 'Año']
+                )
+                st.plotly_chart(figura_scatter, use_container_width=True)
 
-            
-            st.subheader("Análisis de Densidad de Precios por Tipo de Combustible")
-            fig_violin = px.violin(
-                self.df, x="Tipo de Combustible", y="Precio", 
-                color="Tipo de Combustible", box=True, points="all"
-            )
-            st.plotly_chart(fig_violin, use_container_width=True)
-        
         elif self.df.empty:
-            st.error("⚠️ No hay vehículos que coincidan con esos filtros. Ajusta los criterios en la barra lateral.")
+            st.error("⚠️ No hay vehículos que coincidan con esos filtros.")
 class Main:
     @staticmethod
     def run():
