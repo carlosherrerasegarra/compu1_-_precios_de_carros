@@ -84,53 +84,68 @@ class CarApp:
             highlight_promedio.metric("Precio Promedio", f"${self.df['Precio'].mean():,.0f}")
             highlight_kilometraje_promedio.metric("Kilometraje Medio", f"{self.df['Kilometraje'].mean():,.0f} km")
             highlight_vehiculos_filtrados.metric("Vehículos Filtrados", len(self.df))
-            marca_popular = self.df['Marca'].mode()[0] if not self.df.empty else "N/A"
-            highlight_marca_popular.metric("Marca más Frecuente", marca_popular)
+            marca_popular_val = self.df['Marca'].mode()[0] if not self.df.empty else "N/A"
+            highlight_marca_popular.metric("Marca más Frecuente", marca_popular_val)
 
             
-            tab1, tab2 = st.tabs(["📊 Análisis Descriptivo", "📈 Dispersión y Densidad"])
+            tab_graficos_descriptivos, tab_graficos_evolucion_y_distribucion, tab_graficos_correlacion_avanzada = st.tabs(["📊 Descriptivo", "📉 Evolución y Distribución", "📈 Correlación Avanzada"])
 
-            with tab1:
+            with tab_graficos_descriptivos:
                 st.write("##")
-                
-                grafico_evolucion_de_precios, grafico_distribucion_por_combustible = st.columns([6, 4])
-                with grafico_evolucion_de_precios:
-                    st.subheader("Evolución de Precios por Año")
+                grafico_evolucion_general, grafico_pie_combustible = st.columns([6, 4])
+                with grafico_evolucion_general:
+                    st.subheader("Evolución General de Precios")
                     df_prom = self.df.groupby("Año")["Precio"].mean().reset_index()
                     figura_bar = px.bar(df_prom, x="Año", y="Precio", color_discrete_sequence=['#1f77b4'])
                     st.plotly_chart(figura_bar, use_container_width=True)
-                with grafico_distribucion_por_combustible:
-                    st.subheader("Distribución por Combustible")
+                
+                with grafico_pie_combustible:
+                    st.subheader("Cuota de Mercado por Combustible")
                     figura_pie = px.pie(self.df, names='Tipo de Combustible', hole=0.4)
                     st.plotly_chart(figura_pie, use_container_width=True)
-                
                 
                 st.subheader("Top Marcas por Precio Promedio")
                 df_m = self.df.groupby("Marca")["Precio"].mean().sort_values().reset_index()
                 figura_h = px.bar(df_m, x="Precio", y="Marca", orientation='h', color="Precio")
                 st.plotly_chart(figura_h, use_container_width=True)
 
-            with tab2:
+            with tab_graficos_evolucion_y_distribucion:
                 st.write("##")
                 
-                columna_precio_vs_condicion, columna_analisis_densidad = st.columns(2)
-                with columna_precio_vs_condicion:
-                    st.subheader("Precio vs. Condición (Boxplot)")
-                    figura_box = px.box(self.df, x="Condición", y="Precio", color="Condición")
-                    st.plotly_chart(figura_box, use_container_width=True)
-                with columna_analisis_densidad:
-                    st.subheader("Análisis de Densidad (Violin)")
-                    figura_violin = px.violin(self.df, x="Tipo de Combustible", y="Precio", 
-                                         color="Tipo de Combustible", box=True, points="all")
-                    st.plotly_chart(figura_violin, use_container_width=True)
+                st.subheader("Evolución del Precio Promedio por Marca")
+                df_evo_marca = self.df.groupby(["Año", "Marca"])["Precio"].mean().reset_index()
+                figura_linea_marca = px.line(df_evo_marca, x="Año", y="Precio", color="Marca", markers=True)
+                st.plotly_chart(figura_linea_marca, use_container_width=True)
 
                 
+                st.subheader("Distribución de Combustible por Año")
+                figura_comb_año = px.histogram(
+                    self.df, x="Año", color="Tipo de Combustible", 
+                    barmode="stack", nbins=len(self.df['Año'].unique())
+                )
+                st.plotly_chart(figura_comb_año, use_container_width=True)
+
+                
+                st.subheader("Histograma de Precios y Análisis por Condición")
+            
+                df_agrupado = self.df.groupby(["Marca", "Condición"])["Precio"].mean().reset_index()
+                figura_agrupada = px.bar(df_agrupado, x="Marca", y="Precio", color="Condición", barmode="group")
+                st.plotly_chart(figura_agrupada, use_container_width=True)
+
+            with tab_graficos_correlacion_avanzada:
+                st.write("##")
+                
+                st.subheader("Matriz de Correlación")
+                columnas_num = ['Año', 'Kilometraje', 'Precio', 'Tamaño del Motor']
+                df_corr = self.df[columnas_num].corr()
+                figura_heatmap = px.imshow(df_corr, text_auto=True, color_continuous_scale='RdBu_r', aspect="auto")
+                st.plotly_chart(figura_heatmap, use_container_width=True)
+
                 st.subheader("Relación Precio vs. Kilometraje (Regresión)")
                 figura_scatter = px.scatter(
                     self.df, x="Kilometraje", y="Precio", 
                     color="Condición", opacity=0.5,
-                    trendline="ols", 
-                    hover_data=['Modelo', 'Año']
+                    trendline="ols", hover_data=['Modelo', 'Año']
                 )
                 st.plotly_chart(figura_scatter, use_container_width=True)
 
