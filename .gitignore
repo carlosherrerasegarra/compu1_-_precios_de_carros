@@ -1,5 +1,6 @@
 **/__pycache__/
 
+./python/build/
 
 **/.Rproj.user
 **/.Rhistory
@@ -12,3 +13,5 @@
 **/template.tex
 **/bibliografia.bib
 **/plantilla.Rproj
+python/dist/
+python/build/
