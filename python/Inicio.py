@@ -134,11 +134,32 @@ class CarApp:
 
             with tab_graficos_correlacion_avanzada:
                 st.write("##")
-                
                 st.subheader("Matriz de Correlación")
-                columnas_num = ['Año', 'Kilometraje', 'Precio', 'Tamaño del Motor']
-                df_corr = self.df[columnas_num].corr()
-                figura_heatmap = px.imshow(df_corr, text_auto=True, color_continuous_scale='RdBu_r', aspect="auto")
+                
+                
+                orden_variables = ['Tamaño del Motor', 'Año', 'Kilometraje', 'Precio']
+                
+                
+                df_corr = self.df[orden_variables].corr()
+                
+                
+                figura_heatmap = px.imshow(
+                    df_corr, 
+                    text_auto=True, 
+                    color_continuous_scale='RdBu_r', 
+                    aspect="auto",
+                    x=orden_variables,
+                    y=orden_variables,
+                    origin='lower' 
+                )
+                
+               
+                figura_heatmap.update_layout(
+                    xaxis_title="Variables",
+                    yaxis_title="Variables",
+                    yaxis_autorange=True 
+                )
+                
                 st.plotly_chart(figura_heatmap, use_container_width=True)
 
                 st.subheader("Relación Precio vs. Kilometraje (Regresión)")
