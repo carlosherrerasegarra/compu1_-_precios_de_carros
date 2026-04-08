@@ -182,6 +182,175 @@ La variable principal en estudio (Variable Dependiente/Objetivo) es Price, que r
   \item Variables de Especificación Técnica: \textbf{Engine.Size}, \textbf{Fuel.Type} y \textbf{Transmission}
 \end{enumerate}
 
+\chapter{Marco Teórico} 
+
+\section{Bases Teóricas} 
+
+El presente capítulo establece los fundamentos teóricos y estadísticos necesarios para interpretar la dinámica de precios y el desgaste de los vehículos objeto de estudio. Se abordan conceptos de estadística descriptiva y métricas financieras aplicadas a activos físicos. De igual forma se explican los conceptos tecnicos automotrices necesarios para entender a mayor detalle el estudio a realizar.
+
+\subsection{Fundamentos Estadísticos}
+
+\subsubsection{Análisis Exploratorio de Datos (EDA)} 
+
+El Análisis Exploratorio de Datos (EDA, por sus siglas en inglés) es la etapa fundamental de todo proyecto de ciencia de datos. Su objetivo primordial es analizar los conjuntos de datos para determinar patrones, detectar anomalías (valores atípicos), verificar suposiciones y resumir características principales, generalmente mediante métodos de visualización, antes de aplicar modelos complejos o extraer conclusiones definitivas.
+
+\subsubsection {Medidas de Tendencia Central}
+
+Son parámetros que informan sobre el centro de la distribución de una muestra:
+
+\begin{itemize}
+  \item Media Aritmética ($\bar{x}$): Es el promedio de los datos. En este estudio, representa el precio de equilibrio, aunque es sensible a valores extremos (como modelos de lujo).
+  
+  $$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i$$
+
+  \item Mediana ($\tilde{x}$): Es el valor que divide la muestra en dos partes iguales (50 por ciento). Es la medida de posición más robusta para analizar precios, ya que no se ve afectada por los outliers.
+  
+  \item Moda: Es el valor que aparece con mayor frecuencia. Útil para identificar las marcas o modelos de vehículos más comunes en la muestra.
+
+\end{itemize}
+
+
+\subsubsection {Asimetría de Fisher (coeficiente de asimetría)} 
+
+Es una medida estadística que indica el grado de falta de simetría de una distribución de probabilidad con respecto a su media.Se define matemáticamente como el tercer momento estandarizado:
+
+$$\gamma_1 = \frac{E[(X - \mu)^3]}{\sigma^3}$$
+
+Interpretación de los Resultados
+
+\begin{itemize}
+  \item $\gamma_1 = 0$: La distribución es simétrica. Los datos se reparten de forma uniforme a ambos lados de la media (la media, la mediana y la moda suelen coincidir).
+  \item $\gamma_1 > 0$: Asimetría positiva (a la derecha). La "cola" de la distribución es más larga hacia los valores altos; existe una mayor concentración de datos en los valores bajos.
+  \item$\gamma_1 < 0$: Asimetría negativa (a la izquierda). La "cola" es más larga hacia los valores bajos; la mayor concentración de datos está en los valores altos.
+\end{itemize}
+
+```{r, fig.width=12, fig.height=4}
+library(patchwork)
+
+# Gráfico 1: Normal
+p1 <- ggplot(data.frame(x = c(-4, 4)), aes(x = x)) +
+  stat_function(fun = dnorm) +
+  labs(title = "Normal") +
+  theme_minimal()
+
+# Gráfico 2: Asimetría Derecha
+p2 <- ggplot(data.frame(x = c(0, 10)), aes(x = x)) +
+  stat_function(fun = dlnorm, args = list(meanlog = 0, sdlog = 0.7)) +
+  labs(title = "Asimetría (+)") +
+  theme_minimal()
+
+# Gráfico 3: Asimetría Izquierda
+p3 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
+  stat_function(fun = dbeta, args = list(shape1 = 5, shape2 = 2)) +
+  labs(title = "Asimetría (-)") +
+  theme_minimal()
+
+p1 + p2 + p3 + plot_annotation(title = "Comparación de Distribuciones")
+```
+
+\subsubsection {Medidas de Dispersión}
+
+Permiten cuantificar qué tan alejados están los datos respecto al promedio:
+
+\begin{itemize}
+  \item Desviación Estándar ($\sigma$): Indica el grado de variabilidad de los precios en relación con la media.
+
+$$s = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}}$$
+
+  \item Rango Intercuartílico (RIC): Diferencia entre el tercer y primer cuartil ($Q_3 - Q_1$). Representa el 50 por ciento central de la muestra y es la base para la construcción de los Diagramas de Caja.
+\end{itemize}
+
+\subsubsection {Estudio de correlacion lineal}
+
+**Covarianza ($s_{xy}$ / $\sigma_{xy}$)**
+\newline
+\newline
+La Covarianza es una medida estadística que indica el grado de variación conjunta de dos variables aleatorias respecto a sus medias. Es el indicador básico de la dependencia lineal entre dos variables; permite entender si, cuando una variable aumenta, la otra tiende a aumentar o disminuir.
+\newline
+\begin{itemize}
+\item Covarianza Positiva ($s_{xy} > 0$): Indica una relación directa. Ambas variables tienden a variar en el mismo sentido (si $X$ sube, $Y$ sube).
+\item Covarianza Negativa ($s_{xy} < 0$): Indica una relación inversa. Cuando una variable aumenta, la otra tiende a disminuir.
+\item Covarianza Nula ($s_{xy} \approx 0$): Indica que no existe una relación lineal aparente entre las dos variables.
+\end{itemize}
+
+**Coeficiente de correlación de Pearson ($r$)**
+\newline
+\newline
+Es una medida estadística que cuantifica la fuerza y la dirección de la relación lineal entre dos variables cuantitativas.Sus posibles valores se encuentran entre -1 y +1. Mientras mas alejado del cero, mayor sera la fuerza de la correlacion entre las dos variables. Al igual que la covarianza, un resultado negativo indica una relacion inversa y un resultado positivo indica una relacion directa entre ambas variables.
+
+$$r = \frac{S_{xy}}{S_x \cdot S_y}$$
+
+```{r, fig.width=12, fig.height=4}
+set.seed(42)
+n <- 50
+
+# Correlacion POSITIVA
+x1 <- seq(1.0, 6.0, length.out = n)
+y1 <- 10000 + (8000 * x1) + rnorm(n, 0, 1500) # Ruido bajo
+df1 <- data.frame(x = x1, y = y1)
+
+df11<- ggplot(df1, aes(x, y)) +
+  geom_point(color = "#2E5984", size = 2, alpha = 0.7) +
+  geom_smooth(method = "lm", color = "red", se = FALSE, size = 1.2) +
+  labs(title = "Positiva") +
+  scale_y_continuous(labels = dollar) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+
+#  Correlacion NEGATIVA
+x2 <- seq(0, 200000, length.out = n)
+y2 <- 50000 - (0.22 * x2) + rnorm(n, 0, 2000) # Ruido bajo
+df2 <- data.frame(x = x2, y = y2)
+
+df22<- ggplot(df2, aes(x, y)) +
+  geom_point(color = "#8B0000", size = 2, alpha = 0.7) +
+  geom_smooth(method = "lm", color = "red", se = FALSE, size = 1.2) +
+  labs(title = "Negativa") +
+  scale_y_continuous(labels = dollar) +
+  scale_x_continuous(labels = comma) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+
+# Correlación NULA
+x3 <- sample(1000:9999, n)
+y3 <- runif(n, 15000, 45000)
+df3 <- data.frame(x = x3, y = y3)
+
+df33 <- ggplot (df3, aes(x, y)) +
+  geom_point(color = "#4F4F4F", size = 2, alpha = 0.7) +
+  labs(title = "Correlación Nula") +
+  scale_y_continuous(labels = dollar) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+
+df11 + df22 + df33 + plot_annotation(title = "Correlaciones lineales")
+```
+
+\subsection {Fundamentos economicos}
+\subsubsection{Depreciación de Activos Móviles}
+
+Desde una perspectiva económica, la depreciación es la pérdida de valor de un bien debido al uso, el paso del tiempo o la obsolescencia. En el mercado automotriz, este fenómeno se analiza mediante la relación entre la antigüedad (Year) y el uso acumulado (Mileage) con el precio (Price) del vehiculo.
+
+\subsection {Fundamentos tecnicos automotrices}
+\subsubsection {Sistemas de Propulsión (Fuel Type)}
+
+La naturaleza del motor determina no solo el rendimiento, sino también la estructura de costos y la velocidad de depreciación del vehículo:
+
+\begin{itemize}
+\item Motores de Combustión Interna (ICE): Utilizan derivados del petróleo (Gasolina o Diesel). Su valor de mercado está fuertemente ligado a la cilindrada (Engine Size); generalmente, a mayor tamaño de motor, mayor es el consumo y el costo de mantenimiento.
+\item Vehículos Eléctricos (EV): Operan mediante baterías y motores eléctricos. Se caracterizan por la ausencia de cilindrada tradicional (registrados como NA en la base de datos). Su precio de mercado suele ser superior debido al costo de la tecnología de baterías, aunque su depreciación puede ser distinta a la de los carros convencionales.
+\item Vehículos Híbridos (HEV): Combinan un motor de combustión con uno eléctrico. Representan un punto medio en la escala de precios y eficiencia, buscando optimizar el consumo de combustible en entornos urbanos.
+\end{itemize}
+
+\subsubsection {Sistemas de Transmisión}
+
+La transmisión es el mecanismo que administra la potencia del motor hacia las ruedas. En el mercado secundario, esta variable es un factor determinante en la preferencia del consumidor:
+\begin{itemize}
+\item Transmisión Manual: Requiere la intervención directa del conductor para el cambio de marchas. Históricamente asociada a un menor costo de adquisición y mantenimiento, además de una mayor eficiencia de combustible en modelos antiguos.
+
+\item Transmisión Automática: El sistema gestiona los cambios de forma autónoma. Aunque suele incrementar el precio inicial del vehículo, es la tecnología predominante en modelos recientes y de alta gama (como BMW o Tesla), influyendo positivamente en el valor de reventa en mercados modernos.
+\end{itemize}
+
 \chapter{Marco Metódico}
 
 En esta sección se presentan las metodologías, procedimientos algorítmicos y técnicas de curaduría de datos implementadas para transformar la muestra inicial en un conjunto de datos técnicamente verosímil. Se detalla el tratamiento de la fuente de datos precios_carros.csv, los protocolos de limpieza (Data Wrangling) y el procedimiento de imputación mediante fuentes externas utilizado para corregir las inconsistencias detectadas en las variables de precio y millaje.
@@ -244,3 +413,445 @@ El proceso de ajuste se ejecutó bajo la siguiente metodología:
 
  \item Análisis de Relación: Para evaluar la relación entre el uso (Kilometraje) y el valor (Precio), se emplearán Diagramas de Dispersión (Scatter Plots) y el cálculo del Coeficiente de Correlación de Pearson, determinando así la intensidad y dirección de la asociación entre ambas variables.
 \end{itemize}
+
+\chapter{Analisis de Resultados}
+
+```{r etl-process, echo=FALSE, message=FALSE, warning=FALSE}
+# Carga de datos
+
+folder_path <- file.path("C:", "Users", "Viviam Segarra", "Downloads")
+file_name <- "precios_carros_arreglado.csv"
+full_path <- file.path(folder_path, file_name)
+df_precioscarros <- read.csv(full_path, header = TRUE, stringsAsFactors = FALSE, na.strings = c("NA", "", " ", "-", "Unknown"))
+
+```
+
+
+```{r}
+# Gráfico 1: Distribución de Precios
+ggplot(df_precioscarros, aes(x = Price)) +
+  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
+  labs(title = "Distribución Global de Precios de Vehículos",
+       x = "Precio (USD)", y = "Frecuencia") +
+  theme_minimal()
+```
+
+```{r}
+# Gráfico 2: Boxplot de Precio por Marca
+ggplot(df_precioscarros, aes(x = Brand, y = Price, fill = Brand)) +
+  geom_boxplot() +
+  labs(title = "Dispersión de Precios por Casa Fabricante",
+       x = "Marca", y = "Precio (USD)") +
+  theme_minimal()
+```
+
+``` {r}
+tabla_resumen_Price <- df_precioscarros %>%
+  group_by(Marca = Brand) %>%
+  summarise(`Total de carros` = n(), `Precio promedio` = mean(Price, na.rm = TRUE), `Desviacion estandar` = sd(Price, na.rm = TRUE), `Coeficiente de Variacion` = (`Desviacion estandar` / `Precio promedio`) * 100 )
+
+fila_total_Price <- df_precioscarros %>%
+  summarise( Marca = "Total Muestra", `Total de carros` = n(), `Precio promedio` = mean(Price, na.rm = TRUE), `Desviacion estandar` = sd(Price, na.rm = TRUE), `Coeficiente de Variacion` = (`Desviacion estandar` / `Precio promedio`) * 100)
+
+tabla_final_Price <- bind_rows(tabla_resumen_Price, fila_total_Price)
+
+tabla_final_Price %>%
+  mutate(across(where(is.numeric), ~ round(., 2))) %>%
+  kable(format = "latex",booktabs = TRUE, caption = "Resumen Estadístico de Precios por Marca", align = "lcccc",format.args = list(big.mark = ",", decimal.mark = ".")) %>%
+  kable_styling(latex_options = c("striped", "hold_position", "scale_down"), full_width = F, position = "center") %>%
+  row_spec(0, bold = TRUE, color = "black") %>%
+  row_spec(nrow(tabla_final_Price), bold = TRUE, background = "lightgray") %>%
+  column_spec(5, italic = TRUE)
+```
+
+``` {r}
+# 1. Preparar los datos para la línea de tiempo
+df_linea_tiempo <- df_precioscarros %>%
+  group_by(Year, Brand) %>%
+  summarise(Precio_Promedio = mean(Price, na.rm = TRUE), .groups = 'drop')
+
+# 2. Crear el gráfico
+ggplot(df_linea_tiempo, aes(x = Year, y = Precio_Promedio, color = Brand)) +
+  geom_line(size = 1) +
+  geom_point(size = 2) +
+  theme_minimal() +
+  labs(
+    title = "Evolución del Precio Promedio por Marca (2000 - 2023)",
+    subtitle = "Análisis basado en el año de fabricación del vehículo",
+    x = "Año de Fabricación",
+    y = "Precio Promedio (USD)",
+    color = "Marca"
+  ) +
+  scale_y_continuous(labels = scales::comma) + # Separadores de miles en el eje Y
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold", size = 14),
+    panel.grid.minor = element_blank()
+  )
+```
+
+```{r}
+# Gráfico 1: Distribución de Millaje
+ggplot(df_precioscarros, aes(x = Mileage)) +
+  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
+  labs(title = "Distribución Global de Millaje de los Vehículos",
+       x = "Millas", y = "Frecuencia") +
+  theme_minimal()
+```
+
+``` {r}
+tabla_resumen_mileage <- df_precioscarros %>%
+  group_by(Marca = Brand) %>%
+  summarise(`Total de carros` = n(), `Millaje promedio` = mean(Mileage, na.rm = TRUE), `Desviacion estandar` = sd(Mileage, na.rm = TRUE), `Coeficiente de Variacion` = (`Desviacion estandar` / `Millaje promedio`) * 100 )
+
+fila_total_mileage <- df_precioscarros %>%
+  summarise( Marca = "Total Muestra", `Total de carros` = n(), `Millaje promedio` = mean(Mileage, na.rm = TRUE), `Desviacion estandar` = sd(Mileage, na.rm = TRUE), `Coeficiente de Variacion` = (`Desviacion estandar` / `Millaje promedio`) * 100)
+
+tabla_final_mileage <- bind_rows(tabla_resumen_mileage, fila_total_mileage)
+
+tabla_final_mileage %>%
+  mutate(across(where(is.numeric), ~ round(., 2))) %>%
+  kable(format = "latex",booktabs = TRUE, caption = "Resumen Estadístico de Millaje por Marca", align = "lcccc",format.args = list(big.mark = ",", decimal.mark = ".")) %>%
+  kable_styling(latex_options = c("striped", "hold_position", "scale_down"), full_width = F, position = "center") %>%
+  row_spec(0, bold = TRUE, color = "black") %>%
+  row_spec(nrow(tabla_final_mileage), bold = TRUE, background = "lightgray") %>%
+  column_spec(5, italic = TRUE)
+```
+
+``` {r}
+# Gráfico 2: Boxplot de Millaje por Marca
+ggplot(df_precioscarros, aes(x = Brand, y = Mileage, fill = Brand)) +
+  geom_boxplot() +
+  labs(title = "Dispersión de Millaje por Casa Fabricante",
+       x = "Marca", y = "Millaje") +
+  theme_minimal()
+```
+
+``` {r}
+# 1. Preparar los datos para la línea de tiempo
+df_linea_tiempo_millas <- df_precioscarros %>%
+  group_by(Year, Brand) %>%
+  summarise(Millaje_Promedio = mean(Mileage, na.rm = TRUE), .groups = 'drop')
+
+# 2. Crear el gráfico
+ggplot(df_linea_tiempo_millas, aes(x = Year, y = Millaje_Promedio, color = Brand)) +
+  geom_line(size = 1) +
+  geom_point(size = 2) +
+  theme_minimal() +
+  labs(
+    title = "Evolución del Millaje Promedio por Marca (2000 - 2023)",
+    subtitle = "Análisis basado en el año de fabricación del vehículo",
+    x = "Año de Fabricación",
+    y = "Millaje Promedio (USD)",
+    color = "Marca"
+  ) +
+  scale_y_continuous(labels = scales::comma) + # Separadores de miles en el eje Y
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold", size = 14),
+    panel.grid.minor = element_blank()
+  )
+```
+
+
+
+``` {r}
+# 1. Crear el gráfico de dispersión
+ggplot(df_precioscarros, aes(x = Mileage, y = Price)) +
+  geom_point(alpha = 0.5, color = "#2c3e50") + # Puntos con transparencia para ver densidad
+  geom_smooth(method = "lm", color = "red", se = TRUE) + # Línea de tendencia lineal
+  theme_minimal() +
+  scale_y_continuous(labels = comma) +
+  scale_x_continuous(labels = comma) +
+  labs(
+    title = "Correlación entre Precio y Kilometraje",
+    subtitle = "Análisis de dispersión con línea de tendencia (Regresión Lineal)",
+    x = "Kilometraje (Millaje)",
+    y = "Precio (USD)"
+  ) +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    panel.grid.minor = element_blank()
+  )
+
+correlacion <- cor(df_precioscarros$Price, df_precioscarros$Mileage, use = "complete.obs")
+print(paste("El coeficiente de correlación es:", round(correlacion, 4)))
+```
+
+
+``` {r}
+# 1. Definir la paleta de colores personalizada
+colores_combustible <- c(
+  "Electrico" = "#0072B2", # Azul
+  "Hibrido"   = "#009E73", # Verde
+  "Gasolina"  = "#F0E442", # Amarillo
+  "Diesel"    = "#D55E00"  # Rojo
+)
+
+# 2. Crear el gráfico de barras apiladas
+ggplot(df_precioscarros, aes(x = factor(Year), fill = Fuel.Type)) +
+  geom_bar(position = "stack") +
+  scale_fill_manual(values = colores_combustible) +
+  theme_minimal() +
+  labs(
+    title = "Distribución de Tipos de Combustible por Año",
+    subtitle = "Frecuencia absoluta de vehículos en la muestra",
+    x = "Año de Fabricación",
+    y = "Cantidad de Carros",
+    fill = "Tipo de Combustible"
+  ) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1), # Rotar años para lectura en PDF
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold")
+  )
+```
+
+
+
+``` {r}
+# 1. Filtrar y calcular estadísticas (Solo 2015 en adelante)
+tabla_combustible <- df_precioscarros %>%
+  filter(Year >= 2015) %>%
+  group_by(`Tipo de combustible` = Fuel.Type) %>%
+  summarise(
+    `Cantidad de carros` = n(),
+    `Precio promedio` = mean(Price, na.rm = TRUE),
+    `Desviacion estandar` = sd(Price, na.rm = TRUE),
+    `Coeficiente de Variacion` = (`Desviacion estandar` / `Precio promedio`) * 100
+  ) %>%
+  # Añadir fila de total
+  bind_rows(
+    df_precioscarros %>%
+      filter(Year >= 2015) %>%
+      summarise(
+        `Tipo de combustible` = "Total",
+        `Cantidad de carros` = n(),
+        `Precio promedio` = mean(Price, na.rm = TRUE),
+        `Desviacion estandar` = sd(Price, na.rm = TRUE),
+        `Coeficiente de Variacion` = (`Desviacion estandar` / `Precio promedio`) * 100
+      )
+  )
+
+tabla_combustible %>%
+  mutate(across(where(is.numeric), ~ round(., 2))) %>%
+  kable(format = "latex",booktabs = TRUE, caption = "Análisis de Precios por Combustible (Modelos 2015 - 2023)", align = "lcccc",format.args = list(big.mark = ",", decimal.mark = ".")) %>%
+  kable_styling(latex_options = c("striped", "hold_position", "scale_down"), full_width = F, position = "center") %>%
+  row_spec(0, bold = TRUE, color = "black") %>%
+  row_spec(nrow(tabla_combustible), bold = TRUE, background = "lightgray") %>%
+  column_spec(5, italic = TRUE)
+```
+
+``` {r}
+# 1. Filtrar y preparar los datos
+df_linea_combustible <- df_precioscarros %>%
+  filter(Year >= 2015) %>%
+  group_by(Year, Fuel.Type) %>%
+  summarise(Precio_Promedio = mean(Price, na.rm = TRUE), .groups = 'drop')
+
+# 2. Definir los mismos colores del gráfico de barras para mantener consistencia
+colores_combustible <- c(
+  "Electrico" = "#0072B2", # Azul
+  "Hibrido"   = "#009E73", # Verde
+  "Gasolina"  = "#F0E442", # Amarillo
+  "Diesel"    = "#D55E00"  # Rojo
+)
+
+# 3. Crear el gráfico de líneas
+ggplot(df_linea_combustible, aes(x = Year, y = Precio_Promedio, color = Fuel.Type)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 3) +
+  scale_color_manual(values = colores_combustible) +
+  theme_minimal() +
+  scale_y_continuous(labels = scales::comma) +
+  scale_x_continuous(breaks = 2015:2023) +
+  labs(
+    title = "Evolución del Precio Promedio por Tipo de Combustible",
+    subtitle = "Periodo de análisis: 2015 - 2023",
+    x = "Año de Fabricación",
+    y = "Precio Promedio (USD)",
+    color = "Combustible"
+  ) +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold", size = 14),
+    panel.grid.minor = element_blank()
+  )
+```
+
+
+
+``` {r}
+# 1. Definir los colores para mantener la coherencia visual
+colores_combustible <- c(
+  "Electrico" = "#0072B2", # Azul
+  "Hibrido"   = "#009E73", # Verde
+  "Gasolina"  = "#F0E442", # Amarillo
+  "Diesel"    = "#D55E00"  # Rojo
+)
+
+# 2. Crear el Gráfico de Caja y Bigotes
+ggplot(df_precioscarros, aes(x = Fuel.Type, y = Price, fill = Fuel.Type)) +
+  geom_boxplot(alpha = 0.7, outlier.colour = "red", outlier.shape = 16) +
+  scale_fill_manual(values = colores_combustible) +
+  theme_minimal() +
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    title = "Distribución de Precios por Tipo de Combustible",
+    subtitle = "Identificación de medianas y valores atípicos",
+    x = "Tipo de Combustible",
+    y = "Precio (USD)",
+    fill = "Combustible"
+  ) +
+  theme(
+    legend.position = "none", # Quitamos la leyenda porque el eje X ya identifica el grupo
+    plot.title = element_text(face = "bold", size = 14)
+  )
+```
+
+
+
+``` {r}
+# 1. Calcular las estadísticas por tipo de transmisión
+tabla_transmision <- df_precioscarros %>%
+  group_by(`Tipo de transmisión` = Transmission) %>%
+  summarise(
+    `Cantidad de carros` = n(),
+    `Precio medio` = mean(Price, na.rm = TRUE),
+    `Desviación estándar` = sd(Price, na.rm = TRUE),
+    `Coeficiente de Variación` = (`Desviación estándar` / `Precio medio`) * 100
+  ) %>%
+  # Añadir la fila del total de la muestra
+  bind_rows(
+    df_precioscarros %>%
+      summarise(
+        `Tipo de transmisión` = "Total Muestra",
+        `Cantidad de carros` = n(),
+        `Precio medio` = mean(Price, na.rm = TRUE),
+        `Desviación estándar` = sd(Price, na.rm = TRUE),
+        `Coeficiente de Variación` = (`Desviación estándar` / `Precio medio`) * 100
+      )
+  )
+
+# 2. Formatear la tabla para PDF
+tabla_transmision %>%
+  mutate(across(where(is.numeric), ~ round(., 2))) %>%
+  kable(format = "latex",booktabs = TRUE, caption = "Análisis de Precios por Combustible (Modelos 2015 - 2023)", align = "lcccc",format.args = list(big.mark = ",", decimal.mark = ".")) %>%
+  kable_styling(latex_options = c("striped", "hold_position", "scale_down"), full_width = F, position = "center") %>%
+  row_spec(0, bold = TRUE, color = "black") %>%
+  row_spec(nrow(tabla_transmision), bold = TRUE, background = "lightgray") %>%
+  column_spec(5, italic = TRUE)
+```
+
+
+``` {r}
+# 1. Crear el Boxplot por Tipo de Transmisión
+ggplot(df_precioscarros, aes(x = Transmission, y = Price, fill = Transmission)) +
+  geom_boxplot(alpha = 0.7, outlier.colour = "red", outlier.shape = 1) +
+  scale_fill_manual(values = c("Automatico" = "#3498db", "Manual" = "#95a5a6")) +
+  theme_minimal() +
+  scale_y_continuous(labels = comma) +
+  labs(
+    title = "Distribución de Precios por Tipo de Transmisión",
+    subtitle = "Comparación de medianas y rangos intercuartílicos",
+    x = "Tipo de Transmisión",
+    y = "Precio (USD)"
+  ) +
+  theme(
+    legend.position = "none", # El eje X ya identifica los grupos
+    plot.title = element_text(face = "bold", size = 14),
+    panel.grid.minor = element_blank()
+  )
+```
+
+
+
+``` {r}
+# 1. Preparar los datos: Promedio por Año y Transmisión
+df_linea_transmision <- df_precioscarros %>%
+  group_by(Year, Transmission) %>%
+  summarise(Precio_Promedio = mean(Price, na.rm = TRUE), .groups = 'drop')
+
+# 2. Crear el gráfico de líneas
+ggplot(df_linea_transmision, aes(x = Year, y = Precio_Promedio, color = Transmission)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2.5) +
+  # Usamos la misma paleta que el boxplot para coherencia visual
+  scale_color_manual(values = c("Automatico" = "#3498db", "Manual" = "#95a5a6")) +
+  theme_minimal() +
+  scale_y_continuous(labels = comma) +
+  scale_x_continuous(breaks = seq(2005, 2023, by = 2)) +
+  labs(
+    title = "Evolución del Precio Promedio por Tipo de Transmisión",
+    subtitle = "Tendencia histórica (2005 - 2023)",
+    x = "Año de Fabricación",
+    y = "Precio Promedio (USD)",
+    color = "Transmisión"
+  ) +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold", size = 14),
+    panel.grid.minor = element_blank()
+  )
+```
+
+
+``` {r}
+# 1. Seleccionar variables numéricas y calcular la matriz
+matriz_cor <- df_precioscarros %>%
+  select(Price, Mileage, Year, Engine.Size) %>%
+  cor(use = "complete.obs")
+
+# 2. Convertir a data frame y renombrar para la tabla
+df_cor <- as.data.frame(matriz_cor)
+rownames(df_cor) <- c("Precio", "Millaje", "Año", "Tamaño Motor")
+colnames(df_cor) <- c("Precio", "Millaje", "Año", "Tamaño Motor")
+
+# 3. Formatear con kableExtra para PDF
+df_cor %>%
+  mutate(across(everything(), ~ round(., 3))) %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    caption = "Matriz de Correlación Lineal (Pearson)",
+    align = "lcccc"
+  ) %>%
+  kable_styling(
+    latex_options = c("striped", "hold_position"),
+    full_width = F,
+    position = "center"
+  ) %>%
+  column_spec(1, bold = TRUE, border_right = TRUE) %>%
+  row_spec(0, bold = TRUE)
+```
+
+
+``` {r}
+library(ggcorrplot)
+
+# 1. Selección y limpieza de variables (asegurando nombres limpios)
+df_num <- df_precioscarros %>%
+  select(
+    `Tamaño Motor` = Engine.Size,
+    Año = Year,
+    Millaje = Mileage, 
+    Precio = Price)
+
+# 2. Calcular la matriz de correlación
+corr_mat <- cor(df_num, use = "complete.obs")
+
+# 3. Generar el gráfico idéntico a la referencia
+ggcorrplot(corr_mat, 
+           type = "full",          # Cuadrado completo
+           lab = TRUE,             # Mostrar los números
+           lab_size = 5,           # Tamaño de los números
+           outline.col = "white",  # Bordes blancos entre cuadros
+           colors = c("#FF4B4B", "white", "#4B7BFF"), # Rojo (negativa) a Azul (positiva)
+           title = "Matriz de Correlación de Variables",
+           legend.title = "Correlación",
+           ggtheme = theme_minimal()) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 15),
+    axis.text.x = element_text(angle = 0, hjust = 0.5) # Etiquetas horizontales
+  )
+```

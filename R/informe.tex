@@ -308,6 +308,136 @@ analizan:
   \item Variables de Especificación Técnica: \textbf{Engine.Size}, \textbf{Fuel.Type} y \textbf{Transmission}
 \end{enumerate}
 
+\chapter{Marco Teórico}
+
+\section{Bases Teóricas}
+
+El presente capítulo establece los fundamentos teóricos y estadísticos
+necesarios para interpretar la dinámica de precios y el desgaste de los
+vehículos objeto de estudio. Se abordan conceptos de estadística
+descriptiva y métricas financieras aplicadas a activos físicos. De igual
+forma se explican los conceptos tecnicos automotrices necesarios para
+entender a mayor detalle el estudio a realizar.
+
+\subsection{Fundamentos Estadísticos}
+
+\subsubsection{Análisis Exploratorio de Datos (EDA)}
+
+El Análisis Exploratorio de Datos (EDA, por sus siglas en inglés) es la
+etapa fundamental de todo proyecto de ciencia de datos. Su objetivo
+primordial es analizar los conjuntos de datos para determinar patrones,
+detectar anomalías (valores atípicos), verificar suposiciones y resumir
+características principales, generalmente mediante métodos de
+visualización, antes de aplicar modelos complejos o extraer conclusiones
+definitivas.
+
+\subsubsection {Medidas de Tendencia Central}
+
+Son parámetros que informan sobre el centro de la distribución de una
+muestra:
+
+\begin{itemize}
+  \item Media Aritmética ($\bar{x}$): Es el promedio de los datos. En este estudio, representa el precio de equilibrio, aunque es sensible a valores extremos (como modelos de lujo).
+  
+  $$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i$$
+
+  \item Mediana ($\tilde{x}$): Es el valor que divide la muestra en dos partes iguales (50 por ciento). Es la medida de posición más robusta para analizar precios, ya que no se ve afectada por los outliers.
+  
+  \item Moda: Es el valor que aparece con mayor frecuencia. Útil para identificar las marcas o modelos de vehículos más comunes en la muestra.
+
+\end{itemize}
+
+\subsubsection {Asimetría de Fisher (coeficiente de asimetría)}
+
+Es una medida estadística que indica el grado de falta de simetría de
+una distribución de probabilidad con respecto a su media.Se define
+matemáticamente como el tercer momento estandarizado:
+
+\[\gamma_1 = \frac{E[(X - \mu)^3]}{\sigma^3}\]
+
+Interpretación de los Resultados
+
+\begin{itemize}
+  \item $\gamma_1 = 0$: La distribución es simétrica. Los datos se reparten de forma uniforme a ambos lados de la media (la media, la mediana y la moda suelen coincidir).
+  \item $\gamma_1 > 0$: Asimetría positiva (a la derecha). La "cola" de la distribución es más larga hacia los valores altos; existe una mayor concentración de datos en los valores bajos.
+  \item$\gamma_1 < 0$: Asimetría negativa (a la izquierda). La "cola" es más larga hacia los valores bajos; la mayor concentración de datos está en los valores altos.
+\end{itemize}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-1-1} \end{center}
+
+\subsubsection {Medidas de Dispersión}
+
+Permiten cuantificar qué tan alejados están los datos respecto al
+promedio:
+
+\begin{itemize}
+  \item Desviación Estándar ($\sigma$): Indica el grado de variabilidad de los precios en relación con la media.
+
+$$s = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}}$$
+
+  \item Rango Intercuartílico (RIC): Diferencia entre el tercer y primer cuartil ($Q_3 - Q_1$). Representa el 50 por ciento central de la muestra y es la base para la construcción de los Diagramas de Caja.
+\end{itemize}
+
+\subsubsection {Estudio de correlacion lineal}
+
+\textbf{Covarianza (\(s_{xy}\) / \(\sigma_{xy}\))} \newline \newline La
+Covarianza es una medida estadística que indica el grado de variación
+conjunta de dos variables aleatorias respecto a sus medias. Es el
+indicador básico de la dependencia lineal entre dos variables; permite
+entender si, cuando una variable aumenta, la otra tiende a aumentar o
+disminuir. \newline
+
+\begin{itemize}
+\item Covarianza Positiva ($s_{xy} > 0$): Indica una relación directa. Ambas variables tienden a variar en el mismo sentido (si $X$ sube, $Y$ sube).
+\item Covarianza Negativa ($s_{xy} < 0$): Indica una relación inversa. Cuando una variable aumenta, la otra tiende a disminuir.
+\item Covarianza Nula ($s_{xy} \approx 0$): Indica que no existe una relación lineal aparente entre las dos variables.
+\end{itemize}
+
+\textbf{Coeficiente de correlación de Pearson (\(r\))} \newline \newline
+Es una medida estadística que cuantifica la fuerza y la dirección de la
+relación lineal entre dos variables cuantitativas.Sus posibles valores
+se encuentran entre -1 y +1. Mientras mas alejado del cero, mayor sera
+la fuerza de la correlacion entre las dos variables. Al igual que la
+covarianza, un resultado negativo indica una relacion inversa y un
+resultado positivo indica una relacion directa entre ambas variables.
+
+\[r = \frac{S_{xy}}{S_x \cdot S_y}\]
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
+\subsection {Fundamentos economicos}
+\subsubsection{Depreciación de Activos Móviles}
+
+Desde una perspectiva económica, la depreciación es la pérdida de valor
+de un bien debido al uso, el paso del tiempo o la obsolescencia. En el
+mercado automotriz, este fenómeno se analiza mediante la relación entre
+la antigüedad (Year) y el uso acumulado (Mileage) con el precio (Price)
+del vehiculo.
+
+\subsection {Fundamentos tecnicos automotrices}
+\subsubsection {Sistemas de Propulsión (Fuel Type)}
+
+La naturaleza del motor determina no solo el rendimiento, sino también
+la estructura de costos y la velocidad de depreciación del vehículo:
+
+\begin{itemize}
+\item Motores de Combustión Interna (ICE): Utilizan derivados del petróleo (Gasolina o Diesel). Su valor de mercado está fuertemente ligado a la cilindrada (Engine Size); generalmente, a mayor tamaño de motor, mayor es el consumo y el costo de mantenimiento.
+\item Vehículos Eléctricos (EV): Operan mediante baterías y motores eléctricos. Se caracterizan por la ausencia de cilindrada tradicional (registrados como NA en la base de datos). Su precio de mercado suele ser superior debido al costo de la tecnología de baterías, aunque su depreciación puede ser distinta a la de los carros convencionales.
+\item Vehículos Híbridos (HEV): Combinan un motor de combustión con uno eléctrico. Representan un punto medio en la escala de precios y eficiencia, buscando optimizar el consumo de combustible en entornos urbanos.
+\end{itemize}
+
+\subsubsection {Sistemas de Transmisión}
+
+La transmisión es el mecanismo que administra la potencia del motor
+hacia las ruedas. En el mercado secundario, esta variable es un factor
+determinante en la preferencia del consumidor:
+
+\begin{itemize}
+\item Transmisión Manual: Requiere la intervención directa del conductor para el cambio de marchas. Históricamente asociada a un menor costo de adquisición y mantenimiento, además de una mayor eficiencia de combustible en modelos antiguos.
+
+\item Transmisión Automática: El sistema gestiona los cambios de forma autónoma. Aunque suele incrementar el precio inicial del vehículo, es la tecnología predominante en modelos recientes y de alta gama (como BMW o Tesla), influyendo positivamente en el valor de reventa en mercados modernos.
+\end{itemize}
+
 \chapter{Marco Metódico}
 
 En esta sección se presentan las metodologías, procedimientos
@@ -391,6 +521,132 @@ El proceso de ajuste se ejecutó bajo la siguiente metodología:
 
  \item Análisis de Relación: Para evaluar la relación entre el uso (Kilometraje) y el valor (Precio), se emplearán Diagramas de Dispersión (Scatter Plots) y el cálculo del Coeficiente de Correlación de Pearson, determinando así la intensidad y dirección de la asociación entre ambas variables.
 \end{itemize}
+
+\chapter{Analisis de Resultados}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+\begin{table}[!h]
+\centering
+\caption{\label{tab:unnamed-chunk-5}Resumen Estadístico de Precios por Marca}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\begin{tabular}[t]{lccc>{}c}
+\toprule
+\textcolor{black}{\textbf{Marca}} & \textcolor{black}{\textbf{Total de carros}} & \textcolor{black}{\textbf{Precio promedio}} & \textcolor{black}{\textbf{Desviacion estandar}} & \textcolor{black}{\textbf{Coeficiente de Variacion}}\\
+\midrule
+\cellcolor{gray!10}{Audi} & \cellcolor{gray!10}{273} & \cellcolor{gray!10}{21,091.78} & \cellcolor{gray!10}{14,915.68} & \em{\cellcolor{gray!10}{70.72}}\\
+BMW & 315 & 22,055.13 & 14,253.49 & \em{64.63}\\
+\cellcolor{gray!10}{Ford} & \cellcolor{gray!10}{307} & \cellcolor{gray!10}{11,519.09} & \cellcolor{gray!10}{8,196.44} & \em{\cellcolor{gray!10}{71.16}}\\
+Honda & 303 & 12,672.63 & 6,895.22 & \em{54.41}\\
+\cellcolor{gray!10}{Mercedes} & \cellcolor{gray!10}{240} & \cellcolor{gray!10}{27,999.02} & \cellcolor{gray!10}{16,692.46} & \em{\cellcolor{gray!10}{59.62}}\\
+\addlinespace
+Tesla & 82 & 51,690.84 & 15,965.53 & \em{30.89}\\
+\cellcolor{gray!10}{Toyota} & \cellcolor{gray!10}{346} & \cellcolor{gray!10}{13,978.80} & \cellcolor{gray!10}{8,111.27} & \em{\cellcolor{gray!10}{58.03}}\\
+\cellcolor{lightgray}{\textbf{Total Muestra}} & \cellcolor{lightgray}{\textbf{1,866}} & \cellcolor{lightgray}{\textbf{19,226.51}} & \cellcolor{lightgray}{\textbf{14,976.39}} & \em{\cellcolor{lightgray}{\textbf{77.89}}}\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-7-1} \end{center}
+
+\begin{table}[!h]
+\centering
+\caption{\label{tab:unnamed-chunk-8}Resumen Estadístico de Millaje por Marca}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\begin{tabular}[t]{lccc>{}c}
+\toprule
+\textcolor{black}{\textbf{Marca}} & \textcolor{black}{\textbf{Total de carros}} & \textcolor{black}{\textbf{Millaje promedio}} & \textcolor{black}{\textbf{Desviacion estandar}} & \textcolor{black}{\textbf{Coeficiente de Variacion}}\\
+\midrule
+\cellcolor{gray!10}{Audi} & \cellcolor{gray!10}{273} & \cellcolor{gray!10}{78,117.04} & \cellcolor{gray!10}{43,052.92} & \em{\cellcolor{gray!10}{55.11}}\\
+BMW & 315 & 86,093.36 & 47,990.51 & \em{55.74}\\
+\cellcolor{gray!10}{Ford} & \cellcolor{gray!10}{307} & \cellcolor{gray!10}{90,512.53} & \cellcolor{gray!10}{45,444.75} & \em{\cellcolor{gray!10}{50.21}}\\
+Honda & 303 & 84,529.78 & 48,801.04 & \em{57.73}\\
+\cellcolor{gray!10}{Mercedes} & \cellcolor{gray!10}{240} & \cellcolor{gray!10}{69,675.23} & \cellcolor{gray!10}{47,357.88} & \em{\cellcolor{gray!10}{67.97}}\\
+\addlinespace
+Tesla & 82 & 30,862.63 & 15,594.34 & \em{50.53}\\
+\cellcolor{gray!10}{Toyota} & \cellcolor{gray!10}{346} & \cellcolor{gray!10}{82,637.46} & \cellcolor{gray!10}{46,962.79} & \em{\cellcolor{gray!10}{56.83}}\\
+\cellcolor{lightgray}{\textbf{Total Muestra}} & \cellcolor{lightgray}{\textbf{1,866}} & \cellcolor{lightgray}{\textbf{80,220.03}} & \cellcolor{lightgray}{\textbf{47,307.31}} & \em{\cellcolor{lightgray}{\textbf{58.97}}}\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-9-1} \end{center}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-10-1} \end{center}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-11-1} \end{center}
+
+\begin{verbatim}
+## [1] "El coeficiente de correlación es: -0.6254"
+\end{verbatim}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-12-1} \end{center}
+
+\begin{table}[!h]
+\centering
+\caption{\label{tab:unnamed-chunk-13}Análisis de Precios por Combustible (Modelos 2015 - 2023)}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\begin{tabular}[t]{lccc>{}c}
+\toprule
+\textcolor{black}{\textbf{Tipo de combustible}} & \textcolor{black}{\textbf{Cantidad de carros}} & \textcolor{black}{\textbf{Precio promedio}} & \textcolor{black}{\textbf{Desviacion estandar}} & \textcolor{black}{\textbf{Coeficiente de Variacion}}\\
+\midrule
+\cellcolor{gray!10}{Diesel} & \cellcolor{gray!10}{162} & \cellcolor{gray!10}{30,712.56} & \cellcolor{gray!10}{13,738.84} & \em{\cellcolor{gray!10}{44.73}}\\
+Electrico & 92 & 49,496.39 & 16,606.89 & \em{33.55}\\
+\cellcolor{gray!10}{Gasolina} & \cellcolor{gray!10}{437} & \cellcolor{gray!10}{26,759.90} & \cellcolor{gray!10}{13,356.35} & \em{\cellcolor{gray!10}{49.91}}\\
+Hibrido & 141 & 29,083.71 & 14,128.79 & \em{48.58}\\
+\cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{Total}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{832}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{30,437.48}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{15,545.12}}} & \em{\cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{51.07}}}}\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-14-1} \end{center}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-15-1} \end{center}
+
+\begin{table}[!h]
+\centering
+\caption{\label{tab:unnamed-chunk-16}Análisis de Precios por Combustible (Modelos 2015 - 2023)}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\begin{tabular}[t]{lccc>{}c}
+\toprule
+\textcolor{black}{\textbf{Tipo de transmisión}} & \textcolor{black}{\textbf{Cantidad de carros}} & \textcolor{black}{\textbf{Precio medio}} & \textcolor{black}{\textbf{Desviación estándar}} & \textcolor{black}{\textbf{Coeficiente de Variación}}\\
+\midrule
+\cellcolor{gray!10}{Automatico} & \cellcolor{gray!10}{1,080} & \cellcolor{gray!10}{21,238.44} & \cellcolor{gray!10}{16,118.83} & \em{\cellcolor{gray!10}{75.89}}\\
+Manual & 786 & 16,462.03 & 12,748.63 & \em{77.44}\\
+\cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{Total Muestra}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{1,866}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{19,226.51}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{14,976.39}}} & \em{\cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{77.89}}}}\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-17-1} \end{center}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-18-1} \end{center}
+
+\begin{table}[!h]
+\centering
+\caption{\label{tab:unnamed-chunk-19}Matriz de Correlación Lineal (Pearson)}
+\centering
+\begin{tabular}[t]{>{}l|lccc}
+\toprule
+\textbf{ } & \textbf{Precio} & \textbf{Millaje} & \textbf{Año} & \textbf{Tamaño Motor}\\
+\midrule
+\textbf{\cellcolor{gray!10}{Precio}} & \cellcolor{gray!10}{1.000} & \cellcolor{gray!10}{-0.627} & \cellcolor{gray!10}{0.735} & \cellcolor{gray!10}{0.060}\\
+\textbf{Millaje} & -0.627 & 1.000 & -0.900 & 0.139\\
+\textbf{\cellcolor{gray!10}{Año}} & \cellcolor{gray!10}{0.735} & \cellcolor{gray!10}{-0.900} & \cellcolor{gray!10}{1.000} & \cellcolor{gray!10}{-0.143}\\
+\textbf{Tamaño Motor} & 0.060 & 0.139 & -0.143 & 1.000\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-20-1} \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                   REFERENCIAS                     %
