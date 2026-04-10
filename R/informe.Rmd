@@ -415,7 +415,6 @@ El proceso de ajuste se ejecutó bajo la siguiente metodología:
 \end{itemize}
 
 \chapter{Analisis de Resultados}
-
 ```{r etl-process, echo=FALSE, message=FALSE, warning=FALSE}
 # Carga de datos
 
@@ -426,24 +425,23 @@ df_precioscarros <- read.csv(full_path, header = TRUE, stringsAsFactors = FALSE,
 
 ```
 
+El presente capítulo constituye el núcleo del estudio, donde se exponen y examinan de manera detallada los hallazgos obtenidos tras el procesamiento de la base de datos de 1,866 vehículos. El objetivo principal es transformar los datos crudos en información estadística de valor que permita caracterizar el comportamiento del mercado automotriz de segunda mano para el año 2023. Aunque no es una variable de estudio, dentro de los modelos representados en la muestra, hay una representacion de sedans compactos y grandes, asi como SUV de mediano y gran tamaño. Cada marca de la muestra tiene 4 modelos diferentes y una combinacion semejante de carros por tipo de carroceria. 
 
-```{r}
-# Gráfico 1: Distribución de Precios
-ggplot(df_precioscarros, aes(x = Price)) +
-  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
-  labs(title = "Distribución Global de Precios de Vehículos",
-       x = "Precio (USD)", y = "Frecuencia") +
-  theme_minimal()
-```
+\subsection {Estudio de Precios por Marca}
 
-```{r}
-# Gráfico 2: Boxplot de Precio por Marca
-ggplot(df_precioscarros, aes(x = Brand, y = Price, fill = Brand)) +
-  geom_boxplot() +
-  labs(title = "Dispersión de Precios por Casa Fabricante",
-       x = "Marca", y = "Precio (USD)") +
-  theme_minimal()
-```
+Las marcas representadas en la muestra pueden ser divididas en 3 grupos. Un primer grupo conformado por Ford, Honda y Toyota, las cuales son consideradas marcas de consumo masivo, mientras que el grupo de marcas Audi, BMW y Mercedes Benz serian consideradas marcas de lujo. Por ultimo, se tiene el caso particular de Tesla, que tambien se consideraria una marca de lujo, pero tiene la peculiaridad de ser una marca relativamente nueva que fabrica exclusivamente vehiculos electricos.
+\newline
+\newline
+**Resumen Estadistico de Precios por Marca**
+\newline
+\newline
+En la tabla 4.1, se observan los precios promedios por marca y es notable la diferencia entre la media de precios de cada uno de los grupos mencionados anteriormente. Las marcas de consumo masivo tienen un precio promedio considerablemente menor a las de lujo. En el caso de Tesla es aun mas notorio su alto precio promedio, principalmente debido a que los modelos de dicha marca salen al mercado a partir del año 2015, y su promedio no se ve arrastrado hacia abajo por precios de carros de mayor antiguedad, y por lo tanto su variabilidad tambien es la mas baja de entre todas las marcas.
+\newline
+\newline
+La marca con el precio promedio mas bajo es Ford, pero tambien es la que tiene mayor variabilidad en sus precios. Haciendo a un lado los carros de la marca Tesla, la marca con mayor precio promedio es Mercedes Benz.
+\newline
+\newline
+En general, se observa una alta variabilidad en los precios de los carros en la muestra.
 
 ``` {r}
 tabla_resumen_Price <- df_precioscarros %>%
@@ -464,13 +462,51 @@ tabla_final_Price %>%
   column_spec(5, italic = TRUE)
 ```
 
+**Distribucion Global de Precios**
+\newline
+\newline
+En el siguiente histograma observamos que existe una alta asimetria hacia la derecha, esto indica que la mayor concentración de vehículos se encuentra en los rangos de precios bajos y medios, mientras que la "cola" de la distribución se extiende hacia valores altos, representados por modelos de lujo o tecnologías más costosas como Tesla.  Lo que quiere decir que los precios de los carros se concentran mayoritariamente en un rango entre 5 mil y 15 mil dolares y siendo muy pocos los que exceden un precio de 50 mil dolares.
+\newline
+\newline
+El mercado se caracteriza por una amplia oferta de vehículos económicos, pero con una dispersión significativa impulsada por un pequeño segmento de vehículos de alta gama que estira la distribución hacia la derecha.
+
+```{r, fig.width=12, fig.height=5.5}
+# Gráfico: Distribución de Precios
+ggplot(df_precioscarros, aes(x = Price)) +
+  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
+  labs(title = "Distribución Global de Precios de Vehículos",
+       x = "Precio (USD)", y = "Frecuencia") +
+  theme_minimal()
+```
+
+**Dispersion de Precios por Marca**
+\newline
+\newline
+Se observa una clara segmentación entre marcas de lujo y marcas de consumo masivo. Tesla destaca con la mediana de precio más alta (cercana a los $50,000), seguida por Mercedes, BMW y Audi. En contraste, Ford, Honda y Toyota presentan costos mucho más bajos y compactos.
+\newline
+\newline
+El gráfico confirma la presencia de numerosos valores atípicos representados por puntos por encima de los bigotes superiores. Audi y BMW presentan outliers significativos que superan los $75,000, probablemente representando a los modelos mas nuevos de SUV de las marcas.
+
+```{r}
+# Gráfico 2: Boxplot de Precio por Marca
+ggplot(df_precioscarros, aes(x = Brand, y = Price, fill = Brand)) +
+  geom_boxplot() +
+  labs(title = "Dispersión de Precios por Casa Fabricante",
+       x = "Marca", y = "Precio (USD)") +
+  theme_minimal()
+```
+**Linea de tiempo de Precios Promedios por ano de Fabricacion del carro**
+\newline
+\newline
+En la grafica de linea de tiempo se observa que los precios de los carros cuyo año de produccion es menor a 2010 mantienen un precio cercano a los 10 mil dolares, independientemente de la marca. Pero a partir de este punto, ocurre un aumento de los precios, siendo mas suave en las marcas de consumo masivo pero mas notorio en las marcas de lujo, que a partir de este punto aumentan de precio considerablemente. En el caso de los carros de la marca Tesla, podemos ver que sus precios se comportan de una manera diferente. Esto se debe a la introduccion de modelos de gamas mas economicas a partir del año 2020, lo que hace que su precio promedio baje en ese punto, en vez de subir. Sin embargo, se observa que a partir del año 2020 el comportamiento de sus precios esta mas acorde al del resto del mercado, donde el precio promedio de sus carros es cada vez mas alto a medida que el año de fabricacion se va acercando al 2023.
+
 ``` {r}
-# 1. Preparar los datos para la línea de tiempo
+
 df_linea_tiempo <- df_precioscarros %>%
   group_by(Year, Brand) %>%
   summarise(Precio_Promedio = mean(Price, na.rm = TRUE), .groups = 'drop')
 
-# 2. Crear el gráfico
+
 ggplot(df_linea_tiempo, aes(x = Year, y = Precio_Promedio, color = Brand)) +
   geom_line(size = 1) +
   geom_point(size = 2) +
@@ -490,14 +526,18 @@ ggplot(df_linea_tiempo, aes(x = Year, y = Precio_Promedio, color = Brand)) +
   )
 ```
 
-```{r}
-# Gráfico 1: Distribución de Millaje
-ggplot(df_precioscarros, aes(x = Mileage)) +
-  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
-  labs(title = "Distribución Global de Millaje de los Vehículos",
-       x = "Millas", y = "Frecuencia") +
-  theme_minimal()
-```
+\subsection {Estudio de Millajes por Marca}
+
+**Resumen Estadistico de Millaje por Marcas**
+\newline
+\newline
+A diferencia de los precios por marca, los millajes no parecen verse influenciados por el grupo al que pertenezca la marca, pues no hay grandes diferencias en los millajes entre el grupo de marcas de consumo masivo y el grupo de marcas de lujo.
+
+Aunque existe una ligera diferencia, teniendo las marcas como Ford, Honda y Toyota un mayor millaje promedio, no es esta diferencia tan notable como en los precios promedios. En el caso de Tesla ocurre lo mismo que con los precios, pues sus valores de millaje se ven afectados por ser una marca relativamente nueva. 
+\newline
+\newline
+Ford lidera el millaje promedio con 90,512.53 millas, lo que sugiere que los propietarios de esta marca tienden a conservar y utilizar sus vehículos por trayectos más largos antes de ponerlos a la venta en el mercado secundario; mientras que la marca Mercedes Benz registra el Coeficiente de variacion mas más alto. Esto refleja una muestra muy heterogénea donde coexisten vehículos Mercedes con muy poco uso junto a otros con un millaje extremadamente alto, lo que dificulta analisar los valores para la marca sin considerar otras variables.
+
 
 ``` {r}
 tabla_resumen_mileage <- df_precioscarros %>%
@@ -517,9 +557,38 @@ tabla_final_mileage %>%
   row_spec(nrow(tabla_final_mileage), bold = TRUE, background = "lightgray") %>%
   column_spec(5, italic = TRUE)
 ```
+\newpage
 
+**Distribucion Global de Millajes**
+\newline
+\newline
+La muestra abarca un espectro muy amplio que va desde vehículos casi nuevos o nuevos, hasta unidades con un desgaste extremo que superan las 175,000 millas.
+\newline
+\newline
+A diferencia de la variable precio, el millaje muestra una distribución un poco más equilibrada, aunque mantiene una ligera asimetría positiva debido a la menor cantidad de vehículos que logran superar la barrera de las 150,000 millas en el mercado secundario
+
+
+```{r}
+# Gráfico 1: Distribución de Millaje
+ggplot(df_precioscarros, aes(x = Mileage)) +
+  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
+  labs(title = "Distribución Global de Millaje de los Vehículos",
+       x = "Millas", y = "Frecuencia") +
+  theme_minimal()
+```
+
+**Distribucion de millajes por marca**
+\newline
+\newline
+En el grafico de caja y bigote se observa que las cajas son mucho mas alargadas que las de precio, en todas las marcas menos en Tesla. Esto quiere decir que existe una alta heterogeneidad en la muestra; coexisten unidades "casi nuevas" con muy pocas millas y vehículos de alto uso que superan las 150,000 millas.
+\newline
+\newline
+Los "bigotes" superiores de marcas como Ford, Honda y Toyota se extienden casi hasta las 200,000 millas mientras que la marca Tesla presenta la caja más baja y compacta de todo el gráfico. Su mediana se sitúa por debajo de las 30,000 millas , lo que confirma que es la flota con menor desgaste físico, coherente con su naturaleza de vehículos eléctricos de reciente comercialización.
+\newline
+\newline
+El gráfico evidencia que el millaje no es uniforme entre fabricantes. Mientras que Tesla representa el segmento de bajo uso y alta tecnología , marcas de consumo como Ford y Toyota dominan el segmento de vehículos con alto recorrido.
 ``` {r}
-# Gráfico 2: Boxplot de Millaje por Marca
+
 ggplot(df_precioscarros, aes(x = Brand, y = Mileage, fill = Brand)) +
   geom_boxplot() +
   labs(title = "Dispersión de Millaje por Casa Fabricante",
@@ -527,13 +596,20 @@ ggplot(df_precioscarros, aes(x = Brand, y = Mileage, fill = Brand)) +
   theme_minimal()
 ```
 
+**Evolucion de los millajes por año por marca**
+\newline
+\newline
+Se observa una relación inversa casi perfecta entre el año de fabricación y el millaje acumulado. A medida que los vehículos son más recientes, el millaje promedio cae drásticamente
+\newline
+\newline
+A diferencia del gráfico de precios, donde las marcas estaban mas dispersas dependiendo del grupo al que pertencen, en el gráfico de millaje todas las marcas (incluyendo las de lujo como Mercedes y Tesla) siguen una trayectoria muy similar y agrupada. Esto indica que el uso promedio de un vehículo es un factor conductual del propietario que es independiente del prestigio de la marca
+
 ``` {r}
-# 1. Preparar los datos para la línea de tiempo
+
 df_linea_tiempo_millas <- df_precioscarros %>%
   group_by(Year, Brand) %>%
   summarise(Millaje_Promedio = mean(Mileage, na.rm = TRUE), .groups = 'drop')
 
-# 2. Crear el gráfico
 ggplot(df_linea_tiempo_millas, aes(x = Year, y = Millaje_Promedio, color = Brand)) +
   geom_line(size = 1) +
   geom_point(size = 2) +
@@ -556,7 +632,6 @@ ggplot(df_linea_tiempo_millas, aes(x = Year, y = Millaje_Promedio, color = Brand
 
 
 ``` {r}
-# 1. Crear el gráfico de dispersión
 ggplot(df_precioscarros, aes(x = Mileage, y = Price)) +
   geom_point(alpha = 0.5, color = "#2c3e50") + # Puntos con transparencia para ver densidad
   geom_smooth(method = "lm", color = "red", se = TRUE) + # Línea de tendencia lineal
