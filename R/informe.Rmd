@@ -428,11 +428,11 @@ df_precioscarros <- read.csv(full_path, header = TRUE, stringsAsFactors = FALSE,
 
 El presente capítulo constituye el núcleo del estudio, donde se exponen y examinan de manera detallada los hallazgos obtenidos tras el procesamiento de la base de datos de 1,866 vehículos. El objetivo principal es transformar los datos crudos en información estadística de valor que permita caracterizar el comportamiento del mercado automotriz de segunda mano para el año 2023. Aunque no es una variable de estudio, dentro de los modelos representados en la muestra, hay una representacion de sedans compactos y grandes, asi como SUV de mediano y gran tamaño. Cada marca de la muestra tiene 4 modelos diferentes y una combinacion semejante de carros por tipo de carroceria. 
 
-\subsection {Estudio de Precios por Marca}
+\section {Estudio de Precios por Marca}
 
 Las marcas representadas en la muestra pueden ser divididas en 3 grupos. Un primer grupo conformado por Ford, Honda y Toyota, las cuales son consideradas marcas de consumo masivo, mientras que el grupo de marcas Audi, BMW y Mercedes Benz serian consideradas marcas de lujo. Por ultimo, se tiene el caso particular de Tesla, que tambien se consideraria una marca de lujo, pero tiene la peculiaridad de ser una marca relativamente nueva que fabrica exclusivamente vehiculos electricos.
 
-\subsubsection {Resumen Estadistico de Precios por Marca}
+\subsection {Resumen Estadistico de Precios por Marca}
 ``` {r}
 tabla_resumen_Price <- df_precioscarros %>%
   group_by(Marca = Brand) %>%
@@ -460,7 +460,7 @@ La marca con el precio promedio mas bajo es Ford, pero tambien es la que tiene m
 \newline
 En general, se observa una alta variabilidad en los precios de los carros en la muestra.
 
-\subsubsection {Distribucion Global de Precios}
+\subsection {Distribucion Global de Precios}
 ```{r, fig.width=12, fig.height=5.5}
 # Gráfico: Distribución de Precios
 ggplot(df_precioscarros, aes(x = Price)) +
@@ -475,7 +475,7 @@ En el siguiente histograma observamos que existe una alta asimetria hacia la der
 \newline
 El mercado se caracteriza por una amplia oferta de vehículos económicos, pero con una dispersión significativa impulsada por un pequeño segmento de vehículos de alta gama que estira la distribución hacia la derecha.
 
-\subsubsection {Dispersion de Precios por Marca}
+\subsection {Dispersion de Precios por Marca}
 ```{r}
 # Gráfico 2: Boxplot de Precio por Marca
 ggplot(df_precioscarros, aes(x = Brand, y = Price, fill = Brand)) +
@@ -491,7 +491,7 @@ Se observa una clara segmentación entre marcas de lujo y marcas de consumo masi
 El gráfico confirma la presencia de numerosos valores atípicos representados por puntos por encima de los bigotes superiores. Audi y BMW presentan outliers significativos que superan los $75,000, probablemente representando a los modelos mas nuevos de SUV de las marcas.
 
 
-\subsubsection {Precios Promedios por año de Fabricacion del carro}
+\subsection {Precios Promedios por año de Fabricacion del carro}
 ``` {r}
 
 df_linea_tiempo <- df_precioscarros %>%
@@ -520,9 +520,9 @@ ggplot(df_linea_tiempo, aes(x = Year, y = Precio_Promedio, color = Brand)) +
 
 En la grafica de linea de tiempo se observa que los precios de los carros cuyo año de produccion es menor a 2010 mantienen un precio cercano a los 10 mil dolares, independientemente de la marca. Pero a partir de este punto, ocurre un aumento de los precios, siendo mas suave en las marcas de consumo masivo pero mas notorio en las marcas de lujo, que a partir de este punto aumentan de precio considerablemente. En el caso de los carros de la marca Tesla, podemos ver que sus precios se comportan de una manera diferente. Esto se debe a la introduccion de modelos de gamas mas economicas a partir del año 2020, lo que hace que su precio promedio baje en ese punto, en vez de subir. Sin embargo, se observa que a partir del año 2020 el comportamiento de sus precios esta mas acorde al del resto del mercado, donde el precio promedio de sus carros es cada vez mas alto a medida que el año de fabricacion se va acercando al 2023.
 
-\subsection {Estudio de Millajes por Marca}
+\section {Estudio de Millajes por Marca}
 
-\subsubsection {Resumen Estadistico de Millaje por Marcas}
+\subsection {Resumen Estadistico de Millaje por Marcas}
 
 ``` {r}
 tabla_resumen_mileage <- df_precioscarros %>%
@@ -551,7 +551,7 @@ Aunque existe una ligera diferencia, teniendo las marcas como Ford, Honda y Toyo
 \newline
 Ford lidera el millaje promedio con 90,512.53 millas, lo que sugiere que los propietarios de esta marca tienden a conservar y utilizar sus vehículos por trayectos más largos antes de ponerlos a la venta en el mercado secundario; mientras que la marca Mercedes Benz registra el Coeficiente de variacion mas más alto. Esto refleja una muestra muy heterogénea donde coexisten vehículos Mercedes con muy poco uso junto a otros con un millaje extremadamente alto, lo que dificulta analisar los valores para la marca sin considerar otras variables.
 
-\subsubsection {Distribucion Global de Millajes}
+\subsection {Distribucion Global de Millajes}
 
 ```{r}
 # Gráfico 1: Distribución de Millaje
@@ -567,7 +567,7 @@ La muestra abarca un espectro muy amplio que va desde vehículos casi nuevos o n
 \newline
 A diferencia de la variable precio, el millaje muestra una distribución un poco más equilibrada, aunque mantiene una ligera asimetría positiva debido a la menor cantidad de vehículos que logran superar la barrera de las 150,000 millas en el mercado secundario
 
-\subsubsection {Distribucion de millajes por marca}
+\subsection {Distribucion de millajes por marca}
 
 ``` {r}
 
@@ -586,7 +586,7 @@ Los "bigotes" superiores de marcas como Ford, Honda y Toyota se extienden casi h
 \newline
 El gráfico evidencia que el millaje no es uniforme entre fabricantes. Mientras que Tesla representa el segmento de bajo uso y alta tecnología , marcas de consumo como Ford y Toyota dominan el segmento de vehículos con alto recorrido.
 
-\subsubsection {Millaje promedio por y marca por año}
+\subsection {Millaje promedio por y marca por año}
 
 ``` {r}
 
@@ -618,7 +618,7 @@ Se observa una relación inversa casi perfecta entre el año de fabricación y e
 \newline
 A diferencia del gráfico de precios, donde las marcas estaban mas dispersas dependiendo del grupo al que pertencen, en el gráfico de millaje todas las marcas (incluyendo las de lujo como Mercedes y Tesla) siguen una trayectoria muy similar y agrupada. Esto indica que el uso promedio de un vehículo es un factor conductual del propietario que es independiente del prestigio de la marca
 
-\subsection {Correlacion entre Precio y Millaje}
+\section {Correlacion entre Precio y Millaje}
 ``` {r}
 ggplot(df_precioscarros, aes(x = Mileage, y = Price)) +
   geom_point(alpha = 0.5, color = "#2c3e50") + # Puntos con transparencia para ver densidad
@@ -649,9 +649,9 @@ Se observa que la mayor concentración de datos se observa en el cuadrante infer
 \newline
 Por ultimo se puede ver que la relación no parece es perfectamente lineal, sino que muestra una ligera curvatura. El precio cae muy rápido durante las primeras 50,000 millas y luego la caída se vuelve más gradual, lo que sugiere un fenómeno de depreciación acelerada en los primeros años de vida del vehículo.
 
-\subsection {Estudio de precio por tipo de combustible}
+\section {Estudio de precio por tipo de combustible}
 
-\subsubsection {Conteo de carros por tipo de combustible por marca}
+\subsection {Conteo de carros por tipo de combustible por marca}
 
 ``` {r}
 colores_combustible <- c(
@@ -684,7 +684,7 @@ Se observa que la mayoria de los carros presentes en la muestra son de gasolina 
 \newline
 Tambien se puede ver que las marcas europeas tienen mayor cantidad de carros diesel. Mientras que Ford, marca americana esta compuesta casi exlusivamente por carros de gasolina.  
 
-\subsubsection {Conteo de carros por tipo de combustible por año}
+\subsection {Conteo de carros por tipo de combustible por año}
 
 ``` {r}
 
@@ -709,7 +709,7 @@ ggplot(df_precioscarros, aes(x = factor(Year), fill = Fuel.Type)) +
 
 Se observa en este grafico que entre el año 2000 y 2015 el tipo de combustible mas comun es la gasolina, con los carros diesel representando una pequeña porcion y los carros hibridos una menor aun. Hasta ese momento los carros hibridos estan representados casi exclusivamente por el Toyota Prius. Pero a partir del 2015 irrumpen los carros electricos y empiezan a ganar terreno junto con los hibridos y disminuyendo los de gasolina. Esto tiene sentido, ya que es a partir de ese punto que entra en el mercado la marca Tesla, la cual como ya se dijo anteriormente, vende solo carros electricos y representa la mayor parte de este tipo de carros en la muestra. Factores como las legislaciones europeas y estadounidenses que presionan a los fabricantes para que diseñen carros con menor emision de CO2 afectan tambien.
 
-\subsubsection {Resumen Estadistico de Precio por Tipo de Combustible}
+\subsection {Resumen Estadistico de Precio por Tipo de Combustible}
 
 ``` {r}
 
@@ -755,7 +755,7 @@ En cuanto al precio se observa que los precios promedios de los carros Diesel, G
 \newline
 Tambien puede interpretarse como que los carros electricos, al ser una tecnologia mas nueva todavia es mas cara que tecnologias mas antiguas y desarrolladas como los motores de combustion. 
 
-\subsubsection {Distribucion de Precios segun tipo de combustible}
+\subsection {Distribucion de Precios segun tipo de combustible}
 ``` {r}
 
 ggplot(df_precioscarros, aes(x = Fuel.Type, y = Price, fill = Fuel.Type)) +
@@ -784,9 +784,9 @@ Por otro lado, las cajas de los vehículos de Gasolina y Diésel son más largas
 \newline
 En cambio la caja de los Eléctricos es relativamente compacta en comparación con su altura total, lo que sugiere que sus precios, aunque altos, están más concentrados en un rango específico de lujo o tecnología reciente.
 
-\subsection {Estudio de Precio por Tipo de Transmision}
+\section {Estudio de Precio por Tipo de Transmision}
 
-\subsubsection {Resumen Estadistico de Precios por Tipo de Transmision}
+\subsection {Resumen Estadistico de Precios por Tipo de Transmision}
 ``` {r}
 # 1. Calcular las estadísticas por tipo de transmisión
 tabla_transmision <- df_precioscarros %>%
@@ -823,7 +823,7 @@ Se observa que los carros automaticos representan una mayor porcion de la muestr
 \newline
 Por ultimo, aunque ambos tipos de transmision tienen coeficientes de dispercion elevados, la transmisión Manual es más "predecible" o compacta, con un CV del 52.41%, sugiriendo que estos vehículos se mantienen en un rango de precio más estandarizado. Mientras que en los carros automaticos, se encuentran tanto carros de lujo como modelos mas economicos.
 
-\subsubsection {Distribucion de Precios por Tipo de Transmision}
+\subsection {Distribucion de Precios por Tipo de Transmision}
 
 ``` {r}
 # 1. Crear el Boxplot por Tipo de Transmisión
@@ -848,7 +848,7 @@ ggplot(df_precioscarros, aes(x = Transmission, y = Price, fill = Transmission)) 
 Lo descrito anteriormente se puede confirmar en los graficos de caja de bigote. Cabe destarcar que ambos grupos presentan una gran cantidad de outliers por encima del bigote superior.
 
 
-\subsection {Correlaciones entre variables numericas}
+\section {Correlaciones entre variables numericas}
 
 ``` {r}
 library(ggcorrplot)
@@ -889,4 +889,32 @@ Entre las correlaciones, interesa encontrar cuales son las variables cuantitativ
 \item El año de fabricacion afecta directamente el precio del carro, esto significa que mientras mas recientemente haya sido fabricado un carro, mayor sera su precio de venta. Un coeficiente de relacion de 0.73 se puede interpretar como una correlacion fuerte.
 
 \item Por otro lado, el millaje afecta inversamente al precio. Es decir, mientras mas millas se han recorrido en un carro, menor sera su precio de venta. Un coeficiente de correlacion de 0.63 se intrepreta como una correlacion moderada a fuerte.
+\end{itemize}
+
+\chapter{Conclusiones y Recomendaciones}
+
+El análisis descriptivo y exploratorio realizado sobre la muestra de 1,866 vehículos permite establecer conclusiones fundamentales sobre la dinámica de precios en el mercado de segunda mano para el año 2023. A continuación, se presentan los hallazgos finales y las sugerencias estratégicas derivadas del estudio.
+
+\section {Conclusiones}
+
+\begin{itemize}
+
+\item Se confirma que el año de fabricación y el millaje son los predictores más sólidos del valor de mercado. La correlación positiva fuerte ($r = 0.73$) con la antigüedad y la correlación negativa moderada-fuerte ($r = -0.63$) con el kilometraje validan la hipotesis presentada al principio del informe.
+
+\item Se confirma que existe una brecha estructural entre marcas de consumo masivo (Ford, Honda, Toyota) y marcas de lujo (Audi, BMW, Mercedes Benz, Tesla). Factores como prestigio de la marca afectan el precio de los vehiculos. Pero luego de aproximadamente 20 años de antiguedad la brecha de precios entre marcas de lujo y de consumo masivo tiende a cerrarse.
+
+\item A diferencia del precio, el uso del vehículo (millaje) es un factor conductual independiente del prestigio de la marca. Todas las marcas, a excepción de Tesla por su reciente inserción, muestran trayectorias de desgaste similares a lo largo del tiempo, lo que sugiere que el perfil de uso es intrínseco al propietario y no al fabricante.
+
+\item Los vehículos automáticos predominan en la muestra y mantienen precios promedios superiores. Esto responde tanto a una mayor demanda por parte del consumidor moderno como a la estandarización de esta tecnología en los segmentos de alta gama.
+\end{itemize}
+
+\section {Recomendaciones}
+
+\begin{itemize}
+
+\item Optimización de Compra (Consumidor): Para maximizar la relación valor-precio, se recomienda adquirir vehículos que hayan superado la barrera de las 50,000 millas, punto en el cual la curva de depreciación acelerada inicial comienza a estabilizarse, permitiendo una caída de precio más gradual en años posteriores.
+
+\item Estrategia de Venta (Propietarios): Dado que el año de fabricación tiene un impacto más fuerte que el millaje en la valoración ($0.73$ vs. $0.63$), es preferible renovar el activo por antigüedad antes que por kilometraje acumulado para evitar pérdidas significativas de capital.
+
+\item  Se recomienda la inclusión de nuevas Variables para futuros estudios; como integrar el historial de mantenimiento y el estado de la batería como variables explicativas, ya que podrían explicar la varianza que el millaje y el año no cubren totalmente. Variables como tipo de carroceria tambien permitirian hacer un estudio mas completo pues permitiria segmentar el estudio y hacerlo mas preciso. De igual forma, la inclusion de los precios originales de los vehiculos ayudaria a entender la depreciacion real de los activos.
 \end{itemize}
