@@ -462,7 +462,7 @@ se analizan datos observados en un punto del tiempo, pero que abarcan
 modelos de distintos años de fabricación. A continuación, se describen
 las etapas fundamentales del procesamiento:
 
-\subsection{Procesamiento y Limpieza de Datos (ETL)}
+\subsection{Procesamiento y Limpieza de Datos}
 
 La calidad de las conclusiones estadísticas depende directamente de la
 pureza de la base de datos original. Tras una inspección inicial del
@@ -556,15 +556,15 @@ electricos.
 \toprule
 \textcolor{black}{\textbf{Marca}} & \textcolor{black}{\textbf{Total de carros}} & \textcolor{black}{\textbf{Precio promedio}} & \textcolor{black}{\textbf{Desviacion estandar}} & \textcolor{black}{\textbf{Coeficiente de Variacion}}\\
 \midrule
-\cellcolor{gray!10}{Audi} & \cellcolor{gray!10}{273} & \cellcolor{gray!10}{21,091.78} & \cellcolor{gray!10}{14,915.68} & \em{\cellcolor{gray!10}{70.72}}\\
-BMW & 315 & 22,055.13 & 14,253.49 & \em{64.63}\\
-\cellcolor{gray!10}{Ford} & \cellcolor{gray!10}{307} & \cellcolor{gray!10}{11,519.09} & \cellcolor{gray!10}{8,196.44} & \em{\cellcolor{gray!10}{71.16}}\\
-Honda & 303 & 12,672.63 & 6,895.22 & \em{54.41}\\
-\cellcolor{gray!10}{Mercedes} & \cellcolor{gray!10}{240} & \cellcolor{gray!10}{27,999.02} & \cellcolor{gray!10}{16,692.46} & \em{\cellcolor{gray!10}{59.62}}\\
+\cellcolor{gray!10}{Audi} & \cellcolor{gray!10}{273} & \cellcolor{gray!10}{\$21,091.78} & \cellcolor{gray!10}{\$14,915.68} & \em{\cellcolor{gray!10}{70.72}}\\
+BMW & 315 & \$22,055.13 & \$14,253.49 & \em{64.63}\\
+\cellcolor{gray!10}{Ford} & \cellcolor{gray!10}{307} & \cellcolor{gray!10}{\$11,519.09} & \cellcolor{gray!10}{\$8,196.44} & \em{\cellcolor{gray!10}{71.16}}\\
+Honda & 303 & \$12,672.63 & \$6,895.22 & \em{54.41}\\
+\cellcolor{gray!10}{Mercedes} & \cellcolor{gray!10}{240} & \cellcolor{gray!10}{\$27,999.02} & \cellcolor{gray!10}{\$16,692.46} & \em{\cellcolor{gray!10}{59.62}}\\
 \addlinespace
-Tesla & 82 & 51,690.84 & 15,965.53 & \em{30.89}\\
-\cellcolor{gray!10}{Toyota} & \cellcolor{gray!10}{346} & \cellcolor{gray!10}{13,978.80} & \cellcolor{gray!10}{8,111.27} & \em{\cellcolor{gray!10}{58.03}}\\
-\cellcolor{lightgray}{\textbf{Total Muestra}} & \cellcolor{lightgray}{\textbf{1,866}} & \cellcolor{lightgray}{\textbf{19,226.51}} & \cellcolor{lightgray}{\textbf{14,976.39}} & \em{\cellcolor{lightgray}{\textbf{77.89}}}\\
+Tesla & 82 & \$51,690.84 & \$15,965.53 & \em{30.89}\\
+\cellcolor{gray!10}{Toyota} & \cellcolor{gray!10}{346} & \cellcolor{gray!10}{\$13,978.80} & \cellcolor{gray!10}{\$8,111.27} & \em{\cellcolor{gray!10}{58.03}}\\
+\cellcolor{lightgray}{\textbf{Total Muestra}} & \cellcolor{lightgray}{\textbf{1,866}} & \cellcolor{lightgray}{\textbf{\$19,226.51}} & \cellcolor{lightgray}{\textbf{\$14,976.39}} & \em{\cellcolor{lightgray}{\textbf{77.89}}}\\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -689,7 +689,7 @@ mantiene una ligera asimetría positiva debido a la menor cantidad de
 vehículos que logran superar la barrera de las 150,000 millas en el
 mercado secundario
 
-\subsection {Distribucion de millajes por marca}
+\subsection {Dispersion de millajes por marca}
 
 \begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
@@ -726,15 +726,11 @@ independiente del prestigio de la marca
 
 \begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-11-1} \end{center}
 
-\begin{verbatim}
-## [1] "El coeficiente de correlación es: -0.6254"
-\end{verbatim}
-
 El coeficiente de correlación de -0.6254 confirma una correlación
 negativa. Visualmente, esto se observa en los datos que descienden de
 izquierda a derecha: a medida que el millaje aumenta (eje X), el precio
 tiende a disminuir (eje Y). Según la escala de Pearson, un valor de
-\(0.62\) se clasifica como una correlación moderada-fuerte. Esto indica
+-0.6254 se clasifica como una correlación moderada-fuerte. Esto indica
 que el millaje es un predictor sólido del precio, aunque no es el único
 factor (existen otras variables como la marca o el tipo de combustible
 que explican el resto de la varianza). \newline \newline Se observa que
@@ -793,11 +789,11 @@ para que diseñen carros con menor emision de CO2 afectan tambien.
 \toprule
 \textcolor{black}{\textbf{Tipo de combustible}} & \textcolor{black}{\textbf{Cantidad de carros}} & \textcolor{black}{\textbf{Precio promedio}} & \textcolor{black}{\textbf{Desviacion estandar}} & \textcolor{black}{\textbf{Coeficiente de Variacion}}\\
 \midrule
-\cellcolor{gray!10}{Diesel} & \cellcolor{gray!10}{162} & \cellcolor{gray!10}{30,712.56} & \cellcolor{gray!10}{13,738.84} & \em{\cellcolor{gray!10}{44.73}}\\
-Electrico & 92 & 49,496.39 & 16,606.89 & \em{33.55}\\
-\cellcolor{gray!10}{Gasolina} & \cellcolor{gray!10}{437} & \cellcolor{gray!10}{26,759.90} & \cellcolor{gray!10}{13,356.35} & \em{\cellcolor{gray!10}{49.91}}\\
-Hibrido & 141 & 29,083.71 & 14,128.79 & \em{48.58}\\
-\cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{Total}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{832}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{30,437.48}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{15,545.12}}} & \em{\cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{51.07}}}}\\
+\cellcolor{gray!10}{Diesel} & \cellcolor{gray!10}{162} & \cellcolor{gray!10}{\$30,712.56} & \cellcolor{gray!10}{\$13,738.84} & \em{\cellcolor{gray!10}{44.73}}\\
+Electrico & 92 & \$49,496.39 & \$16,606.89 & \em{33.55}\\
+\cellcolor{gray!10}{Gasolina} & \cellcolor{gray!10}{437} & \cellcolor{gray!10}{\$26,759.90} & \cellcolor{gray!10}{\$13,356.35} & \em{\cellcolor{gray!10}{49.91}}\\
+Hibrido & 141 & \$29,083.71 & \$14,128.79 & \em{48.58}\\
+\cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{Total}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{832}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{\$30,437.48}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{\$15,545.12}}} & \em{\cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{51.07}}}}\\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -852,9 +848,9 @@ un rango específico de lujo o tecnología reciente.
 \toprule
 \textcolor{black}{\textbf{Tipo de transmisión}} & \textcolor{black}{\textbf{Cantidad de carros}} & \textcolor{black}{\textbf{Precio medio}} & \textcolor{black}{\textbf{Desviación estándar}} & \textcolor{black}{\textbf{Coeficiente de Variación}}\\
 \midrule
-\cellcolor{gray!10}{Automatico} & \cellcolor{gray!10}{1,080} & \cellcolor{gray!10}{21,238.44} & \cellcolor{gray!10}{16,118.83} & \em{\cellcolor{gray!10}{75.89}}\\
-Manual & 786 & 16,462.03 & 12,748.63 & \em{77.44}\\
-\cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{Total Muestra}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{1,866}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{19,226.51}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{14,976.39}}} & \em{\cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{77.89}}}}\\
+\cellcolor{gray!10}{Automatico} & \cellcolor{gray!10}{1,080} & \cellcolor{gray!10}{\$21,238.44} & \cellcolor{gray!10}{\$16,118.83} & \em{\cellcolor{gray!10}{75.89}}\\
+Manual & 786 & \$16,462.03 & \$12,748.63 & \em{77.44}\\
+\cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{Total Muestra}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{1,866}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{\$19,226.51}}} & \cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{\$14,976.39}}} & \em{\cellcolor{lightgray}{\textbf{\cellcolor{gray!10}{77.89}}}}\\
 \bottomrule
 \end{tabular}}
 \end{table}

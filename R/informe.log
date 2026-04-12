@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.1)  11 APR 2026 11:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.1)  12 APR 2026 12:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1282,7 +1282,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 591--602
 LaTeX Info: Redefining \. on input line 602.
 LaTeX Info: Redefining \% on input line 602.
 [15 <./informe_files/figure-latex/unnamed-chunk-4-1.pdf>]
-<informe_files/figure-latex/unnamed-chunk-5-1.pdf, id=395, 469.755pt x 325.215p
+<informe_files/figure-latex/unnamed-chunk-5-1.pdf, id=400, 469.755pt x 325.215p
 t>
 File: informe_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use informe_files/figure-latex/unnamed-chunk-5-1.pdf>
@@ -1294,7 +1294,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 607--616
 
  []
 
-<informe_files/figure-latex/unnamed-chunk-6-1.pdf, id=396, 469.755pt x 325.215p
+<informe_files/figure-latex/unnamed-chunk-6-1.pdf, id=401, 469.755pt x 325.215p
 t>
 File: informe_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use informe_files/figure-latex/unnamed-chunk-6-1.pdf>
@@ -1320,7 +1320,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 662--679
 LaTeX Info: Redefining \. on input line 679.
 LaTeX Info: Redefining \% on input line 679.
 [17 <./informe_files/figure-latex/unnamed-chunk-6-1.pdf>]
-<informe_files/figure-latex/unnamed-chunk-8-1.pdf, id=417, 469.755pt x 325.215p
+<informe_files/figure-latex/unnamed-chunk-8-1.pdf, id=425, 469.755pt x 325.215p
 t>
 File: informe_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use informe_files/figure-latex/unnamed-chunk-8-1.pdf>
@@ -1334,7 +1334,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 684--691
 
  []
 
-<informe_files/figure-latex/unnamed-chunk-9-1.pdf, id=423, 469.755pt x 325.215p
+<informe_files/figure-latex/unnamed-chunk-9-1.pdf, id=431, 469.755pt x 325.215p
 t>
 File: informe_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use informe_files/figure-latex/unnamed-chunk-9-1.pdf>
@@ -1353,7 +1353,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 696--710
 
  []
 
-<informe_files/figure-latex/unnamed-chunk-10-1.pdf, id=433, 469.755pt x 325.215
+<informe_files/figure-latex/unnamed-chunk-10-1.pdf, id=444, 469.755pt x 325.215
 pt>
 File: informe_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type pdf)
 
@@ -1368,7 +1368,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 715--724
 
  []
 
-<informe_files/figure-latex/unnamed-chunk-11-1.pdf, id=443, 469.755pt x 325.215
+<informe_files/figure-latex/unnamed-chunk-11-1.pdf, id=457, 469.755pt x 325.215
 pt>
 File: informe_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type pdf)
 
@@ -1379,119 +1379,119 @@ d on input line 727.
 LaTeX Info: Redefining \. on input line 727.
 LaTeX Info: Redefining \% on input line 727.
 [21 <./informe_files/figure-latex/unnamed-chunk-10-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 733--752
+Underfull \hbox (badness 10000) in paragraph at lines 729--748
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 733--752
+Underfull \hbox (badness 10000) in paragraph at lines 729--748
 
  []
 
-<informe_files/figure-latex/unnamed-chunk-12-1.pdf, id=455, 469.755pt x 325.215
+<informe_files/figure-latex/unnamed-chunk-12-1.pdf, id=469, 469.755pt x 325.215
 pt>
 File: informe_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
 
 <use informe_files/figure-latex/unnamed-chunk-12-1.pdf>
 Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-12-1.pdf  use
-d on input line 757.
+d on input line 753.
 (pdftex.def)             Requested size: 371.30594pt x 257.05597pt.
-LaTeX Info: Redefining \. on input line 757.
-LaTeX Info: Redefining \% on input line 757.
+LaTeX Info: Redefining \. on input line 753.
+LaTeX Info: Redefining \% on input line 753.
 [22 <./informe_files/figure-latex/unnamed-chunk-11-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 759--767
+Underfull \hbox (badness 10000) in paragraph at lines 755--763
 
  []
 
-<informe_files/figure-latex/unnamed-chunk-13-1.pdf, id=472, 469.755pt x 325.215
+<informe_files/figure-latex/unnamed-chunk-13-1.pdf, id=485, 469.755pt x 325.215
 pt>
 File: informe_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type pdf)
 
 <use informe_files/figure-latex/unnamed-chunk-13-1.pdf>
 Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-13-1.pdf  use
-d on input line 770.
+d on input line 766.
 (pdftex.def)             Requested size: 371.30594pt x 257.05597pt.
-LaTeX Info: Redefining \. on input line 770.
-LaTeX Info: Redefining \% on input line 770.
+LaTeX Info: Redefining \. on input line 766.
+LaTeX Info: Redefining \% on input line 766.
 [23 <./informe_files/figure-latex/unnamed-chunk-12-1.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 805--824
+Underfull \hbox (badness 10000) in paragraph at lines 801--820
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 805--824
+Underfull \hbox (badness 10000) in paragraph at lines 801--820
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 805--824
+Underfull \hbox (badness 10000) in paragraph at lines 801--820
 
  []
 
-LaTeX Info: Redefining \. on input line 824.
-LaTeX Info: Redefining \% on input line 824.
+LaTeX Info: Redefining \. on input line 820.
+LaTeX Info: Redefining \% on input line 820.
 [24 <./informe_files/figure-latex/unnamed-chunk-13-1.pdf>]
-<informe_files/figure-latex/unnamed-chunk-15-1.pdf, id=493, 469.755pt x 325.215
+<informe_files/figure-latex/unnamed-chunk-15-1.pdf, id=506, 469.755pt x 325.215
 pt>
 File: informe_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (type pdf)
 
 <use informe_files/figure-latex/unnamed-chunk-15-1.pdf>
 Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-15-1.pdf  use
-d on input line 827.
+d on input line 823.
 (pdftex.def)             Requested size: 371.30594pt x 257.05597pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 829--842
+Underfull \hbox (badness 10000) in paragraph at lines 825--838
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 829--842
+Underfull \hbox (badness 10000) in paragraph at lines 825--838
 
  []
 
-LaTeX Info: Redefining \. on input line 842.
-LaTeX Info: Redefining \% on input line 842.
+LaTeX Info: Redefining \. on input line 838.
+LaTeX Info: Redefining \% on input line 838.
 [25 <./informe_files/figure-latex/unnamed-chunk-15-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 862--877
+Underfull \hbox (badness 10000) in paragraph at lines 858--873
 
  []
 
-<informe_files/figure-latex/unnamed-chunk-17-1.pdf, id=508, 469.755pt x 325.215
+<informe_files/figure-latex/unnamed-chunk-17-1.pdf, id=518, 469.755pt x 325.215
 pt>
 File: informe_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type pdf)
 
 <use informe_files/figure-latex/unnamed-chunk-17-1.pdf>
 Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-17-1.pdf  use
-d on input line 880.
+d on input line 876.
 (pdftex.def)             Requested size: 371.30594pt x 257.05597pt.
-LaTeX Info: Redefining \. on input line 880.
-LaTeX Info: Redefining \% on input line 880.
+LaTeX Info: Redefining \. on input line 876.
+LaTeX Info: Redefining \% on input line 876.
 [26]
-<informe_files/figure-latex/unnamed-chunk-18-1.pdf, id=514, 469.755pt x 325.215
+<informe_files/figure-latex/unnamed-chunk-18-1.pdf, id=524, 469.755pt x 325.215
 pt>
 File: informe_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
 
 <use informe_files/figure-latex/unnamed-chunk-18-1.pdf>
 Package pdftex.def Info: informe_files/figure-latex/unnamed-chunk-18-1.pdf  use
-d on input line 888.
+d on input line 884.
 (pdftex.def)             Requested size: 371.30594pt x 257.05597pt.
-LaTeX Info: Redefining \. on input line 888.
-LaTeX Info: Redefining \% on input line 888.
+LaTeX Info: Redefining \. on input line 884.
+LaTeX Info: Redefining \% on input line 884.
 [27 <./informe_files/figure-latex/unnamed-chunk-17-1.pdf>]
-LaTeX Info: Redefining \. on input line 902.
-LaTeX Info: Redefining \% on input line 902.
+LaTeX Info: Redefining \. on input line 898.
+LaTeX Info: Redefining \% on input line 898.
 [28 <./informe_files/figure-latex/unnamed-chunk-18-1.pdf>]
 Cap\'{\i }tulo 5.
 [29
 
 ]
 No file informe.bbl.
-LaTeX Info: Redefining \. on input line 946.
-LaTeX Info: Redefining \% on input line 946.
+LaTeX Info: Redefining \. on input line 942.
+LaTeX Info: Redefining \% on input line 942.
 [30] (informe.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
@@ -1504,39 +1504,39 @@ L3 programming layer <2026-01-19>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `informe.out' has not changed.
-(rerunfilecheck)             Checksum: C760866A90FDA5F88D4CAA9136DEA620;12776.
+(rerunfilecheck)             Checksum: 1584E89C50D4005A6450F63E4718B31A;12727.
  ) 
 Here is how much of TeX's memory you used:
- 21136 strings out of 467867
- 364671 string characters out of 5413943
+ 21133 strings out of 467867
+ 364604 string characters out of 5413943
  835240 words of memory out of 5000000
- 49570 multiletter control sequences out of 15000+600000
- 637732 words of font info for 79 fonts, out of 8000000 for 9000
+ 49567 multiletter control sequences out of 15000+600000
+ 637909 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  105i,12n,107p,569b,794s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Viviam Segarra\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dp
-i600\tcrm1095.pk><C:/Users/Viviam Segarra/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Viviam Segarra/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Viviam Segarra/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users
+i600\tcbx1095.pk> <C:\Users\Viviam Segarra\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/Viviam Segarra/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Viviam Segarra/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/V
+iviam Segarra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx
+8.pfb><C:/Users/Viviam Segarra/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmbxti10.pfb><C:/Users/Viviam Segarra/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Viviam Segarra/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Viviam
+ Segarra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><C:/Users/Viviam Segarra/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmmi8.pfb><C:/Users/Viviam Segarra/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Viviam Segarra/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Viviam Segarra/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users
 /Viviam Segarra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-bxti10.pfb><C:/Users/Viviam Segarra/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmcsc10.pfb><C:/Users/Viviam Segarra/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Viviam Segarra/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Viv
-iam Segarra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.
-pfb><C:/Users/Viviam Segarra/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr10.pfb><C:/Users/Viviam Segarra/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Viviam Segarra/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Viviam Segarra
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/User
-s/Viviam Segarra/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-msy10.pfb><C:/Users/Viviam Segarra/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmti10.pfb><C:/Users/Viviam Segarra/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on informe.pdf (34 pages, 794084 bytes).
+r8.pfb><C:/Users/Viviam Segarra/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb><C:/Users/Viviam Segarra/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on informe.pdf (34 pages, 788124 bytes).
 PDF statistics:
- 638 PDF objects out of 1000 (max. 8388607)
+ 648 PDF objects out of 1000 (max. 8388607)
  101 named destinations out of 1000 (max. 500000)
  497 words of extra memory for PDF output out of 10000 (max. 10000000)
 

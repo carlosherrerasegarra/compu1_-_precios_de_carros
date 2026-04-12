@@ -363,7 +363,7 @@ Igualmente se explican las tecnicas estadisticas para posterior análisis utiliz
 
 El diseño de la investigación es de carácter cuantitativo, no experimental y de corte transversal con perspectiva histórica, dado que se analizan datos observados en un punto del tiempo, pero que abarcan modelos de distintos años de fabricación. A continuación, se describen las etapas fundamentales del procesamiento:
 
-\subsection{Procesamiento y Limpieza de Datos (ETL)}
+\subsection{Procesamiento y Limpieza de Datos}
 
 La calidad de las conclusiones estadísticas depende directamente de la pureza de la base de datos original. Tras una inspección inicial del archivo precios_carros.csv mediante el lenguaje R, se identificaron anomalías estructurales y lógicas que requirieron una intervención inmediata bajo los siguientes criterios:
 \newline
@@ -444,7 +444,10 @@ fila_total_Price <- df_precioscarros %>%
 tabla_final_Price <- bind_rows(tabla_resumen_Price, fila_total_Price)
 
 tabla_final_Price %>%
-  mutate(across(where(is.numeric), ~ round(., 2))) %>%
+  mutate( `Precio promedio` = dollar(`Precio promedio`),
+    `Desviacion estandar` = dollar(`Desviacion estandar`),
+    `Total de carros` = comma(`Total de carros`),
+    `Coeficiente de Variacion` = round(`Coeficiente de Variacion`, 2)) %>%
   kable(format = "latex",booktabs = TRUE, caption = "Resumen Estadístico de Precios por Marca", align = "lcccc",format.args = list(big.mark = ",", decimal.mark = ".")) %>%
   kable_styling(latex_options = c("striped", "hold_position", "scale_down"), full_width = F, position = "center") %>%
   row_spec(0, bold = TRUE, color = "black") %>%
@@ -462,13 +465,19 @@ En general, se observa una alta variabilidad en los precios de los carros en la 
 
 \subsection {Distribucion Global de Precios}
 ```{r, fig.width=12, fig.height=5.5}
-# Gráfico: Distribución de Precios
 ggplot(df_precioscarros, aes(x = Price)) +
-  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
-  labs(title = "Distribución Global de Precios de Vehículos",
-       x = "Precio (USD)", y = "Frecuencia") +
+  geom_histogram(aes(y = after_stat(density)), bins = 30, fill = "steelblue", color = "white", alpha = 0.7) +
+  geom_density(color = "red", linewidth = 1) +
+  scale_x_continuous(labels = scales::dollar) +
+  labs(
+    title = "Distribución Global de Precios de Vehículos",
+    subtitle = "Histograma de densidad con curva de tendencia",
+    x = "Precio (USD)", 
+    y = "Densidad"
+  ) +
   theme_minimal()
 ```
+
 
 En el siguiente histograma observamos que existe una alta asimetria hacia la derecha, esto indica que la mayor concentración de vehículos se encuentra en los rangos de precios bajos y medios, mientras que la "cola" de la distribución se extiende hacia valores altos, representados por modelos de lujo o tecnologías más costosas como Tesla.  Lo que quiere decir que los precios de los carros se concentran mayoritariamente en un rango entre 5 mil y 15 mil dolares y siendo muy pocos los que exceden un precio de 50 mil dolares.
 \newline
@@ -477,9 +486,19 @@ El mercado se caracteriza por una amplia oferta de vehículos económicos, pero 
 
 \subsection {Dispersion de Precios por Marca}
 ```{r}
-# Gráfico 2: Boxplot de Precio por Marca
+colores_marcas <- c(
+  "Audi" = "#F5BD07", 
+  "BMW"   = "#0066B2", 
+  "Ford"  = "#002C5F", 
+  "Honda" = "#0BA131",
+  "Mercedes" = "#A6A6A6",
+  "Tesla"  = "#8B0000",
+  "Toyota"    = "#FF4B4B"
+)
+
 ggplot(df_precioscarros, aes(x = Brand, y = Price, fill = Brand)) +
-  geom_boxplot() +
+  geom_boxplot(color = "black", alpha = 0.8, outlier.colour = "red") +
+  scale_fill_manual(values = colores_marcas) +
   labs(title = "Dispersión de Precios por Casa Fabricante",
        x = "Marca", y = "Precio (USD)") +
   theme_minimal()
@@ -503,6 +522,7 @@ ggplot(df_linea_tiempo, aes(x = Year, y = Precio_Promedio, color = Brand)) +
   geom_line(size = 1) +
   geom_point(size = 2) +
   theme_minimal() +
+  scale_color_manual(values = colores_marcas) +
   labs(
     title = "Precio Promedio por Marca (2000 - 2023)",
     subtitle = "Análisis basado en el año de fabricación del vehículo",
@@ -510,7 +530,7 @@ ggplot(df_linea_tiempo, aes(x = Year, y = Precio_Promedio, color = Brand)) +
     y = "Precio Promedio (USD)",
     color = "Marca"
   ) +
-  scale_y_continuous(labels = scales::comma) + # Separadores de miles en el eje Y
+  scale_y_continuous(labels = scales::comma) +
   theme(
     legend.position = "bottom",
     plot.title = element_text(face = "bold", size = 14),
@@ -554,11 +574,14 @@ Ford lidera el millaje promedio con 90,512.53 millas, lo que sugiere que los pro
 \subsection {Distribucion Global de Millajes}
 
 ```{r}
-# Gráfico 1: Distribución de Millaje
 ggplot(df_precioscarros, aes(x = Mileage)) +
-  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
+  geom_histogram(aes(y = after_stat(density)), bins = 30, fill = "steelblue", color = "white", alpha = 0.8) +
+  geom_density(color = "red", linewidth = 1) +
+  scale_x_continuous(labels = scales::comma) +
   labs(title = "Distribución Global de Millaje de los Vehículos",
-       x = "Millas", y = "Frecuencia") +
+       subtitle = "Histograma de densidad con curva superpuesta",
+       x = "Millas", 
+       y = "Densidad") +
   theme_minimal()
 ```
 
@@ -567,12 +590,13 @@ La muestra abarca un espectro muy amplio que va desde vehículos casi nuevos o n
 \newline
 A diferencia de la variable precio, el millaje muestra una distribución un poco más equilibrada, aunque mantiene una ligera asimetría positiva debido a la menor cantidad de vehículos que logran superar la barrera de las 150,000 millas en el mercado secundario
 
-\subsection {Distribucion de millajes por marca}
+\subsection {Dispersion de millajes por marca}
 
 ``` {r}
 
 ggplot(df_precioscarros, aes(x = Brand, y = Mileage, fill = Brand)) +
-  geom_boxplot() +
+geom_boxplot(color = "black", alpha = 0.8) +
+  scale_fill_manual(values = colores_marcas) +
   labs(title = "Dispersión de Millaje por Casa Fabricante",
        x = "Marca", y = "Millaje") +
   theme_minimal()
@@ -595,6 +619,7 @@ df_linea_tiempo_millas <- df_precioscarros %>%
   summarise(Millaje_Promedio = mean(Mileage, na.rm = TRUE), .groups = 'drop')
 
 ggplot(df_linea_tiempo_millas, aes(x = Year, y = Millaje_Promedio, color = Brand)) +
+  scale_color_manual(values = colores_marcas) +
   geom_line(size = 1) +
   geom_point(size = 2) +
   theme_minimal() +
@@ -621,8 +646,8 @@ A diferencia del gráfico de precios, donde las marcas estaban mas dispersas dep
 \section {Correlacion entre Precio y Millaje}
 ``` {r}
 ggplot(df_precioscarros, aes(x = Mileage, y = Price)) +
-  geom_point(alpha = 0.5, color = "#2c3e50") + # Puntos con transparencia para ver densidad
-  geom_smooth(method = "lm", color = "red", se = TRUE) + # Línea de tendencia lineal
+  geom_point(alpha = 0.5, color = "#2c3e50") +
+  geom_smooth(method = "lm", color = "red", se = TRUE) +
   theme_minimal() +
   scale_y_continuous(labels = comma) +
   scale_x_continuous(labels = comma) +
@@ -638,10 +663,9 @@ ggplot(df_precioscarros, aes(x = Mileage, y = Price)) +
   )
 
 correlacion <- cor(df_precioscarros$Price, df_precioscarros$Mileage, use = "complete.obs")
-print(paste("El coeficiente de correlación es:", round(correlacion, 4)))
 ```
 
-El coeficiente de correlación de -0.6254 confirma una correlación negativa. Visualmente, esto se observa en los datos que descienden de izquierda a derecha: a medida que el millaje aumenta (eje X), el precio tiende a disminuir (eje Y). Según la escala de Pearson, un valor de $0.62$ se clasifica como una correlación moderada-fuerte. Esto indica que el millaje es un predictor sólido del precio, aunque no es el único factor (existen otras variables como la marca o el tipo de combustible que explican el resto de la varianza).
+El coeficiente de correlación de `r round(correlacion, 4)` confirma una correlación negativa. Visualmente, esto se observa en los datos que descienden de izquierda a derecha: a medida que el millaje aumenta (eje X), el precio tiende a disminuir (eje Y). Según la escala de Pearson, un valor de `r round(correlacion, 4)` se clasifica como una correlación moderada-fuerte. Esto indica que el millaje es un predictor sólido del precio, aunque no es el único factor (existen otras variables como la marca o el tipo de combustible que explican el resto de la varianza).
 \newline
 \newline
 Se observa que la mayor concentración de datos se observa en el cuadrante inferior izquierdo (vehículos con millaje entre 50,000 y 125,000 y precios por debajo de los $25,000$). De igual forma, se observan puntos aislados con muy poco millaje y precios muy altos (superiores a $75,000$). Estos corresponden a los modelos de lujo y eléctricos (como Tesla) analizados en las secciones anteriores.
@@ -673,7 +697,7 @@ ggplot(df_precioscarros, aes(x = Brand, fill = Fuel.Type)) +
     fill = "Combustible"
   ) +
   theme(
-    axis.text.x = element_text(angle = 45, hjust = 1), # Rotar etiquetas para evitar solapamiento
+    axis.text.x = element_text(angle = 45, hjust = 1),
     legend.position = "bottom",
     plot.title = element_text(face = "bold", size = 14)
   )
@@ -687,8 +711,6 @@ Tambien se puede ver que las marcas europeas tienen mayor cantidad de carros die
 \subsection {Conteo de carros por tipo de combustible por año}
 
 ``` {r}
-
-# Gráfico de barras apiladas
 ggplot(df_precioscarros, aes(x = factor(Year), fill = Fuel.Type)) +
   geom_bar(position = "stack") +
   scale_fill_manual(values = colores_combustible) +
@@ -701,7 +723,7 @@ ggplot(df_precioscarros, aes(x = factor(Year), fill = Fuel.Type)) +
     fill = "Tipo de Combustible"
   ) +
   theme(
-    axis.text.x = element_text(angle = 45, hjust = 1), # Rotar años para lectura en PDF
+    axis.text.x = element_text(angle = 45, hjust = 1),
     legend.position = "bottom",
     plot.title = element_text(face = "bold")
   )
@@ -736,7 +758,10 @@ tabla_combustible <- df_precioscarros %>%
   )
 
 tabla_combustible %>%
-  mutate(across(where(is.numeric), ~ round(., 2))) %>%
+  mutate(`Precio promedio` = dollar(`Precio promedio`),
+    `Desviacion estandar` = dollar(`Desviacion estandar`),
+    `Cantidad de carros` = comma(`Cantidad de carros`),
+    `Coeficiente de Variacion` = round(`Coeficiente de Variacion`, 2)) %>%
   kable(format = "latex",booktabs = TRUE, caption = "Análisis de Precios por Combustible (Modelos 2015 - 2023)", align = "lcccc",format.args = list(big.mark = ",", decimal.mark = ".")) %>%
   kable_styling(latex_options = c("striped", "hold_position", "scale_down"), full_width = F, position = "center") %>%
   row_spec(0, bold = TRUE, color = "black") %>%
@@ -759,7 +784,7 @@ Tambien puede interpretarse como que los carros electricos, al ser una tecnologi
 ``` {r}
 
 ggplot(df_precioscarros, aes(x = Fuel.Type, y = Price, fill = Fuel.Type)) +
-  geom_boxplot(alpha = 0.7, outlier.colour = "red", outlier.shape = 16) +
+  geom_boxplot(outlier.colour = "red", outlier.shape = 16) +
   scale_fill_manual(values = colores_combustible) +
   theme_minimal() +
   scale_y_continuous(labels = scales::comma) +
@@ -771,7 +796,7 @@ ggplot(df_precioscarros, aes(x = Fuel.Type, y = Price, fill = Fuel.Type)) +
     fill = "Combustible"
   ) +
   theme(
-    legend.position = "none", # Quitamos la leyenda porque el eje X ya identifica el grupo
+    legend.position = "none",
     plot.title = element_text(face = "bold", size = 14)
   )
 ```
@@ -788,7 +813,6 @@ En cambio la caja de los Eléctricos es relativamente compacta en comparación c
 
 \subsection {Resumen Estadistico de Precios por Tipo de Transmision}
 ``` {r}
-# 1. Calcular las estadísticas por tipo de transmisión
 tabla_transmision <- df_precioscarros %>%
   group_by(`Tipo de transmisión` = Transmission) %>%
   summarise(
@@ -797,7 +821,6 @@ tabla_transmision <- df_precioscarros %>%
     `Desviación estándar` = sd(Price, na.rm = TRUE),
     `Coeficiente de Variación` = (`Desviación estándar` / `Precio medio`) * 100
   ) %>%
-  # Añadir la fila del total de la muestra
   bind_rows(
     df_precioscarros %>%
       summarise(
@@ -810,7 +833,10 @@ tabla_transmision <- df_precioscarros %>%
   )
 
 tabla_transmision %>%
-  mutate(across(where(is.numeric), ~ round(., 2))) %>%
+  mutate(`Precio medio` = dollar(`Precio medio`),
+    `Desviación estándar` = dollar(`Desviación estándar`),
+    `Cantidad de carros` = comma(`Cantidad de carros`),
+    `Coeficiente de Variación` = round(`Coeficiente de Variación`, 2)) %>%
   kable(format = "latex",booktabs = TRUE, caption = "Análisis de Precios por Tipo de Transmision", align = "lcccc",format.args = list(big.mark = ",", decimal.mark = ".")) %>%
   kable_styling(latex_options = c("striped", "hold_position", "scale_down"), full_width = F, position = "center") %>%
   row_spec(0, bold = TRUE, color = "black") %>%
@@ -826,7 +852,6 @@ Por ultimo, aunque ambos tipos de transmision tienen coeficientes de dispercion 
 \subsection {Distribucion de Precios por Tipo de Transmision}
 
 ``` {r}
-# 1. Crear el Boxplot por Tipo de Transmisión
 ggplot(df_precioscarros, aes(x = Transmission, y = Price, fill = Transmission)) +
   geom_boxplot(alpha = 0.7, outlier.colour = "red", outlier.shape = 1) +
   scale_fill_manual(values = c("Automatico" = "#3498db", "Manual" = "#95a5a6")) +
@@ -852,8 +877,6 @@ Lo descrito anteriormente se puede confirmar en los graficos de caja de bigote. 
 
 ``` {r}
 library(ggcorrplot)
-
-# 1. Selección y limpieza de variables (asegurando nombres limpios)
 df_num <- df_precioscarros %>%
   select(
     `Tamaño Motor` = Engine.Size,
@@ -861,22 +884,20 @@ df_num <- df_precioscarros %>%
     Millaje = Mileage, 
     Precio = Price)
 
-# 2. Calcular la matriz de correlación
 corr_mat <- cor(df_num, use = "complete.obs")
 
-# 3. Generar el gráfico idéntico a la referencia
 ggcorrplot(corr_mat, 
-           type = "full",          # Cuadrado completo
-           lab = TRUE,             # Mostrar los números
-           lab_size = 5,           # Tamaño de los números
-           outline.col = "white",  # Bordes blancos entre cuadros
-           colors = c("#FF4B4B", "white", "#4B7BFF"), # Rojo (negativa) a Azul (positiva)
+           type = "full",
+           lab = TRUE,
+           lab_size = 5,
+           outline.col = "white",
+           colors = c("#FF4B4B", "white", "#4B7BFF"),
            title = "Matriz de Correlación de Variables",
            legend.title = "Correlación",
            ggtheme = theme_minimal()) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 15),
-    axis.text.x = element_text(angle = 0, hjust = 0.5) # Etiquetas horizontales
+    axis.text.x = element_text(angle = 0, hjust = 0.5)
   )
 ```
 
