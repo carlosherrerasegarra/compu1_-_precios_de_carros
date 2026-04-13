@@ -23,6 +23,8 @@ facultad:
 - Escuela de Estadistica y Ciencias Actuariales
 escudo: Latex/Classes/Escudos/faces
 bibliography: bibliografia.bib
+link-citations: true
+csl: ieee.csl
 degree: Computación I
 abstract: |
   En el presente informe se realiza un análisis exploratorio de los datos de precios para el año 2023 de una selección de carros. Partiendo de variables como marca, modelo, año, tipo de transmisión, millaje, entre otras; se examinan cuales los factores que afectan su precio, aplicando técnicas estadísticas descriptivas y visualización de datos con R.
@@ -83,7 +85,7 @@ Este reporte no solo pretende ofrecer una radiografía del estado actual del mer
 
 \chapter{Planteamiento del Problema} 
 
-En el mercado automotriz actual, el valor de un vehículo no es una cifra estática, sino el resultado de una interacción multivariable donde convergen la obsolescencia tecnológica, el desgaste físico y las preferencias del consumidor. Para un analista o un comprador, la imprevisibilidad de los precios de reventa representa un riesgo financiero significativo.
+En el mercado automotriz actual, el valor de un vehículo no es una cifra estática, sino el resultado de una interacción multivariable donde convergen la obsolescencia tecnológica, el desgaste físico y las preferencias del consumidor [@han2024]. Para un analista o un comprador, la imprevisibilidad de los precios de reventa representa un riesgo financiero significativo.
 \newline
 \newline
 El conjunto de datos bajo estudio presenta una muestra heterogénea que incluye desde vehículos de combustión tradicional hasta modelos eléctricos de alta gama. Esta diversidad genera una alta dispersión en los precios, dificultando la identificación de un "valor justo". El problema radica en la falta de una caracterización estadística clara que permita entender cómo factores como el kilometraje acumulado, el año de fabricación y el tipo de combustible (especialmente ante el auge de los motores híbridos y eléctricos) impactan directamente en la valoración del activo.
@@ -105,10 +107,10 @@ Para orientar el análisis, se plantean las siguientes interrogantes:
 La presente investigación se justifica desde tres dimensiones fundamentales: la económica, la técnica y la académica.
 \newline
 \newline
-Desde la dimensión económica, la adquisición de un vehículo representa una de las inversiones más significativas para el patrimonio personal o empresarial. No obstante, el mercado de automóviles de segunda mano se caracteriza por una alta asimetría de información, donde el precio suele estar sujeto a la especulación o a una valoración empírica del estado del bien. Este estudio proporciona una base objetiva que permite comprender el comportamiento de los precios, facilitando una toma de decisiones informada que minimice el riesgo financiero.
+Desde la dimensión económica, la adquisición de un vehículo representa una de las inversiones más significativas para el patrimonio personal o empresarial [@rginversiones2024]. No obstante, el mercado de automóviles de segunda mano se caracteriza por una alta asimetría de información, donde el precio suele estar sujeto a la especulación o a una valoración empírica del estado del bien. Este estudio proporciona una base objetiva que permite comprender el comportamiento de los precios, facilitando una toma de decisiones informada que minimice el riesgo financiero.
 \newline
 \newline
-Desde la dimensión técnica, la industria automotriz atraviesa una transición energética sin precedentes. La coexistencia de motores de combustión interna con tecnologías híbridas y eléctricas plantea un reto para los métodos de valoración tradicionales. La aplicación de herramientas de **Estadística Descriptiva** en este contexto permite caracterizar estas nuevas categorías y determinar si su comportamiento de mercado sigue los patrones históricos o si, por el contrario, requieren de marcos de análisis diferenciados debido a su naturaleza tecnológica.
+Desde la dimensión técnica, la industria automotriz atraviesa una transición energética sin precedentes [@iea2025]. La coexistencia de motores de combustión interna con tecnologías híbridas y eléctricas plantea un reto para los métodos de valoración tradicionales. La aplicación de herramientas de **Estadística Descriptiva** en este contexto permite caracterizar estas nuevas categorías y determinar si su comportamiento de mercado sigue los patrones históricos o si, por el contrario, requieren de marcos de análisis diferenciados debido a su naturaleza tecnológica.
 \newline
 \newline
 Desde la dimensión académica, este trabajo se inserta en la formación de la Escuela de Estadística y Ciencias Actuariales, demostrando la capacidad del lenguaje de programación R para el manejo de grandes volúmenes de datos y la generación de reportes dinámicos. La relevancia del estudio reside en la transformación de datos crudos en indicadores estadísticos (medidas de posición, dispersión y forma), validando que el análisis exploratorio de datos (EDA) es una etapa indispensable para garantizar la robustez de cualquier inferencia o modelo predictivo posterior.
@@ -193,11 +195,11 @@ El presente capítulo establece los fundamentos teóricos y estadísticos necesa
 
 \subsubsection{Análisis Exploratorio de Datos (EDA)} 
 
-El Análisis Exploratorio de Datos (EDA, por sus siglas en inglés) es la etapa fundamental de todo proyecto de ciencia de datos. Su objetivo primordial es analizar los conjuntos de datos para determinar patrones, detectar anomalías (valores atípicos), verificar suposiciones y resumir características principales, generalmente mediante métodos de visualización, antes de aplicar modelos complejos o extraer conclusiones definitivas.
+El Análisis Exploratorio de Datos (EDA, por sus siglas en inglés) es la etapa fundamental de todo proyecto de ciencia de datos. Su objetivo primordial es analizar los conjuntos de datos para determinar patrones, detectar anomalías (valores atípicos), verificar suposiciones y resumir características principales, generalmente mediante métodos de visualización, antes de aplicar modelos complejos o extraer conclusiones definitivas [@tukey1977].
 
 \subsubsection {Medidas de Tendencia Central}
 
-Son parámetros que informan sobre el centro de la distribución de una muestra:
+Son parámetros que informan sobre el centro de la distribución de una muestra [@rivas2000]:
 
 \begin{itemize}
   \item Media Aritmética ($\bar{x}$): Es el promedio de los datos. En este estudio, representa el precio de equilibrio, aunque es sensible a valores extremos (como modelos de lujo).
@@ -213,7 +215,7 @@ Son parámetros que informan sobre el centro de la distribución de una muestra:
 
 \subsubsection {Asimetría de Fisher (coeficiente de asimetría)} 
 
-Es una medida estadística que indica el grado de falta de simetría de una distribución de probabilidad con respecto a su media.Se define matemáticamente como el tercer momento estandarizado:
+Es una medida estadística que indica el grado de falta de simetría de una distribución de probabilidad con respecto a su media.Se define matemáticamente como el tercer momento estandarizado [@salama2002]:
 
 $$\gamma_1 = \frac{E[(X - \mu)^3]}{\sigma^3}$$
 
@@ -251,7 +253,7 @@ p1 + p2 + p3 + plot_annotation(title = "Comparación de Distribuciones")
 
 \subsubsection {Medidas de Dispersión}
 
-Permiten cuantificar qué tan alejados están los datos respecto al promedio:
+Permiten cuantificar qué tan alejados están los datos respecto al promedio  [@rivas2000]:
 
 \begin{itemize}
   \item Desviación Estándar ($\sigma$): Indica el grado de variabilidad de los precios en relación con la media.
@@ -266,7 +268,7 @@ $$s = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}}$$
 **Covarianza ($s_{xy}$ / $\sigma_{xy}$)**
 \newline
 \newline
-La Covarianza es una medida estadística que indica el grado de variación conjunta de dos variables aleatorias respecto a sus medias. Es el indicador básico de la dependencia lineal entre dos variables; permite entender si, cuando una variable aumenta, la otra tiende a aumentar o disminuir.
+La Covarianza es una medida estadística que indica el grado de variación conjunta de dos variables aleatorias respecto a sus medias. Es el indicador básico de la dependencia lineal entre dos variables; permite entender si, cuando una variable aumenta, la otra tiende a aumentar o disminuir [@salama2002].
 \newline
 \begin{itemize}
 \item Covarianza Positiva ($s_{xy} > 0$): Indica una relación directa. Ambas variables tienden a variar en el mismo sentido (si $X$ sube, $Y$ sube).
@@ -277,7 +279,7 @@ La Covarianza es una medida estadística que indica el grado de variación conju
 **Coeficiente de correlación de Pearson ($r$)**
 \newline
 \newline
-Es una medida estadística que cuantifica la fuerza y la dirección de la relación lineal entre dos variables cuantitativas.Sus posibles valores se encuentran entre -1 y +1. Mientras mas alejado del cero, mayor sera la fuerza de la correlacion entre las dos variables. Al igual que la covarianza, un resultado negativo indica una relacion inversa y un resultado positivo indica una relacion directa entre ambas variables.
+Es una medida estadística que cuantifica la fuerza y la dirección de la relación lineal entre dos variables cuantitativas.Sus posibles valores se encuentran entre -1 y +1. Mientras mas alejado del cero, mayor sera la fuerza de la correlacion entre las dos variables. Al igual que la covarianza, un resultado negativo indica una relacion inversa y un resultado positivo indica una relacion directa entre ambas variables [@salama2002].
 
 $$r = \frac{S_{xy}}{S_x \cdot S_y}$$
 
@@ -330,24 +332,28 @@ df11 + df22 + df33 + plot_annotation(title = "Correlaciones lineales")
 \subsection {Fundamentos economicos}
 \subsubsection{Depreciación de Activos Móviles}
 
-Desde una perspectiva económica, la depreciación es la pérdida de valor de un bien debido al uso, el paso del tiempo o la obsolescencia. En el mercado automotriz, este fenómeno se analiza mediante la relación entre la antigüedad (Year) y el uso acumulado (Mileage) con el precio (Price) del vehiculo.
+Desde una perspectiva económica, la depreciación es la pérdida de valor de un bien debido al uso, el paso del tiempo o la obsolescencia [@gitman2016]. En el mercado automotriz, este fenómeno se analiza mediante la relación entre la antigüedad (Year) y el uso acumulado (Mileage) con el precio (Price) del vehiculo.
 
 \subsection {Fundamentos tecnicos automotrices}
 \subsubsection {Sistemas de Propulsión (Fuel Type)}
 
-La naturaleza del motor determina no solo el rendimiento, sino también la estructura de costos y la velocidad de depreciación del vehículo:
+La naturaleza del motor determina no solo el rendimiento, sino también la estructura de costos y la velocidad de depreciación del vehículo [@hibri],[@wikicombustion],[@doeev]:
 
 \begin{itemize}
 \item Motores de Combustión Interna (ICE): Utilizan derivados del petróleo (Gasolina o Diesel). Su valor de mercado está fuertemente ligado a la cilindrada (Engine Size); generalmente, a mayor tamaño de motor, mayor es el consumo y el costo de mantenimiento.
+
 \item Vehículos Eléctricos (EV): Operan mediante baterías y motores eléctricos. Se caracterizan por la ausencia de cilindrada tradicional (registrados como NA en la base de datos). Su precio de mercado suele ser superior debido al costo de la tecnología de baterías, aunque su depreciación puede ser distinta a la de los carros convencionales.
+
 \item Vehículos Híbridos (HEV): Combinan un motor de combustión con uno eléctrico. Representan un punto medio en la escala de precios y eficiencia, buscando optimizar el consumo de combustible en entornos urbanos.
 \end{itemize}
 
 \subsubsection {Sistemas de Transmisión}
 
-La transmisión es el mecanismo que administra la potencia del motor hacia las ruedas. En el mercado secundario, esta variable es un factor determinante en la preferencia del consumidor:
+La transmisión es el mecanismo que administra la potencia del motor hacia las ruedas. En el mercado secundario, esta variable es un factor determinante en la preferencia del consumidor[@manual] [@auto]:
+
 \begin{itemize}
-\item Transmisión Manual: Requiere la intervención directa del conductor para el cambio de marchas. Históricamente asociada a un menor costo de adquisición y mantenimiento, además de una mayor eficiencia de combustible en modelos antiguos.
+
+\item Transmisión Manual: Requiere la intervención directa del conductor para el cambio de marchas. Históricamente asociada a un menor costo de adquisición y mantenimiento, además de una mayor eficiencia de combustible en modelos antiguos .
 
 \item Transmisión Automática: El sistema gestiona los cambios de forma autónoma. Aunque suele incrementar el precio inicial del vehículo, es la tecnología predominante en modelos recientes y de alta gama (como BMW o Tesla), influyendo positivamente en el valor de reventa en mercados modernos.
 \end{itemize}
