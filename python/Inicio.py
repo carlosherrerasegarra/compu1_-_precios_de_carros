@@ -1,4 +1,3 @@
-# main.py actualizado con filtros
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -52,7 +51,7 @@ class CarApp:
         comb_sel = st.sidebar.multiselect("Tipo de Combustible", combustibles, default=list(combustibles))
 
         km_min, km_max = int(self.df_original['Kilometraje'].min()), int(self.df_original['Kilometraje'].max())
-        rango_km = st.sidebar.slider("Kilometraje Máximo", km_min, km_max, (km_min, km_max))
+        rango_km = st.sidebar.slider("Millaje Máximo", km_min, km_max, (km_min, km_max))
 
         query = (
             self.df_original['Marca'].isin(marcas_sel) &
@@ -67,6 +66,7 @@ class CarApp:
         if trans_sel != "Todas":
             self.df = self.df[self.df['Transmisión'] == trans_sel]
 
+    
     def render_ui(self):
         st.markdown("""
             <style>
@@ -79,106 +79,117 @@ class CarApp:
             st.markdown('<div style="text-align: right;"><p style="font-size: 24px; font-weight: bold; margin: 0;">🚗 Dashboard de Precios de Vehículos</p></div>', unsafe_allow_html=True)
             st.markdown("<hr style='margin: 10px 0px 20px 0px; opacity: 0.2;'>", unsafe_allow_html=True)
 
+            highlight_promedio, highlight_millaje_promedio, highlight_vehiculos_filtrados, highlight_marca_popular = st.columns(4)
             
-            highlight_promedio, highlight_kilometraje_promedio, highlight_vehiculos_filtrados, highlight_marca_popular = st.columns(4)
             highlight_promedio.metric("Precio Promedio", f"${self.df['Precio'].mean():,.0f}")
-            highlight_kilometraje_promedio.metric("Kilometraje Medio", f"{self.df['Kilometraje'].mean():,.0f} km")
+            highlight_millaje_promedio.metric("Millaje Medio", f"{self.df['Kilometraje'].mean():,.0f} mi")
             highlight_vehiculos_filtrados.metric("Vehículos Filtrados", len(self.df))
             marca_popular_val = self.df['Marca'].mode()[0] if not self.df.empty else "N/A"
             highlight_marca_popular.metric("Marca más Frecuente", marca_popular_val)
 
-            
-            tab_graficos_descriptivos, tab_graficos_evolucion_y_distribucion, tab_graficos_correlacion_avanzada = st.tabs(["📊 Descriptivo", "📉 Evolución y Distribución", "📈 Correlación Avanzada"])
+            tab_graficos_descriptivos, tab_graficos_evolucion_y_distribucion, tab_graficos_correlacion_avanzada = st.tabs(["📊 Análisis Descriptivo", "📉 Evolución y Distribución", "📈 Correlación"])
 
             with tab_graficos_descriptivos:
                 st.write("##")
                 grafico_evolucion_general, grafico_pie_combustible = st.columns([6, 4])
+                
                 with grafico_evolucion_general:
                     st.subheader("Evolución General de Precios")
                     df_prom = self.df.groupby("Año")["Precio"].mean().reset_index()
                     figura_bar = px.bar(df_prom, x="Año", y="Precio", color_discrete_sequence=['#1f77b4'])
+                    figura_bar.update_layout(yaxis_tickprefix='$', yaxis_tickformat=',.0f')
+                    figura_bar.update_traces(hovertemplate="Año: %{x}<br>Precio Promedio: $%{y:,.0f}")
                     st.plotly_chart(figura_bar, use_container_width=True)
                 
                 with grafico_pie_combustible:
                     st.subheader("Cuota de Mercado por Combustible")
                     figura_pie = px.pie(self.df, names='Tipo de Combustible', hole=0.4)
+                    figura_pie.update_traces(hovertemplate="%{label}<br>Vehículos: %{value}<br>Porcentaje: %{percent}")
                     st.plotly_chart(figura_pie, use_container_width=True)
                 
                 st.subheader("Top Marcas por Precio Promedio")
                 df_m = self.df.groupby("Marca")["Precio"].mean().sort_values().reset_index()
                 figura_h = px.bar(df_m, x="Precio", y="Marca", orientation='h', color="Precio")
+                figura_h.update_layout(xaxis_tickprefix='$', xaxis_tickformat=',.0f')
+                figura_h.update_traces(hovertemplate="Marca: %{y}<br>Precio Promedio: $%{x:,.0f}")
                 st.plotly_chart(figura_h, use_container_width=True)
 
             with tab_graficos_evolucion_y_distribucion:
                 st.write("##")
-                
                 st.subheader("Evolución del Precio Promedio por Marca")
                 df_evo_marca = self.df.groupby(["Año", "Marca"])["Precio"].mean().reset_index()
                 figura_linea_marca = px.line(df_evo_marca, x="Año", y="Precio", color="Marca", markers=True)
+                figura_linea_marca.update_layout(yaxis_tickprefix='$', yaxis_tickformat=',.0f')
                 st.plotly_chart(figura_linea_marca, use_container_width=True)
 
-                
                 st.subheader("Distribución de Combustible por Año")
-                figura_comb_año = px.histogram(
-                    self.df, x="Año", color="Tipo de Combustible", 
-                    barmode="stack", nbins=len(self.df['Año'].unique())
-                )
+                figura_comb_año = px.histogram(self.df, x="Año", color="Tipo de Combustible", barmode="stack")
                 st.plotly_chart(figura_comb_año, use_container_width=True)
+                
+                st.subheader("Distribución de Precios por Marca (Boxplot)")
+                figura_boxplot = px.box(
+                    self.df, 
+                    x="Marca", 
+                    y="Precio", 
+                    color="Marca",
+                    points="all", 
+                    notched=True,  
+                    labels={'Precio': 'Precio ($)'}
+                )
 
                 
-                st.subheader("Histograma de Precios y Análisis por Condición")
-            
-                df_agrupado = self.df.groupby(["Marca", "Condición"])["Precio"].mean().reset_index()
-                figura_agrupada = px.bar(df_agrupado, x="Marca", y="Precio", color="Condición", barmode="group")
-                st.plotly_chart(figura_agrupada, use_container_width=True)
+                figura_boxplot.update_layout(yaxis_tickprefix='$', yaxis_tickformat=',.0f')
+
+                st.plotly_chart(figura_boxplot, use_container_width=True)
+                
+                
 
             with tab_graficos_correlacion_avanzada:
                 st.write("##")
                 st.subheader("Matriz de Correlación")
-                
-                
                 orden_variables = ['Tamaño del Motor', 'Año', 'Kilometraje', 'Precio']
-                
-                
                 df_corr = self.df[orden_variables].corr()
-                
-                
                 figura_heatmap = px.imshow(
-                    df_corr, 
-                    text_auto=True, 
-                    color_continuous_scale='RdBu_r', 
-                    aspect="auto",
-                    x=orden_variables,
-                    y=orden_variables,
-                    origin='lower' 
+                    df_corr, text_auto=".2f", color_continuous_scale='RdBu_r', 
+                    x=orden_variables, y=orden_variables
                 )
-                
-               
-                figura_heatmap.update_layout(
-                    xaxis_title="Variables",
-                    yaxis_title="Variables",
-                    yaxis_autorange=True 
-                )
-                
                 st.plotly_chart(figura_heatmap, use_container_width=True)
 
-                st.subheader("Relación Precio vs. Kilometraje (Regresión)")
+                st.subheader("Relación Precio vs. Millaje (Regresión)")
+
+             
                 figura_scatter = px.scatter(
                     self.df, x="Kilometraje", y="Precio", 
-                    color="Condición", opacity=0.5,
-                    trendline="ols", hover_data=['Modelo', 'Año']
+                    color="Condición", opacity=0.5, 
+                    trendline="ols", 
+                    labels={'Kilometraje': 'Millaje (mi)', 'Precio': 'Precio ($)'}
                 )
+
+                figura_scatter.update_traces(
+                    line=dict(color="red"), 
+                    selector=dict(mode="lines") 
+                )
+
+             
+                figura_scatter.update_layout(yaxis_tickprefix='$', yaxis_tickformat=',.0f')
+                figura_scatter.update_traces(
+                    hovertemplate="Millaje: %{x:,.0f} mi<br>Precio: $%{y:,.0f}",
+                    selector=dict(mode="markers")
+                )
+
                 st.plotly_chart(figura_scatter, use_container_width=True)
+                                
+                            
 
         elif self.df.empty:
             st.error("⚠️ No hay vehículos que coincidan con esos filtros.")
+
 class Main:
     @staticmethod
     def run():
         st.set_page_config(page_title="Análisis de Carros - UCV", layout="wide")
         app = CarApp('db/precios_carros_arreglado.csv')
         app.cargar_y_limpiar()
-        
         
         if app.df_original is not None:
             app.aplicar_filtros()
