@@ -51,7 +51,7 @@ class UI:
         
         highlight_promedio.metric("Precio Promedio", f"${df['Precio'].mean():,.0f}")
         highlight_millaje_promedio.metric("Millaje Medio", f"{df['Kilometraje'].mean():,.0f} mi")
-        highlight_vehiculos_filtrados.metric("Vehículos Filtrados", len(df))
+        highlight_vehiculos_filtrados.metric("Vehículos Filtrados",  f"{len(df):,.0f}")
         marca_popular_val = df['Marca'].mode()[0] if not df.empty else "N/A"
         highlight_marca_popular.metric("Marca más Frecuente", marca_popular_val)
 
@@ -65,25 +65,43 @@ class UI:
             
             with grafico_evolucion_general:
                 st.subheader("Evolución General de Precios")
-                st.plotly_chart(Graphics.bar_evolucion_general(df), use_container_width=True)
+                st.plotly_chart(Graphics.grafico_de_barras_de_evolucion_general(df), use_container_width=True)
             
             with grafico_pie_combustible:
                 st.subheader("Cuota de Mercado por Combustible")
-                st.plotly_chart(Graphics.pie_combustible(df), use_container_width=True)
+                st.plotly_chart(Graphics.grafico_de_torta_de_combustible(df), use_container_width=True)
             
             st.subheader("Top Marcas por Precio Promedio")
-            st.plotly_chart(Graphics.bar_top_marcas(df), use_container_width=True)
+            st.plotly_chart(Graphics.grafico_de_barras_de_top_marcas(df), use_container_width=True)
+            
+            st.subheader("Distribución de precios")
+            st.plotly_chart(Graphics.historigrama_de_precio(df), use_container_width=True)
+            
+            st.subheader("Boxplot de precios por transmisión")
+            st.plotly_chart(Graphics.boxplot_transmision(df), use_container_width=True)
+            
+            st.subheader("Gráfico de barras apiladas de combustible por marca")
+            st.plotly_chart(Graphics.grafico_de_barras_de_combustible_marca(df), use_container_width=True)
+            
+            
+            
 
         with tab_graficos_evolucion_y_distribucion:
             st.write("##")
             st.subheader("Evolución del Precio Promedio por Marca")
             st.plotly_chart(Graphics.line_evolucion_marca(df), use_container_width=True)
+            
+            st.subheader("Evolución del millaje promedio por marca por año")
+            st.plotly_chart(Graphics.line_evolucion_millaje(df), use_container_width=True)
 
             st.subheader("Distribución de Combustible por Año")
-            st.plotly_chart(Graphics.hist_comb_año(df), use_container_width=True)
+            st.plotly_chart(Graphics.historigrama_de_comb_año(df), use_container_width=True)
             
             st.subheader("Distribución de Precios por Marca (Boxplot)")
             st.plotly_chart(Graphics.boxplot_precios(df), use_container_width=True)
+            
+            st.subheader("Boxplot de precios por tipos de combustible")
+            st.plotly_chart(Graphics.boxplot_combustible(df), use_container_width=True)
 
         with tab_graficos_correlacion_avanzada:
             st.write("##")
