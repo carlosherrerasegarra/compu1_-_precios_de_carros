@@ -19,7 +19,6 @@ El dashboard permite realizar un estudio multidimensional basado en:
 
 ## Enlaces
 * **Informe PDF:**
-
 https://compu1-precios-de-carros.onrender.com/R/informe.pdf
 
 * **Dashboard:**
