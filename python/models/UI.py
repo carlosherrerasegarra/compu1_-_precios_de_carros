@@ -56,7 +56,7 @@ class UI:
         highlight_marca_popular.metric("Marca más Frecuente", marca_popular_val)
 
         tab_graficos_descriptivos, tab_graficos_evolucion_y_distribucion, tab_graficos_correlacion_avanzada = st.tabs(
-            ["📊 Análisis Descriptivo", "📉 Evolución y Distribución", "📈 Correlación"]
+            ["Análisis Descriptivo", "Evolución y Distribución", "Correlación"]
         )
 
         with tab_graficos_descriptivos:
