@@ -23,7 +23,7 @@ El dashboard permite realizar un estudio multidimensional basado en:
 https://compu1-precios-de-carros.onrender.com/R/informe.pdf
 
 * **Dashboard:**
-https://huggingface.co/spaces/juandh382/analisis-de-precios-de-carros
+https://compu1-precios-de-carros-cgc4.onrender.com/
 
 ## 🚀 Instalación y Uso
 
